@@ -123,12 +123,12 @@
                 <suiteXmlFile>src/test/java/com/google/runner/testng.xml</suiteXmlFile>
               </suiteXmlFiles>
               <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
-              <!--<properties>-->
-                <!--<property>-->
-                  <!--<name>listener</name>-->
-                  <!--<value>ru.yandex.qatools.allure.cucumberjvm.AllureRunListener</value>-->
-                <!--</property>-->
-              <!--</properties>-->
+              <!--properties>
+                <property>
+                  <name>listener</name>
+                  <value>ru.yandex.qatools.allure.cucumberjvm.AllureRunListener</value>
+                </property>
+              </properties-->
             </configuration>
           </plugin>
           <!--<plugin>-->
