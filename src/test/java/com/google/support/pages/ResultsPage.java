@@ -1,8 +1,9 @@
-package com.google.pages.web;
+package com.google.support.pages;
 
 import java.util.List;
 import java.util.stream.Stream;
 
+import com.frameworkium.core.ui.annotations.Visible;
 import com.frameworkium.core.ui.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,8 +11,14 @@ import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.allure.annotations.Step;
 import ru.yandex.qatools.htmlelements.annotations.Name;
 import ru.yandex.qatools.htmlelements.element.Link;
+import ru.yandex.qatools.htmlelements.element.TextBlock;
 
 public class ResultsPage extends BasePage<ResultsPage> {
+
+    @Visible
+    @Name("Search results stats")
+    @FindBy(id = "resultStats")
+    private TextBlock resultStats;
 
     @Name("Search result titles")
     //@Visible doesn't seem to work
