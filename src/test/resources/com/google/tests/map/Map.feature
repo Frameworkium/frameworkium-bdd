@@ -13,6 +13,6 @@ Feature: Map Search
     Then I should see information about "The Shard"
 
   Scenario: Search for BlueFin
-    When I search for a location "Blue Fin Building"
+    When I search for a location "Blue Fin Venue"
     Then I should see information about "Blue Fin Venue"
     And I should see the address "110 Southwark St, London SE1 0SU"
