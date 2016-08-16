@@ -1,4 +1,4 @@
-package com.google.support.pages;
+package com.google.pages;
 
 import com.frameworkium.core.ui.annotations.Visible;
 import com.frameworkium.core.ui.pages.BasePage;

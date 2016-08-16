@@ -1,17 +1,16 @@
-package com.google.support.pages;
-
-import java.util.List;
-import java.util.stream.Stream;
+package com.google.pages;
 
 import com.frameworkium.core.ui.annotations.Visible;
 import com.frameworkium.core.ui.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import ru.yandex.qatools.allure.annotations.Step;
 import ru.yandex.qatools.htmlelements.annotations.Name;
 import ru.yandex.qatools.htmlelements.element.Link;
 import ru.yandex.qatools.htmlelements.element.TextBlock;
+
+import java.util.List;
+import java.util.stream.Stream;
 
 public class ResultsPage extends BasePage<ResultsPage> {
 
