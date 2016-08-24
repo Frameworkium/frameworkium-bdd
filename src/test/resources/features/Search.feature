@@ -13,4 +13,4 @@ Feature: Web Search
 
   Scenario: Search for Cucumber
     When I search for "Cucumber"
-    Then I should see a link containing "Cucumber" on Results page
+    Then I should see a link containing "Cucuumber" on Results page

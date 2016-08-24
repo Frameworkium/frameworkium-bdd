@@ -1,4 +1,4 @@
-package com.google.glue;
+package com.google.will.move.to.core;
 
 import com.frameworkium.core.common.reporting.jira.JiraConfig;
 import com.frameworkium.core.common.reporting.jira.zapi.Execution;
@@ -7,6 +7,7 @@ import gherkin.formatter.Formatter;
 import gherkin.formatter.Reporter;
 import gherkin.formatter.model.*;
 import gherkin.formatter.model.Step;
+import org.apache.commons.lang.StringUtils;
 import ru.yandex.qatools.allure.Allure;
 import ru.yandex.qatools.allure.model.*;
 import ru.yandex.qatools.allure.config.AllureModelUtils;
@@ -23,15 +24,17 @@ public class CustomCukeListener implements Formatter, Reporter {
     public Allure getLifecycle() {
         return lifecycle;
     }
+    private Boolean logSteps = true;
+    private Boolean logScenarioAsStep = true;
+    private Boolean updateLabels = true;
+    private Boolean updateTCMStatus = true;
 
     private Feature featureInUse;
-    private Boolean logSteps = true;
-    private Boolean logScenarioAsTest = false;
-    private Boolean logScenarioAsStep = true;
     private int feaStepBrokenCount = 0;
     private int scnStepBrokenCount = 0;
     private Throwable latestError;
     private Boolean hasBackground = false;
+
 
     @Override
     public void syntaxError(String s, String s1, List<String> list, String s2, Integer integer) {
@@ -45,10 +48,12 @@ public class CustomCukeListener implements Formatter, Reporter {
 
     @Override
     public void feature(Feature feature) {
+
         feaStepBrokenCount=0;
         featureInUse = feature;
-        updateTCMStatus(getTestCaseId(feature.getTags()), JiraConfig.ZapiStatus.ZAPI_STATUS_WIP, "");
-        getLifecycle().fire(new TestSuiteStartedEvent(feature.getId(),feature.getName()).withTitle(feature.getName()));
+
+        if(updateTCMStatus)
+            updateTCMStatus(getTestCaseId(feature.getTags()), JiraConfig.ZapiStatus.ZAPI_STATUS_WIP, "");
     }
 
     @Override
@@ -63,29 +68,39 @@ public class CustomCukeListener implements Formatter, Reporter {
     @Override
     public void startOfScenarioLifeCycle(Scenario scenario) {
         scnStepBrokenCount=0;
-        if(logScenarioAsTest) {
 
-            getLifecycle().fire(new TestCaseStartedEvent(featureInUse.getId(), scenario.getName())
-                    .withDescription(new Description().withValue(featureInUse.getDescription()))
-                    .withLabels(
-                            AllureModelUtils.createFeatureLabel(featureInUse.getName()),
-                            AllureModelUtils.createStoryLabel(scenario.getName()),
-                            AllureModelUtils.createIssueLabel(getTestCaseId(scenario.getTags()))
-                    ));
-        } else if (logScenarioAsStep){
-            getLifecycle().fire(new StepStartedEvent("[SCN] " + scenario.getName()));
+        if (logScenarioAsStep) {
+            if (!getTestCaseId(scenario.getTags()).isEmpty()) {
+                getLifecycle().fire(new StepStartedEvent("[SCN (" + getTestCaseId(scenario.getTags()) + ")] " + scenario.getName()));
+            } else {
+                getLifecycle().fire(new StepStartedEvent("[SCN] " + scenario.getName()));
+            }
         }
+
+        getLifecycle().fire(new UpdateTestCaseTitle(featureInUse.getName()));
 
         if(!featureInUse.getDescription().isEmpty())
             getLifecycle().fire(new AddTestCaseDescriptionEvent(featureInUse.getDescription()));
 
-        List<Label> labels = new ArrayList<Label>();
-        labels.add(AllureModelUtils.createFeatureLabel(featureInUse.getName()));
-        labels.addAll(getStoryLabels(featureInUse, scenario));
-        getLifecycle().fire(new AddTestCaseLabelEvent(labels));
+        if(updateLabels) {
+            List<Label> labels = new ArrayList<Label>();
+
+            labels.add(AllureModelUtils.createFeatureLabel(featureInUse.getName()));
+
+            List<Tag> featureAndScenTags = featureInUse.getTags();
+            featureAndScenTags.addAll(scenario.getTags());
+            labels.addAll(getStoryLabelsFromTags(featureAndScenTags));
+            //Only use the first testcaseid tag - otherwise we'll append the scenario ones too
+            labels.add(AllureModelUtils.createTestLabel(getTestCaseId(featureInUse.getTags()).split(",")[0]));
+
+            getLifecycle().fire(new AddTestCaseLabelEvent(labels));
 
 
-        updateTCMStatus(getTestCaseId(scenario.getTags()), JiraConfig.ZapiStatus.ZAPI_STATUS_WIP, "");
+        }
+
+        if(updateTCMStatus)
+            updateTCMStatus(getTestCaseId(scenario.getTags()), JiraConfig.ZapiStatus.ZAPI_STATUS_WIP, "");
+
     }
 
     @Override
@@ -110,38 +125,31 @@ public class CustomCukeListener implements Formatter, Reporter {
     @Override
     public void endOfScenarioLifeCycle(Scenario scenario) {
 
-        if(logScenarioAsTest) {
-            if (scnStepBrokenCount > 0) {
-                getLifecycle().fire(new TestCaseFailureEvent().withThrowable(latestError));
-                getLifecycle().fire(new TestCaseFinishedEvent());
-            } else {
-                getLifecycle().fire(new TestCaseFinishedEvent());
-            }
-
-        } else if (logScenarioAsStep){
+        if (logScenarioAsStep){
             if (scnStepBrokenCount > 0) {
                 getLifecycle().fire(new StepFailureEvent().withThrowable(latestError));
             }
             getLifecycle().fire(new StepFinishedEvent());
         }
 
-        if(scnStepBrokenCount > 0) {
-            updateTCMStatus(getTestCaseId(scenario.getTags()), JiraConfig.ZapiStatus.ZAPI_STATUS_FAIL, latestError.getLocalizedMessage());
-        } else {
-            updateTCMStatus(getTestCaseId(scenario.getTags()), JiraConfig.ZapiStatus.ZAPI_STATUS_PASS, "");
+        if(updateTCMStatus) {
+            if (scnStepBrokenCount > 0) {
+                updateTCMStatus(getTestCaseId(scenario.getTags()), JiraConfig.ZapiStatus.ZAPI_STATUS_FAIL, latestError.getLocalizedMessage());
+            } else {
+                updateTCMStatus(getTestCaseId(scenario.getTags()), JiraConfig.ZapiStatus.ZAPI_STATUS_PASS, "");
+            }
         }
     }
 
     @Override
     public void done() {
 
-        getLifecycle().fire(new TestSuiteFinishedEvent(featureInUse.getId()));
-
-
-        if (feaStepBrokenCount > 0) {
-            updateTCMStatus(getTestCaseId(featureInUse.getTags()), JiraConfig.ZapiStatus.ZAPI_STATUS_FAIL, latestError.getLocalizedMessage());
-        } else {
-            updateTCMStatus(getTestCaseId(featureInUse.getTags()), JiraConfig.ZapiStatus.ZAPI_STATUS_PASS, "");
+        if(updateTCMStatus) {
+            if (feaStepBrokenCount > 0) {
+                updateTCMStatus(getTestCaseId(featureInUse.getTags()), JiraConfig.ZapiStatus.ZAPI_STATUS_FAIL, latestError.getLocalizedMessage());
+            } else {
+                updateTCMStatus(getTestCaseId(featureInUse.getTags()), JiraConfig.ZapiStatus.ZAPI_STATUS_PASS, "");
+            }
         }
     }
 
@@ -209,10 +217,6 @@ public class CustomCukeListener implements Formatter, Reporter {
 
 
 
-
-
-
-
     private <T> Object getFieldValueInObject(T m, String field) {
         try {
             Field fieldInObject = getFieldInObject(m, field);
@@ -226,30 +230,19 @@ public class CustomCukeListener implements Formatter, Reporter {
         return m.getClass().getDeclaredField(field);
     }
 
-    private void printTags(List<Tag> tags){
-        for (Tag tag : tags){
-            System.out.println(tag.getName());
-        }
-    }
-
 
     private String getTestCaseId(List<Tag> tags){
         return retrieveTagValue(tags, "TestCaseId");
     }
 
-    private List<Label> getStoryLabels(Feature feature, Scenario scenario){
+    private List<Label> getStoryLabelsFromTags(List<Tag> tags){
         List<Label> labels = new ArrayList<Label>();
         List<String> storyAnnotations = new ArrayList<>();
 
         //Get the story annotations from the feature
-        storyAnnotations.addAll(Arrays.asList(retrieveTagValue(feature.getTags(),"Story").split(",")));
-        storyAnnotations.addAll(Arrays.asList(retrieveTagValue(feature.getTags(),"Stories").split(",")));
+        storyAnnotations.addAll(Arrays.asList(retrieveTagValue(tags,"Story").split(",")));
+        storyAnnotations.addAll(Arrays.asList(retrieveTagValue(tags,"Stories").split(",")));
 
-        //Get the story annotations from the scenario
-        storyAnnotations.addAll(Arrays.asList(retrieveTagValue(scenario.getTags(),"Story").split(",")));
-        storyAnnotations.addAll(Arrays.asList(retrieveTagValue(scenario.getTags(),"Stories").split(",")));
-
-        System.out.println(storyAnnotations.toString());
         for (String storyAnnotation : storyAnnotations){
             if(!storyAnnotation.isEmpty())
                 labels.add(AllureModelUtils.createStoryLabel(storyAnnotation.trim()));
@@ -258,29 +251,43 @@ public class CustomCukeListener implements Formatter, Reporter {
     }
 
     private String retrieveTagValue(List<Tag> tags, String tagName){
-        String value = "";
+        List<String> values = new ArrayList<>();
         String tagSearch = "@" + tagName + ":";
         for (Tag tag : tags){
-            System.out.println(tag.getName());
             if(tag.getName().startsWith(tagSearch))
-                value = tag.getName().replace(tagSearch,"").trim();
+                values.add(tag.getName().replace(tagSearch,"").trim());
         }
-        return value;
+        //Return a comma separated list
+        return StringUtils.join(values,",");
     }
 
     private void updateTCMStatus(String testCaseId, int status, String comment){
-        if(!testCaseId.isEmpty()) {
-            comment = "Updated by CustomCukeListener" + System.lineSeparator() + comment;
-            new Execution(testCaseId).update(status, comment, null);
+        for(String jiraId : testCaseId.split(",")) {
+            if (!jiraId.isEmpty()) {
+                comment = "Updated by CustomCukeListener" + System.lineSeparator() + comment;
+                new Execution(jiraId).update(status, comment, null);
+            }
         }
     }
 
+    public class UpdateTestCaseTitle implements TestCaseEvent {
+        String title;
+
+        public UpdateTestCaseTitle(String title) {
+            this.title = title;
+        }
+
+        @Override
+        public void process(TestCaseResult context) {
+            context.setTitle(title);
+        }
+    }
 
     public class AddTestCaseDescriptionEvent implements TestCaseEvent {
         Description value;
 
         public AddTestCaseDescriptionEvent(String description) {
-            this.value = new Description().withValue(description);
+            this.value = new Description().withValue(description).withType(DescriptionType.MARKDOWN);
         }
 
         @Override
@@ -290,16 +297,19 @@ public class CustomCukeListener implements Formatter, Reporter {
     }
 
     public class AddTestCaseLabelEvent implements TestCaseEvent {
-        List<Label> labels;
+        List<Label> labelsToAdd;
 
         public AddTestCaseLabelEvent(List<Label> labels) {
-            this.labels = labels;
+            this.labelsToAdd = labels;
         }
 
         @Override
         public void process(TestCaseResult context) {
+            List<Label> labels = context.getLabels();
+            labels.addAll(labelsToAdd);
             context.setLabels(labels);
         }
     }
+
 
 }

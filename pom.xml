@@ -97,7 +97,7 @@
                 </goals>
                 <configuration>
                   <glue>com.google.glue</glue>
-                  <format>json,com.google.glue.CustomCukeListener</format>
+                  <format>json,com.google.will.move.to.core.CustomCukeListener</format>
                   <outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
                   <featuresDirectory>src/test/resources/features/</featuresDirectory>
                   <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
@@ -107,6 +107,7 @@
                   <filterFeaturesByTags>false</filterFeaturesByTags>
                   <useTestNG>true</useTestNG>
                   <namingScheme>feature-title</namingScheme>
+                  <!--<customVmPath>cucumber-niche-runner.vm</customVmPath>-->
                 </configuration>
               </execution>
             </executions>
