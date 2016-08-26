@@ -42,7 +42,7 @@
     <dependency>
       <groupId>com.github.frameworkium</groupId>
       <artifactId>frameworkium-core</artifactId>
-      <version>2.0.9</version>
+      <version>24765851279dfe3e50560588380ac6fe7b49d06a</version>
     </dependency>
     <dependency>
       <groupId>info.cukes</groupId>
@@ -97,7 +97,7 @@
                 </goals>
                 <configuration>
                   <glue>com.google.glue</glue>
-                  <format>json,com.google.will.move.to.core.CustomCukeListener</format>
+                  <format>json,com.frameworkium.core.common.listeners.CukeListener</format>
                   <outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
                   <featuresDirectory>src/test/resources/features/</featuresDirectory>
                   <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
