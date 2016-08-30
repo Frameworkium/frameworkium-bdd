@@ -46,7 +46,9 @@ script:
   #- java -jar selenium-server-standalone-$SELENIUM_VER.jar -role node -hub http://localhost:4444/grid/register -browser browserName=chrome,maxInstances=$THREAD_COUNT -port 5556 > /dev/null 2>&1 &
 
   # Run on Firefox on the grid
-  - mvn verify -B -Dthreads=$THREAD_COUNT -Dconfig=config/FirefoxGrid.yaml -DcaptureURL=$CAPTURE_URL -DsutName="$SUT_NAME" -DsutVersion="$SUT_VERSION"
+  #Commenting out the capture elements as these are currently causing build failures
+  # - mvn verify -B -Dthreads=$THREAD_COUNT -Dconfig=config/FirefoxGrid.yaml -DcaptureURL=$CAPTURE_URL -DsutName="$SUT_NAME" -DsutVersion="$SUT_VERSION"
+  - mvn verify -B -Dthreads=$THREAD_COUNT -Dconfig=config/FirefoxGrid.yaml
   # Run on chrome on the grid
   # chromium crashes and google chrome doesn't work on travis
   # - mvn verify -Dthreads=$THREAD_COUNT -Dbrowser=chrome -DgridURL=http://localhost:4444/wd/hub -DcaptureURL=$CAPTURE_URL -DsutName="$SUT_NAME" -DsutVersion="$SUT_VERSION"
