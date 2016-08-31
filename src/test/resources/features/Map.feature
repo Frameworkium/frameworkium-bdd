@@ -1,4 +1,4 @@
-@TestCaseId:TEST-1
+@TestCaseId(TEST-1)
 Feature: Map Search
 
   In order to find information about places
@@ -9,13 +9,13 @@ Feature: Map Search
     Given I am on the google homepage
     And I open the maps app
 
-  @TestCaseId:TEST-2
+  @TestCaseId(TEST-2)
   Scenario: Search for The Shard
     When I search for a location "the shard"
     Then I should see information about "The Shard"
 
-  @Stories:one_story,another_story
-  @Story:Another_sodding_story
+  @Stories(one_story,another_story)
+  @Story(Another_sodding_story)
   Scenario: Search for BlueFin
     When I search for a location "Blue Fin Venue"
     Then I should see information about "Blue Fin Venue"
