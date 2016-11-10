@@ -1,158 +1,213 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.frameworkium</groupId>
-  <artifactId>Frameworkium-BDD</artifactId>
-  <version>2.1.0-BDD</version>
+    <groupId>com.frameworkium</groupId>
+    <artifactId>Frameworkium-BDD</artifactId>
+    <version>2.1.0-BDD</version>
+    <packaging>pom</packaging>
 
-  <properties>
-    <!-- Needed for allure-maven-plugin to specify report version -->
-    <allure.version>1.4.24.RC3</allure.version>
-    <aspectj.version>1.8.9</aspectj.version>
-    <!-- Default - should be overriden by -Dthreads=n at maven cmd line -->
-    <threads>1</threads>
-    <tags>"*"</tags>
-  </properties>
+    <properties>
+        <!-- Needed for allure-maven-plugin to specify report version -->
+        <allure.version>1.4.24.RC3</allure.version>
+        <aspectj.version>1.8.9</aspectj.version>
+        <!-- Default - should be overriden by -Dthreads=n at maven cmd line -->
+        <threads>1</threads>
+        <tags>"*"</tags>
+    </properties>
 
-  <name>Frameworkium-Cukes</name>
-  <description>Frameworkium Cucumber-JVM Test Automation Framework</description>
+    <name>Frameworkium-Cukes</name>
+    <description>Frameworkium Cucumber-JVM Test Automation Framework</description>
 
-  <repositories>
-    <repository>
-      <id>jitpack.io</id>
-      <url>https://jitpack.io</url>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>jitpack.io</id>
-      <url>https://jitpack.io</url>
-    </pluginRepository>
-  </pluginRepositories>
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </pluginRepository>
+    </pluginRepositories>
 
-  <dependencies>
-    <dependency>
-      <groupId>info.cukes</groupId>
-      <artifactId>cucumber-java</artifactId>
-      <version>1.2.4</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.github.frameworkium</groupId>
-      <artifactId>frameworkium-core</artifactId>
-      <version>2.1.1</version>
-    </dependency>
-    <dependency>
-      <groupId>info.cukes</groupId>
-      <artifactId>cucumber-testng</artifactId>
-      <version>1.2.4</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.inject</groupId>
-      <artifactId>guice</artifactId>
-      <version>4.0</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjweaver</artifactId>
-      <version>${aspectj.version}</version>
-    </dependency>
-  </dependencies>
+    <!--<modules>-->
+    <!--<module>custom-runner-module</module>-->
+    <!--&lt;!&ndash;<module>Frameworkium-BDD</module>&ndash;&gt;-->
+    <!--</modules>-->
 
-  <profiles>
-    <profile>
-      <id>standard-execution</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <properties>
-        <customArgLine />
-      </properties>
-      <build>
-
-        <plugins>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-              <source>1.8</source>
-              <target>1.8</target>
-            </configuration>
-          </plugin>
-
-          <plugin>
+    <dependencies>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>1.2.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>com.github.frameworkium</groupId>
-            <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-            <version>1.3.4</version>
-            <executions>
-              <execution>
-                <id>generateRunners</id>
-                <phase>generate-test-sources</phase>
-                <goals>
-                  <goal>generateRunners</goal>
-                </goals>
-                <configuration>
-                  <glue>com.google.glue</glue>
-                  <format>json,com.frameworkium.core.common.listeners.CukeListener</format>
-                  <outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
-                  <featuresDirectory>src/test/resources/features/</featuresDirectory>
-                  <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
-                  <strict>true</strict>
-                  <monochrome>true</monochrome>
-                  <tags></tags>
-                  <filterFeaturesByTags>false</filterFeaturesByTags>
-                  <useTestNG>true</useTestNG>
-                  <namingScheme>feature-title</namingScheme>
-                  <!--<customVmPath>cucumber-niche-runner.vm</customVmPath>-->
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
+            <artifactId>frameworkium-core</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>4.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
 
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.18.1</version>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>test</goal>
-                </goals>
-                <configuration>
-                  <forkCount>${threads}</forkCount>
-                  <reuseForks>true</reuseForks>
-                  <includes>
-                    <include>**/*IT.class</include>
-                    <include>**/BrowserSetup.class</include>
-                  </includes>
-                  <argLine>
-                    -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
-                  </argLine>
 
-                </configuration>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
+        </dependency>
 
-              </execution>
-            </executions>
-          </plugin>
 
+    </dependencies>
+
+    <profiles>
+
+        <profile>
+            <id>standard-execution</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <customArgLine />
+            </properties>
+
+
+            <build>
+
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy-resources</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>src/test/resources</directory>
+                                            <includes>
+                                                <include>**/*.vm</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <source>1.8</source>
+                            <target>1.8</target>
+                        </configuration>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>com.github.frameworkium</groupId>
+                        <artifactId>cucumber-jvm-parallel-plugin</artifactId>
+                        <version>1.5.3</version>
+                        <executions>
+                            <execution>
+                                <id>generateRunners</id>
+                                <phase>generate-test-sources</phase>
+                                <goals>
+                                    <goal>generateRunners</goal>
+                                </goals>
+                                <configuration>
+                                    <glue>com.google.glue</glue>
+                                    <format>json</format>
+
+                                    <!--<format>json,com.frameworkium.core.common.listeners.CukeListener</format>-->
+                                    <outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
+                                    <featuresDirectory>src/test/resources/features/</featuresDirectory>
+                                    <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
+                                    <strict>true</strict>
+                                    <monochrome>true</monochrome>
+                                    <tags></tags>
+                                    <filterFeaturesByTags>false</filterFeaturesByTags>
+                                    <useTestNG>true</useTestNG>
+                                    <templateType>CUSTOM</templateType>
+                                    <namingScheme>simple</namingScheme>
+                                    <parallelScheme>FEATURE</parallelScheme>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.18.1</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                                <configuration>
+                                    <forkCount>${threads}</forkCount>
+                                    <reuseForks>true</reuseForks>
+                                    <!--<testClassesDirectory>${project.build.directory}/generated-test-sources/cucumber/</testClassesDirectory>-->
+
+                                    <!--<classesDirectory>${project.build.directory}/generated-test-sources/cucumber/</classesDirectory>-->
+                                    <!--<testSourceDirectory>${project.build.directory}/generated-test-sources/cucumber/</testSourceDirectory>-->
+                                    <!--${project.build.testOutputDirectory}-->
+                                    <includes>
+                                        <include>**/*IT.class</include>
+                                        <include>*IT.class</include>
+                                        <include>**/*Test.class</include>
+                                        <include>**/*IT.java</include>
+                                        <include>*IT.java</include>
+                                        <include>**/*Test.java</include>
+                                    </includes>
+                                    <argLine>
+                                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+                                    </argLine>
+
+                                </configuration>
+
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>ru.yandex.qatools.allure</groupId>
+                <artifactId>allure-maven-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
         </plugins>
-      </build>
-    </profile>
-  </profiles>
-
-  <reporting>
-    <excludeDefaults>true</excludeDefaults>
-    <plugins>
-      <plugin>
-        <groupId>ru.yandex.qatools.allure</groupId>
-        <artifactId>allure-maven-plugin</artifactId>
-        <version>2.5</version>
-      </plugin>
-    </plugins>
-  </reporting>
+    </reporting>
 
 </project>
