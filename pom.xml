@@ -47,7 +47,7 @@
         <dependency>
             <groupId>com.github.frameworkium</groupId>
             <artifactId>frameworkium-core</artifactId>
-            <version>2.1.1</version>
+            <version>2.3.0</version>
         </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
@@ -129,7 +129,7 @@
                     <plugin>
                         <groupId>com.github.frameworkium</groupId>
                         <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-                        <version>1.5.3</version>
+                        <version>1.3.4</version>
                         <executions>
                             <execution>
                                 <id>generateRunners</id>
@@ -140,8 +140,6 @@
                                 <configuration>
                                     <glue>com.google.glue</glue>
                                     <format>json</format>
-
-                                    <!--<format>json,com.frameworkium.core.common.listeners.CukeListener</format>-->
                                     <outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
                                     <featuresDirectory>src/test/resources/features/</featuresDirectory>
                                     <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
@@ -150,9 +148,8 @@
                                     <tags></tags>
                                     <filterFeaturesByTags>false</filterFeaturesByTags>
                                     <useTestNG>true</useTestNG>
-                                    <templateType>CUSTOM</templateType>
-                                    <namingScheme>simple</namingScheme>
-                                    <parallelScheme>FEATURE</parallelScheme>
+                                    <namingScheme>feature-title</namingScheme>
+                                    <!--<customVmPath>cucumber-niche-runner.vm</customVmPath>-->
                                 </configuration>
                             </execution>
                         </executions>
