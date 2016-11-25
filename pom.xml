@@ -6,7 +6,6 @@
     <groupId>com.frameworkium</groupId>
     <artifactId>Frameworkium-BDD</artifactId>
     <version>2.1.0-BDD</version>
-    <packaging>pom</packaging>
 
     <properties>
         <!-- Needed for allure-maven-plugin to specify report version -->
