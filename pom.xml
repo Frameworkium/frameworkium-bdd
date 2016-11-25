@@ -177,11 +177,8 @@
                                     <!--${project.build.testOutputDirectory}-->
                                     <includes>
                                         <include>**/*IT.class</include>
-                                        <include>*IT.class</include>
-                                        <include>**/*Test.class</include>
-                                        <include>**/*IT.java</include>
-                                        <include>*IT.java</include>
                                         <include>**/*Test.java</include>
+                                        <include>**/*BrowserSetup.java</include>
                                     </includes>
                                     <argLine>
                                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
