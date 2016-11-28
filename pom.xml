@@ -142,7 +142,6 @@
                   <includes>
                     <include>**/*IT.java</include>
                     <include>**/*Test.java</include>
-                    <include>**/*BrowserSetup.java</include>
                   </includes>
                   <argLine>
                     -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
