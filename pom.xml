@@ -11,7 +11,7 @@
     <!-- Needed for allure-maven-plugin to specify report version -->
     <allure.version>1.4.24.RC3</allure.version>
     <aspectj.version>1.8.9</aspectj.version>
-    <!-- Default - should be overriden by -Dthreads=n at maven cmd line -->
+    <!-- Default - can be overridden by -Dthreads=n at maven cmd line -->
     <threads>1</threads>
     <tags>"*"</tags>
   </properties>
@@ -38,31 +38,26 @@
 
   <dependencies>
     <dependency>
-      <groupId>info.cukes</groupId>
-      <artifactId>cucumber-java</artifactId>
-      <version>1.2.5</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>com.github.frameworkium</groupId>
       <artifactId>frameworkium-core</artifactId>
       <version>2.3.0</version>
+    </dependency>
+    <!-- required for allure -->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>${aspectj.version}</version>
+    </dependency>
+    <!-- explicitly state cuc related dependencies -->
+    <dependency>
+      <groupId>info.cukes</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>1.2.5</version>
     </dependency>
     <dependency>
       <groupId>info.cukes</groupId>
       <artifactId>cucumber-testng</artifactId>
       <version>1.2.5</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.inject</groupId>
-      <artifactId>guice</artifactId>
-      <version>4.0</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjweaver</artifactId>
-      <version>${aspectj.version}</version>
     </dependency>
   </dependencies>
 
@@ -88,13 +83,13 @@
             </configuration>
           </plugin>
 
+          <!--
+            Used to generate Cucumber test classes to then run in parallel
+          -->
           <plugin>
-            <!--
-              Used to generate Cucumber test classes to then run in parallel
-            -->
             <groupId>com.github.ham1</groupId>
             <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-            <version>0.1.8</version>
+            <version>2.0.4</version>
             <!--<groupId>com.github.temyers</groupId>-->
             <!--<artifactId>cucumber-jvm-parallel-plugin</artifactId>-->
             <!--<version>2.0.2</version>-->
@@ -106,6 +101,7 @@
                   <goal>generateRunners</goal>
                 </goals>
                 <configuration>
+                  <!-- change this to be your glue Java package -->
                   <glue>com.google.glue</glue>
                   <outputDirectory>
                     ${project.build.directory}/generated-test-sources/cucumber
@@ -114,6 +110,7 @@
                   </featuresDirectory>
                   <cucumberOutputDir>target/cucumber-parallel
                   </cucumberOutputDir>
+                  <!-- cucumber options -->
                   <format>json</format>
                   <strict>true</strict>
                   <monochrome>true</monochrome>
@@ -123,6 +120,7 @@
                   <namingScheme>feature-title</namingScheme>
                   <namingPattern>Parallel{c}IT</namingPattern>
                   <parallelScheme>SCENARIO</parallelScheme>
+                  <!-- Frameworkium custom template -->
                   <customVmTemplate>${basedir}/src/test/resources/cucumber-custom-runner.vm</customVmTemplate>
                 </configuration>
               </execution>
