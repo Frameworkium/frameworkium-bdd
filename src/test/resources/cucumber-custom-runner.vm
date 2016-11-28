@@ -8,7 +8,7 @@ public class $className extends BaseTest {
     @Test
     @CucumberOptions(
             strict = $strict,
-            features = {"classpath:$featureFile"},
+            features = {"$featureFile"},
             plugin = {$reports, "pretty"},
             monochrome = ${monochrome},
             tags = {#if($tags)$tags#end},
