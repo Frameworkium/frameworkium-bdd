@@ -137,14 +137,13 @@
                   <goal>test</goal>
                 </goals>
                 <configuration>
-                  <forkCount>${threads}</forkCount>
-                  <reuseForks>true</reuseForks>
+                  <parallel>classes</parallel>
+                  <threadCount>${threads}</threadCount>
                   <includes>
                     <include>**/*IT.java</include>
-                    <include>**/*Test.java</include>
                   </includes>
                   <argLine>
-                    -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                   </argLine>
                 </configuration>
               </execution>

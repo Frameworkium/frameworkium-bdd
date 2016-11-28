@@ -8,6 +8,7 @@ import java.lang.reflect.Method;
 /** Functionality for setup */
 public class BrowserSetup implements ITestListener {
 
+    /** Required to replicate the @BeforeMethod in {@link BaseTest}. */
     @Override
     public void onTestStart(ITestResult iTestResult) {
         BaseTest.configureBrowserBeforeTest(getMethod(iTestResult));
@@ -19,29 +20,18 @@ public class BrowserSetup implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        closeBrowser();
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        closeBrowser();
     }
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-        closeBrowser();
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-        closeBrowser();
-    }
-
-    private void closeBrowser() {
-        try {
-            BaseTest.getDriver().quit();
-        } catch (Exception ignored) {
-        }
     }
 
     @Override
