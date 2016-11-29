@@ -8,6 +8,7 @@ Feature: Web Search
   Background:
     Given I am on the google homepage
 
+  @CustomTag
   Scenario: Search for Hello world
     When I search for "hello world"
     Then I should see a link containing "HelloWorld" on Results page

@@ -49,5 +49,8 @@ script:
   # Run on Firefox on the grid
   - mvn verify -B -Dthreads=$THREAD_COUNT -Dconfig=FirefoxGrid.yaml -DcaptureURL=$CAPTURE_URL -DsutName="$SUT_NAME" -DsutVersion="$SUT_VERSION"
 
+  # Run single test with tags parameter
+  - mvn verify -B -Dtags="@CustomTag" -Dthreads=$THREAD_COUNT -Dbrowser=firefox -Dwebdriver.gecko.driver=/tmp/geckodriver 2> /dev/null
+
   # generate allure report
   - mvn site -B -q
