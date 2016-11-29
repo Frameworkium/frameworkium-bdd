@@ -13,7 +13,8 @@
     <aspectj.version>1.8.9</aspectj.version>
     <!-- Default - can be overridden by -Dthreads=n at maven cmd line -->
     <threads>1</threads>
-    <tags>"*"</tags>
+    <!-- Default - can be overridden by -Dtags="@Blah" at maven cmd line -->
+    <tags>~</tags>
   </properties>
 
   <name>Frameworkium-Cukes</name>
@@ -114,8 +115,8 @@
                   <format>json</format>
                   <strict>true</strict>
                   <monochrome>true</monochrome>
-                  <tags></tags>
-                  <filterFeaturesByTags>false</filterFeaturesByTags>
+                  <tags>"${tags}"</tags>
+                  <filterFeaturesByTags>true</filterFeaturesByTags>
                   <useTestNG>false</useTestNG>
                   <namingScheme>feature-title</namingScheme>
                   <namingPattern>Parallel{c}IT</namingPattern>
