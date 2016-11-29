@@ -2,6 +2,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.Test;
 import com.frameworkium.core.ui.tests.BaseTest;
+import com.frameworkium.core.common.listeners.CukeListener;
 
 public class $className extends BaseTest {
 
@@ -9,7 +10,7 @@ public class $className extends BaseTest {
     @CucumberOptions(
             strict = $strict,
             features = {"$featureFile"},
-            plugin = {$reports, "pretty"},
+            plugin = {$reports, "com.frameworkium.core.common.listeners.CukeListener", "pretty"},
             monochrome = ${monochrome},
             tags = {#if($tags)$tags#end},
             glue = {$glue })
