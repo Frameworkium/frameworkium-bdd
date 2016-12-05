@@ -90,10 +90,10 @@
           <plugin>
             <groupId>com.github.ham1</groupId>
             <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-            <version>2.0.4</version>
+            <version>2.0.6</version>
             <!--<groupId>com.github.temyers</groupId>-->
             <!--<artifactId>cucumber-jvm-parallel-plugin</artifactId>-->
-            <!--<version>2.0.2</version>-->
+            <!--<version>2.0.3</version>-->
             <executions>
               <execution>
                 <id>generateRunners</id>
@@ -117,12 +117,11 @@
                   <monochrome>true</monochrome>
                   <tags>"${tags}"</tags>
                   <filterFeaturesByTags>true</filterFeaturesByTags>
-                  <useTestNG>false</useTestNG>
                   <namingScheme>feature-title</namingScheme>
                   <namingPattern>Parallel{c}IT</namingPattern>
                   <parallelScheme>SCENARIO</parallelScheme>
                   <!-- Frameworkium custom template -->
-                  <customVmTemplate>${basedir}/src/test/resources/cucumber-custom-runner.vm</customVmTemplate>
+                  <customVmTemplate>src/test/resources/cucumber-custom-runner.vm</customVmTemplate>
                 </configuration>
               </execution>
             </executions>

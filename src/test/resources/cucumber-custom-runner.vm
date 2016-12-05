@@ -13,7 +13,7 @@ public class $className extends BaseTest {
             plugin = {$reports, "com.frameworkium.core.common.listeners.CukeListener", "pretty"},
             monochrome = ${monochrome},
             tags = {#if($tags)$tags#end},
-            glue = {$glue })
+            glue = {$glue})
     public class test_$className extends AbstractTestNGCucumberTests {}
 
 }
