@@ -15,6 +15,11 @@ public class MapPage extends BasePage<MapPage> {
     @FindBy(css = "input#searchboxinput")
     private TextInput searchBox;
 
+    @Step("Open maps page")
+    public static MapPage open() {
+        return new MapPage().get("https://maps.google.co.uk");
+    }
+
     @Step("Search for location {0}")
     public void search(String location) {
         searchBox.sendKeys(location + Keys.ENTER);

@@ -28,6 +28,7 @@ public class SearchStepDefs {
     public void should_see_on_results(String result) {
         assertThat(new ResultsPage().get()
                 .getResultTitles()
+                // lazily evaluated
                 .anyMatch(title -> title.contains(result)))
                 .isTrue();
     }
