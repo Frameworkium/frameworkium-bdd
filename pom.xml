@@ -26,12 +26,6 @@
       <url>https://jitpack.io</url>
     </repository>
   </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>jitpack.io</id>
-      <url>https://jitpack.io</url>
-    </pluginRepository>
-  </pluginRepositories>
 
   <prerequisites>
     <maven>3.1.1</maven>
@@ -88,12 +82,9 @@
             Used to generate Cucumber test classes to then run in parallel
           -->
           <plugin>
-            <groupId>com.github.ham1</groupId>
+            <groupId>com.github.temyers</groupId>
             <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-            <version>2.0.6</version>
-            <!--<groupId>com.github.temyers</groupId>-->
-            <!--<artifactId>cucumber-jvm-parallel-plugin</artifactId>-->
-            <!--<version>2.0.3</version>-->
+            <version>2.1.0</version>
             <executions>
               <execution>
                 <id>generateRunners</id>
