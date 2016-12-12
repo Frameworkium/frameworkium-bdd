@@ -3,19 +3,14 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import java.lang.reflect.Method;
-
 /** Functionality for setup */
 public class BrowserSetup implements ITestListener {
 
     /** Required to replicate the @BeforeMethod in {@link BaseTest}. */
     @Override
     public void onTestStart(ITestResult iTestResult) {
-        BaseTest.configureBrowserBeforeTest(getMethod(iTestResult));
-    }
-
-    private Method getMethod(ITestResult iTestResult) {
-        return iTestResult.getMethod().getConstructorOrMethod().getMethod();
+        BaseTest.configureBrowserBeforeTest(
+                iTestResult.getInstance().getClass().getCanonicalName());
     }
 
     @Override
