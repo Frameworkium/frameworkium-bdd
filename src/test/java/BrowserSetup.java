@@ -1,4 +1,5 @@
 import com.frameworkium.core.ui.tests.BaseTest;
+import cucumber.runtime.CucumberException;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -19,6 +20,9 @@ public class BrowserSetup implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
+        Throwable throwable = iTestResult.getThrowable();
+        if (throwable instanceof CucumberException)
+            iTestResult.setThrowable(throwable.getCause());
     }
 
     @Override
