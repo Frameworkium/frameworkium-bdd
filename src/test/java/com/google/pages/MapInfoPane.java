@@ -11,7 +11,7 @@ public class MapInfoPane extends BasePage<MapInfoPane> {
 
     @Visible
     @Name("Place information header")
-    @FindBy(css = "#pane div.section-hero-header-title")
+    @FindBy(css = "#pane .section-hero-header-title")
     private WebElement infoHeader;
 
     @Name("Place information address")
