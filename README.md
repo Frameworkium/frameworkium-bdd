@@ -17,7 +17,7 @@ This is a BDD version of [Frameworkium][frameworkium], it utilises
 ## TODO:
 - [ ] expand documentation
 - [x] improve capture test title
-- [ ] open browsers only when required
+- [x] open browsers only when required
 - [ ] beta test
 
 [status-svg]: https://travis-ci.org/Frameworkium/frameworkium-bdd.svg?branch=master
