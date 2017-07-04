@@ -95,8 +95,8 @@
                 <configuration>
                   <!-- change this to be your glue Java package -->
                   <glue>
-                  	<param>com.google.glue</param>
-                  	<param>com.tfl.glue</param>
+                  	<package>com.google.glue</package>
+                  	<package>com.tfl.glue</package>
                   </glue>
                   <outputDirectory>
                     ${project.build.directory}/generated-test-sources/cucumber
@@ -110,7 +110,7 @@
                   <strict>true</strict>
                   <monochrome>true</monochrome>
                   <tags>
-                  	<param>${tags}</param>
+                  	<tag>${tags}</tag>
                   </tags>
                   <filterFeaturesByTags>true</filterFeaturesByTags>
                   <namingScheme>feature-title</namingScheme>
