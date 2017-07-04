@@ -109,7 +109,9 @@
                   <format>json</format>
                   <strict>true</strict>
                   <monochrome>true</monochrome>
-                  <tags>"${tags}"</tags>
+                  <tags>
+                  	<param>${tags}</param>
+                  </tags>
                   <filterFeaturesByTags>true</filterFeaturesByTags>
                   <namingScheme>feature-title</namingScheme>
                   <namingPattern>Parallel{c}IT</namingPattern>

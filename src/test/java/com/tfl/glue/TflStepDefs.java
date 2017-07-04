@@ -1,4 +1,4 @@
-package com.tfl.api.glue;
+package com.tfl.glue;
 
 import static com.google.common.truth.Truth.assertWithMessage;
 
