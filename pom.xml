@@ -94,7 +94,10 @@
                 </goals>
                 <configuration>
                   <!-- change this to be your glue Java package -->
-                  <glue>com.google.glue,com.tfl.glue</glue>
+                  <glue>
+                  	<param>com.google.glue</param>
+                  	<param>com.tfl.glue</param>
+                  </glue>
                   <outputDirectory>
                     ${project.build.directory}/generated-test-sources/cucumber
                   </outputDirectory>
