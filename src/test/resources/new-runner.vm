@@ -1,0 +1,88 @@
+#macro( stringArray $array ){#foreach( $element in $array )"$element"#if( $foreach.hasNext ), #end#end}#end
+
+#if ($packageName)
+package $packageName;
+#end##
+
+#set( $api = false )
+
+#foreach($tag in $feature.getTags() )
+    #if ($tag.getName() == '@api')
+        #set( $api = true )
+        #break
+    #end
+#end
+
+#foreach($tag in $scenario.getTags() )
+    #if ($tag.getName() == '@api')
+        #set( $api = true )
+        #break
+    #end
+#end
+
+#if( $api )
+import com.frameworkium.core.api.tests.BaseTest;
+#else
+import com.frameworkium.core.ui.tests.BaseTest;
+#end
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.CucumberFeatureWrapper;
+import cucumber.api.testng.TestNGCucumberRunner;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import org.testng.annotations.BeforeMethod;
+import ru.yandex.qatools.allure.cucumberjvm.AllureReporter;
+
+
+
+@Test
+@CucumberOptions(
+strict = $strict,
+features = {"$featureFile"},
+plugin = #stringArray($plugins),
+monochrome = ${monochrome},
+#if(!$featureFile.contains(".feature:") && $tags)
+tags = #stringArray($tags),
+#end
+glue = #stringArray($glue))
+public class $className extends BaseTest{
+private TestNGCucumberRunner testNGCucumberRunner;
+
+@BeforeClass(alwaysRun = true)
+public void setUpClass() throws Exception {
+testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+}
+
+#if(!$api)
+@BeforeMethod
+public void screenshotSetup(){
+AllureReporter.applyFailureCallback(FailureCallback.class);
+}
+#end
+
+
+@AfterClass(alwaysRun = true)
+public void tearDownClass() throws Exception {
+testNGCucumberRunner.finish();
+}
+
+@Test(
+groups = {"cucumber"},
+description = "Runs Cucumber Feature",
+dataProvider = "features"
+)
+public void feature(CucumberFeatureWrapper cucumberFeature) {
+this.testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
+}
+
+@DataProvider
+public Object[][] features() {
+return this.testNGCucumberRunner.provideFeatures();
+}
+
+
+}

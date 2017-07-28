@@ -37,7 +37,7 @@ public class $className extends BaseTest {
     @CucumberOptions(
         strict = $strict,
         features = {"$featureFile"},
-        plugin = {"com.frameworkium.core.common.listeners.CukeListener", "pretty"},
+        plugin = #stringArray($plugins),
         monochrome = ${monochrome},
 #if(!$featureFile.contains(".feature:") && $tags)
         tags = #stringArray($tags),
