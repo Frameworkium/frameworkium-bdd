@@ -5,11 +5,9 @@
 
   <groupId>com.frameworkium</groupId>
   <artifactId>Frameworkium-BDD</artifactId>
-  <version>2.3.3-BDD</version>
+  <version>2.5-BDD</version>
 
   <properties>
-    <!-- Needed for allure-maven-plugin to specify report version -->
-    <allure.version>1.4.24.RC3</allure.version>
     <aspectj.version>1.8.10</aspectj.version>
     <!-- Default - can be overridden by -Dthreads=n at maven cmd line -->
     <threads>1</threads>
@@ -35,23 +33,18 @@
     <dependency>
       <groupId>com.github.frameworkium</groupId>
       <artifactId>frameworkium-core</artifactId>
-      <version>2.4</version>
+      <version>2.4.1</version>
+      <exclusions>
+        <exclusion>
+          <groupId>ru.yandex.qatools.allure</groupId>
+          <artifactId>allure-testng-adaptor</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
-    <!-- required for allure -->
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjweaver</artifactId>
-      <version>${aspectj.version}</version>
-    </dependency>
-    <!-- explicitly state cucumber related dependencies -->
+    <!-- explicitly state cucumber dependencies -->
     <dependency>
       <groupId>info.cukes</groupId>
       <artifactId>cucumber-java</artifactId>
-      <version>1.2.5</version>
-    </dependency>
-    <dependency>
-      <groupId>info.cukes</groupId>
-      <artifactId>cucumber-testng</artifactId>
       <version>1.2.5</version>
     </dependency>
   </dependencies>
@@ -98,26 +91,31 @@
                   	<package>com.google.glue</package>
                   	<package>com.tfl.glue</package>
                   </glue>
-                  <outputDirectory>
-                    ${project.build.directory}/generated-test-sources/cucumber
-                  </outputDirectory>
-                  <featuresDirectory>src/test/resources/features/
-                  </featuresDirectory>
-                  <cucumberOutputDir>target/cucumber-parallel
-                  </cucumberOutputDir>
+                  <outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
+                  <featuresDirectory>src/test/resources/features/</featuresDirectory>
+                  <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
                   <!-- cucumber options -->
                   <format>json</format>
                   <strict>true</strict>
                   <monochrome>true</monochrome>
+                  <plugins>
+                    <plugin>
+                      <name>ru.yandex.qatools.allure.cucumberjvm.AllureReporter</name>
+                    </plugin>
+                    <plugin>
+                      <name>com.frameworkium.core.common.listeners.CucumberZephyrListener</name>
+                      <noOutput>true</noOutput>
+                    </plugin>
+                  </plugins>
                   <tags>
                   	<tag>${tags}</tag>
                   </tags>
-                  <filterFeaturesByTags>true</filterFeaturesByTags>
+                  <!--<filterFeaturesByTags>true</filterFeaturesByTags>-->
                   <namingScheme>feature-title</namingScheme>
                   <namingPattern>Parallel{c}IT</namingPattern>
                   <parallelScheme>SCENARIO</parallelScheme>
                   <!-- Frameworkium custom template -->
-                  <customVmTemplate>src/test/resources/cucumber-custom-runner.vm</customVmTemplate>
+                  <customVmTemplate>src/test/resources/Frameworkium-Runner.vm</customVmTemplate>
                 </configuration>
               </execution>
             </executions>
@@ -157,7 +155,6 @@
       <plugin>
         <groupId>ru.yandex.qatools.allure</groupId>
         <artifactId>allure-maven-plugin</artifactId>
-        <version>2.5</version>
       </plugin>
     </plugins>
   </reporting>

@@ -9,5 +9,6 @@
     <include within="ru.yandex.qatools.allure.*" />
     <include within="com.frameworkium..*" />
     <include within="com.google..*" />
+    <include within="com.tfl..*" />
   </weaver>
 </aspectj>
