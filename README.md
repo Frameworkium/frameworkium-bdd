@@ -22,5 +22,5 @@ This is a BDD version of [Frameworkium][frameworkium], it utilises
 
 [status-svg]: https://travis-ci.org/Frameworkium/frameworkium-bdd.svg?branch=master
 [status]: https://travis-ci.org/Frameworkium/frameworkium-bdd
-[frameworkium]: https://github.com/Frameworkium/frameworkium
+[frameworkium]: https://github.com/Frameworkium/
 [core]: https://github.com/Frameworkium/frameworkium-core
