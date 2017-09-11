@@ -1,4 +1,4 @@
-@Story(feature_level_story)
+@Story(feature_level_story) @all
 Feature: Web Search
 
   In order to find some information
@@ -13,7 +13,7 @@ Feature: Web Search
     When I search for "hello world"
     Then I should see a link containing "HelloWorld" on Results page
 
-  @Story(scen_level_story)
+  @Story(scen_level_story) @run
   Scenario: Search for Cucumber
     When I search for "Cucumber"
-    Then I should see a link containing "Cucumber" on Results page
+    Then I should see a link containing "Cucumberr" on Results page

@@ -31,11 +31,6 @@
 
   <dependencies>
     <dependency>
-      <groupId>ru.yandex.qatools.allure</groupId>
-      <artifactId>allure-cucumber-jvm-adaptor</artifactId>
-      <version>1.6.3</version>
-    </dependency>
-    <dependency>
       <groupId>com.github.frameworkium</groupId>
       <artifactId>frameworkium-core</artifactId>
       <version>2.4.2</version>
@@ -46,21 +41,10 @@
         </exclusion>
       </exclusions>
     </dependency>
-    <!-- required for allure -->
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjweaver</artifactId>
-      <version>${aspectj.version}</version>
-    </dependency>
-    <!-- explicitly state cucumber related dependencies -->
+    <!-- explicitly state cucumber dependencies -->
     <dependency>
       <groupId>info.cukes</groupId>
       <artifactId>cucumber-java</artifactId>
-      <version>1.2.5</version>
-    </dependency>
-    <dependency>
-      <groupId>info.cukes</groupId>
-      <artifactId>cucumber-testng</artifactId>
       <version>1.2.5</version>
     </dependency>
   </dependencies>
@@ -117,6 +101,10 @@
                   <plugins>
                     <plugin>
                       <name>ru.yandex.qatools.allure.cucumberjvm.AllureReporter</name>
+                    </plugin>
+                    <plugin>
+                      <name>com.frameworkium.core.common.listeners.CucumberZephyrListener</name>
+                      <noOutput>true</noOutput>
                     </plugin>
                   </plugins>
                   <tags>
