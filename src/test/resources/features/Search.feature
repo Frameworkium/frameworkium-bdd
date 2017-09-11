@@ -16,4 +16,4 @@ Feature: Web Search
   @Story(scen_level_story) @run
   Scenario: Search for Cucumber
     When I search for "Cucumber"
-    Then I should see a link containing "Cucumberr" on Results page
+    Then I should see a link containing "Cucumber" on Results page
