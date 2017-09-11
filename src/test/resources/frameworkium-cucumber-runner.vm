@@ -60,7 +60,7 @@ testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
 #if(!$api)
 @BeforeMethod
 public void screenshotSetup(){
-AllureReporter.applyFailureCallback(FailureCallback.class);
+AllureReporter.applyFailureCallback(com.frameworkium.core.ui.cucumber.FailureCallback.class);
 }
 #end
 

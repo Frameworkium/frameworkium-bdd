@@ -10,8 +10,6 @@ import ru.yandex.qatools.htmlelements.element.TextInput;
 
 public class HomePage extends BasePage<HomePage> {
 
-
-
     @Visible
     @Name("Search Input Box")
     @FindBy(css = "input#lst-ib")
@@ -31,7 +29,6 @@ public class HomePage extends BasePage<HomePage> {
     public ResultsPage runSearch(String searchTerms) {
         searchInputBox.sendKeys(searchTerms);
         searchInputBox.submit();
-//        runSearchButton.click();
         return new ResultsPage().get();
     }
 }
