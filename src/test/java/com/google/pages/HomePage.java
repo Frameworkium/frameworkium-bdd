@@ -28,7 +28,7 @@ public class HomePage extends BasePage<HomePage> {
     @Step("Search for {0}")
     public ResultsPage runSearch(String searchTerms) {
         searchInputBox.sendKeys(searchTerms);
-        runSearchButton.click();
+        searchInputBox.submit();
         return new ResultsPage().get();
     }
 }

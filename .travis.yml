@@ -4,7 +4,7 @@ jdk: oraclejdk8
 dist: xenial
 
 addons:
-  firefox: "50.0"
+  firefox: "54.0.1"
 
 # disable default mvn install
 install: true
@@ -15,13 +15,15 @@ notifications:
 env:
   global:
     # set PATH to include desired firefox as the firefox-addon doesn't seem to work properly
-    - PATH="/tmp/firefox:$PATH"
+    #- PATH="/tmp/firefox:$PATH"
     - CAPTURE_URL="https://capture.unity.perimeterusa.com:5000"
     - SUT_NAME="frameworkium-bdd"
-    - SUT_VERSION=$TRAVIS_BRANCH
+    - SUT_VERSION=${TRAVIS_BRANCH}
     - THREAD_COUNT=2
-    - SELENIUM_MAJ_VER=3.0
-    - SELENIUM_VER=$SELENIUM_MAJ_VER.1
+    - SELENIUM_MAJ_VER=3.4
+    - SELENIUM_VER=${SELENIUM_MAJ_VER}.0
+    - SELENIUM_JAR=selenium-server-standalone-${SELENIUM_VER}.jar
+    - GECKO_VER=0.18.0
 
 before_script:
   - export DISPLAY=:99.0
@@ -32,16 +34,16 @@ script:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -U -q
 
   # Download and setup Grid
-  - wget --quiet --no-check-certificate https://selenium-release.storage.googleapis.com/$SELENIUM_MAJ_VER/selenium-server-standalone-$SELENIUM_VER.jar
-  - java -jar selenium-server-standalone-$SELENIUM_VER.jar -role hub > /dev/null 2>&1 &
+  - wget --quiet --no-check-certificate https://selenium-release.storage.googleapis.com/${SELENIUM_MAJ_VER}/${SELENIUM_JAR}
+  - java -Xmx128m -jar ${SELENIUM_JAR} -role hub > /dev/null 2>&1 &
 
   # Extract Firefox as the firefox-addon doesn't seem to work
-  - tar -xjf /tmp/firefox*.tar.bz2 --directory /tmp
+  #- tar -xjf /tmp/firefox*.tar.bz2 --directory /tmp
 
   # Download and setup Marionette/geckodriver grid node
-  - wget --quiet --no-check-certificate https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz
-  - tar -xzf geckodriver-v0.11.1-linux64.tar.gz --directory /tmp
-  - java -Dwebdriver.gecko.driver=/tmp/geckodriver -jar selenium-server-standalone-$SELENIUM_VER.jar -role node -hub http://localhost:4444/grid/register -browser browserName=firefox,maxInstances=$THREAD_COUNT -maxSession $THREAD_COUNT -port 5555 > /dev/null 2>&1 &
+  - wget --quiet --no-check-certificate https://github.com/mozilla/geckodriver/releases/download/v${GECKO_VER}/geckodriver-v${GECKO_VER}-linux64.tar.gz
+  - tar -xzf geckodriver-v${GECKO_VER}-linux64.tar.gz --directory /tmp
+  - java -Xmx128m -Dwebdriver.gecko.driver=/tmp/geckodriver -jar ${SELENIUM_JAR} -role node -hub http://localhost:4444/grid/register -browser browserName=firefox,maxInstances=${THREAD_COUNT} -maxSession ${THREAD_COUNT} -port 5555 > /dev/null 2>&1 &
 
   # Run on Firefox off the grid
   - mvn verify -B -Dthreads=$THREAD_COUNT -Dbrowser=firefox -Dwebdriver.gecko.driver=/tmp/geckodriver 2> /dev/null
