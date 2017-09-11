@@ -1,6 +1,6 @@
 package com.google.glue;
 
-import com.google.pages .HomePage;
+import com.google.pages.HomePage;
 import com.google.pages.ResultsPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -9,9 +9,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.google.common.truth.Truth.assertThat;
 
-
 public class SearchStepDefs {
-
 
     @Step
     @Given("^I am on the google homepage$")
