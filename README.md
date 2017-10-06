@@ -59,7 +59,7 @@ An overview of some of the important packages
 | ------------- | ------------- | 
 | glue  | Contain your 'step definition' classes (e.g AStepClass.java) which join together the page object layer with the feature file | 
 | pages  | Contain page object classes  | 
-| features  | Contain your 'feature files' which hold all your test scenarios  |
+| features  | Contain your 'feature files' which hold all your test scenario's  |
 | aop.xml | configuration file to tell the allure reporting which packages to include in the report  | 
 
 ## Running Tests
@@ -87,12 +87,12 @@ Comprehensive docs on cucumber tagging can be found on the official cucumber wik
 If no tag property is set all tests will be executed
 
 ### API tests
-Tag your API Sceanrios with the `@api` tag so the correct `BaseTest` is configured and a browser window isn't opened. This also means you could have UI and API scenarios in the same feature file if you wished
+Tag your API Sceanrios with the `@api` tag so the correct `BaseTest` is configured and a browser window isn't opened. This also means you could have UI and API scenario's in the same feature file if you wished
 
 You can also use one tag at the feature level to create an API runner for all tests in the feature file
 
 ### Parallel Execution 
-Parallel execution is available out of the box in the same way as Frameworkium (*[docs](https://frameworkium.github.io/#_pages/Command-Line-Options.md)*), by parsing the `threads` parameter for the amount of browser instances to run in parallel. also can be configured to use Selenium Grid (*[docs](https://frameworkium.github.io/#_pages/Selenium-Grid.md)*)
+Parallel execution is available out the box in the same way as Frameworkium (*[docs](https://frameworkium.github.io/#_pages/Command-Line-Options.md)*), by parsing the `threads` parameter for the amount of browser instances to run in parallel. It can also can be configured to use Selenium Grid (*[docs](https://frameworkium.github.io/#_pages/Selenium-Grid.md)*)
 
 We achieve parallel execution by running multiple 'Runner' classes in parallel with different runner classes
 executing different tests. We utilise this by using a plugin (*[docs](https://github.com/temyers/cucumber-jvm-parallel-plugin)*) 
