@@ -12,7 +12,7 @@
     <!-- Default - can be overridden by -Dthreads=n at maven cmd line -->
     <threads>1</threads>
     <!-- Default - can be overridden by -Dtags="@Blah" at maven cmd line -->
-    <tags>~</tags>
+    <tags>@angular</tags>
   </properties>
 
   <name>Frameworkium-Cukes</name>
@@ -90,6 +90,7 @@
                   <glue>
                   	<package>com.google.glue</package>
                   	<package>com.tfl.glue</package>
+                  	<package>com.microsoft.glue</package>
                   </glue>
                   <outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
                   <featuresDirectory>src/test/resources/features/</featuresDirectory>
