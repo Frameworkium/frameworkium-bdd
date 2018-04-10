@@ -15,7 +15,7 @@ public class MapInfoPane extends BasePage<MapInfoPane> {
     private WebElement infoHeader;
 
     @Name("Place information address")
-    @FindBy(css = "#pane span.section-info-text > span:nth-child(1) > span")
+    @FindBy(css = "#pane span.section-info-text span:nth-of-type(3)")
     private WebElement addressSpan;
 
     @Step
