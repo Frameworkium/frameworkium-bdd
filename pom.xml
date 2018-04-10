@@ -12,7 +12,7 @@
     <!-- Default - can be overridden by -Dthreads=n at maven cmd line -->
     <threads>1</threads>
     <!-- Default - can be overridden by -Dtags="@Blah" at maven cmd line -->
-    <tags>@angular</tags>
+    <tags>~</tags>
   </properties>
 
   <name>Frameworkium-Cukes</name>
