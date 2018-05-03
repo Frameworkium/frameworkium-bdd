@@ -88,9 +88,9 @@
                 <configuration>
                   <!-- change this to be your glue Java package -->
                   <glue>
-                  	<package>com.google.glue</package>
-                  	<package>com.tfl.glue</package>
-                  	<package>com.microsoft.glue</package>
+                    <package>com.google.glue</package>
+                    <package>com.tfl.glue</package>
+                    <package>com.microsoft.glue</package>
                   </glue>
                   <outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
                   <featuresDirectory>src/test/resources/features/</featuresDirectory>
@@ -109,7 +109,7 @@
                     </plugin>
                   </plugins>
                   <tags>
-                  	<tag>${tags}</tag>
+                    <tag>${tags}</tag>
                   </tags>
                   <namingScheme>feature-title</namingScheme>
                   <namingPattern>Parallel{c}IT</namingPattern>
