@@ -2,8 +2,8 @@
 
 
 
-import com.frameworkium.core.ui.tests.BaseTest;
 
+import com.frameworkium.ui.tests.BaseTest;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
@@ -12,8 +12,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import org.testng.annotations.BeforeMethod;
-import ru.yandex.qatools.allure.cucumberjvm.AllureReporter;
 
 
 
@@ -23,9 +21,9 @@ import ru.yandex.qatools.allure.cucumberjvm.AllureReporter;
         features = {"src/test/resources/features/"},
         plugin = {"ru.yandex.qatools.allure.cucumberjvm.AllureReporter", "com.frameworkium.core.common.listeners.CucumberZephyrListener"},
         monochrome = true,
-        tags = {"~@ignore"},
+        tags = {"@run"},
         glue = {"com.google.glue", "com.tfl.glue", "com.microsoft.glue"})
-public class DebuggingRunner extends BaseTest{
+public class DebuggingRunner extends BaseTest {
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
@@ -33,10 +31,11 @@ public class DebuggingRunner extends BaseTest{
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
 
-    @BeforeMethod
-    public void screenshotSetup(){
-        AllureReporter.applyFailureCallback(com.frameworkium.core.ui.cucumber.FailureCallback.class);
-    }
+
+//    @BeforeMethod
+//    public void screenshotSetup(){
+//        AllureReporter.applyFailureCallback(com.frameworkium.core.ui.cucumber.FailureCallback.class);
+//    }
 
 
     @AfterClass(alwaysRun = true)

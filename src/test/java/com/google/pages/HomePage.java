@@ -1,9 +1,9 @@
 package com.google.pages;
 
-import com.frameworkium.core.ui.annotations.Visible;
-import com.frameworkium.core.ui.pages.BasePage;
+import com.frameworkium.ui.annotations.Visible;
+import com.frameworkium.ui.pages.BasePage;
 import org.openqa.selenium.support.FindBy;
-import ru.yandex.qatools.allure.annotations.Step;
+import io.qameta.allure.Step;
 import ru.yandex.qatools.htmlelements.annotations.Name;
 import ru.yandex.qatools.htmlelements.element.Button;
 import ru.yandex.qatools.htmlelements.element.TextInput;

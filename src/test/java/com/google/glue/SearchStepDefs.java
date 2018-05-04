@@ -5,9 +5,11 @@ import com.google.pages.ResultsPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import ru.yandex.qatools.allure.annotations.Step;
+import io.qameta.allure.Step;
 
 import static com.google.common.truth.Truth.assertThat;
+
+//import static com.google.common.truth.Truth.assertThat;
 
 public class SearchStepDefs {
 

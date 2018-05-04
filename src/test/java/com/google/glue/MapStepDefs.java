@@ -3,7 +3,7 @@ package com.google.glue;
 import com.google.pages.MapInfoPane;
 import com.google.pages.MapPage;
 import cucumber.api.java.en.*;
-import ru.yandex.qatools.allure.annotations.Step;
+import io.qameta.allure.Step;
 
 import static com.google.common.truth.Truth.assertThat;
 
