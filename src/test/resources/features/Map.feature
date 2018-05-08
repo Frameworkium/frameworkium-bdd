@@ -1,4 +1,4 @@
-@TestCaseId(TEST-1)
+@TestCaseId(TEST-1) @ui
 Feature: Map Search
 
   In order to find information about places

@@ -1,4 +1,4 @@
-@angular
+@angular @ui
 Feature: A test to test automation on an Angular webpage
 
   Scenario: Navigate across 2 Angular webpages

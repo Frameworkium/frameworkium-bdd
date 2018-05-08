@@ -1,4 +1,4 @@
-@Story(feature_level_story) @all
+@Story(feature_level_story) @all @ui
 Feature: Web Search
 
   In order to find some information
