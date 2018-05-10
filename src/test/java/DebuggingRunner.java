@@ -8,8 +8,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
-
-
 @Test
 @CucumberOptions(
         strict = true,
@@ -17,7 +15,7 @@ import org.testng.annotations.Test;
         plugin = {"io.qameta.allure.cucumberjvm.AllureCucumberJvm"},
         monochrome = true,
         tags = {"~@ignore"},
-        glue = {"com.google.glue", "com.tfl.glue", "com.microsoft.glue"})
+        glue = {"com.google.glue", "com.trello.glue"})
 public class DebuggingRunner extends BaseUITest {
     private TestNGCucumberRunner testNGCucumberRunner;
 
