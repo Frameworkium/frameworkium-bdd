@@ -1,8 +1,8 @@
 Frameworkium-BDD [![Build Status][status-svg]][status]
 ======================================================
 
-This is a Cucumber implementation of [Frameworkium][frameworkium], it utilises all the features of 
-[frameworkium-core][core] with an added BDD layer provided from the Cucumber-JVM framework to give you a BDD Automation solution.
+This is a Cucumber-jvm framework implementing [Frameworkium][frameworkium] libraries, it utilises the features from
+ [frameworkium-ui](https://github.com/Frameworkium/frameworkium-ui), [frameworkium-api](https://github.com/Frameworkium/frameworkium-api) and [frameworkium-reporting](https://github.com/Frameworkium/frameworkium-reporting) with an added BDD layer provided from Cucumber-JVM framework to give you a Frameworkium + BDD Automation solution.
 
 ## Getting Started
 
@@ -39,8 +39,8 @@ The layout looks something like this
 |        |       └── pages/
 |        |           └──PageObjectClass.java
 |        └── resources/
-|            ├── features/
-|            |	└── Feature_file.feature
+|            └─── features/
+|                	└── Feature_file.feature
 └── pom.xml
 ```
 
