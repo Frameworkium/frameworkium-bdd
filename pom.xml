@@ -18,20 +18,25 @@
   <name>Frameworkium-BDD</name>
   <description>Frameworkium Backed Cucumber-JVM Test Automation Framework</description>
 
-  <repositories>
-    <repository>
-      <id>jitpack.io</id>
-      <url>https://jitpack.io</url>
-    </repository>
-  </repositories>
 
-  <prerequisites>
-    <maven>3.1.1</maven>
-  </prerequisites>
+
+  <!--<prerequisites>-->
+    <!--<maven>3.1.1</maven>-->
+  <!--</prerequisites>-->
 
   <dependencies>
+    <dependency>
+      <groupId>com.github.frameworkium</groupId>
+      <artifactId>frameworkium-jira</artifactId>
+      <version>3.0-BETA2</version>
+    </dependency>
 
     <!--Frameworkium 3-->
+    <dependency>
+      <groupId>com.github.frameworkium</groupId>
+      <artifactId>frameworkium-base</artifactId>
+      <version>3.0-BETA2</version>
+    </dependency>
     <dependency>
       <groupId>com.github.frameworkium</groupId>
       <artifactId>frameworkium-ui</artifactId>
@@ -42,30 +47,37 @@
       <artifactId>frameworkium-api</artifactId>
       <version>3.0-BETA1</version>
     </dependency>
-    <dependency>
-      <groupId>com.github.frameworkium</groupId>
-      <artifactId>frameworkium-reporting</artifactId>
-      <version>3.0-BETA1</version>
-      <exclusions>
-        <exclusion>
-          <groupId>io.qameta.allure</groupId>
-          <artifactId>allure-testng</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>com.github.frameworkium</groupId>-->
+      <!--<artifactId>frameworkium-reporting</artifactId>-->
+      <!--<version>3.0-BETA1</version>-->
+      <!--<exclusions>-->
+        <!--<exclusion>-->
+          <!--<groupId>io.qameta.allure</groupId>-->
+          <!--<artifactId>allure-testng</artifactId>-->
+        <!--</exclusion>-->
+      <!--</exclusions>-->
+    <!--</dependency>-->
 
 
     <!-- explicitly state cucumber dependencies -->
-    <dependency>
-      <groupId>info.cukes</groupId>
-      <artifactId>cucumber-testng</artifactId>
-      <version>1.2.5</version>
-    </dependency>
-    <dependency>
-      <groupId>info.cukes</groupId>
-      <artifactId>cucumber-java</artifactId>
-      <version>1.2.5</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>info.cukes</groupId>-->
+      <!--<artifactId>cucumber-testng</artifactId>-->
+      <!--<version>1.2.5</version>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>info.cukes</groupId>-->
+      <!--<artifactId>cucumber-java</artifactId>-->
+      <!--<version>1.2.5</version>-->
+    <!--</dependency>-->
+
+      <dependency>
+          <groupId>io.cucumber</groupId>
+          <artifactId>cucumber-testng</artifactId>
+          <version>3.0.0</version>
+          <scope>test</scope>
+      </dependency>
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
@@ -98,47 +110,47 @@
           <!--
             Used to generate Cucumber test classes to then run in parallel
           -->
-          <plugin>
-            <groupId>com.github.temyers</groupId>
-            <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-            <version>4.1.0</version>
-            <executions>
-              <execution>
-                <id>generateRunners</id>
-                <phase>generate-test-sources</phase>
-                <goals>
-                  <goal>generateRunners</goal>
-                </goals>
-                <configuration>
-                  <!-- change this to be your glue Java package -->
-                  <glue>
-                  	<package>com.google.glue</package>
-                  	<package>com.trello.glue</package>
-                  </glue>
-                  <outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
-                  <featuresDirectory>src/test/resources/features/</featuresDirectory>
-                  <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
-                  <!-- cucumber options -->
-                  <format>json</format>
-                  <strict>true</strict>
-                  <monochrome>true</monochrome>
-                  <plugins>
-                    <plugin>
-                      <name>io.qameta.allure.cucumberjvm.AllureCucumberJvm</name>
-                    </plugin>
-                  </plugins>
-                  <tags>
-                  	<tag>${tags}</tag>
-                  </tags>
-                  <namingScheme>feature-title</namingScheme>
-                  <namingPattern>Parallel{c}IT</namingPattern>
-                  <parallelScheme>SCENARIO</parallelScheme>
-                  <!-- Frameworkium custom template -->
-                  <customVmTemplate>src/test/resources/frameworkium-cucumber-runner.vm</customVmTemplate>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
+          <!--<plugin>-->
+            <!--<groupId>com.github.temyers</groupId>-->
+            <!--<artifactId>cucumber-jvm-parallel-plugin</artifactId>-->
+            <!--<version>4.1.0</version>-->
+            <!--<executions>-->
+              <!--<execution>-->
+                <!--<id>generateRunners</id>-->
+                <!--<phase>generate-test-sources</phase>-->
+                <!--<goals>-->
+                  <!--<goal>generateRunners</goal>-->
+                <!--</goals>-->
+                <!--<configuration>-->
+                  <!--&lt;!&ndash; change this to be your glue Java package &ndash;&gt;-->
+                  <!--<glue>-->
+                  	<!--<package>com.google.glue</package>-->
+                  	<!--<package>com.trello.glue</package>-->
+                  <!--</glue>-->
+                  <!--<outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>-->
+                  <!--<featuresDirectory>src/test/resources/features/</featuresDirectory>-->
+                  <!--<cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>-->
+                  <!--&lt;!&ndash; cucumber options &ndash;&gt;-->
+                  <!--<format>json</format>-->
+                  <!--<strict>true</strict>-->
+                  <!--<monochrome>true</monochrome>-->
+                  <!--<plugins>-->
+                    <!--<plugin>-->
+                      <!--<name>io.qameta.allure.cucumberjvm.AllureCucumberJvm</name>-->
+                    <!--</plugin>-->
+                  <!--</plugins>-->
+                  <!--<tags>-->
+                  	<!--<tag>${tags}</tag>-->
+                  <!--</tags>-->
+                  <!--<namingScheme>feature-title</namingScheme>-->
+                  <!--<namingPattern>Parallel{c}IT</namingPattern>-->
+                  <!--<parallelScheme>SCENARIO</parallelScheme>-->
+                  <!--&lt;!&ndash; Frameworkium custom template &ndash;&gt;-->
+                  <!--<customVmTemplate>src/test/resources/frameworkium-cucumber-runner.vm</customVmTemplate>-->
+                <!--</configuration>-->
+              <!--</execution>-->
+            <!--</executions>-->
+          <!--</plugin>-->
 
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -153,7 +165,7 @@
                   <parallel>classes</parallel>
                   <threadCount>${threads}</threadCount>
                   <includes>
-                    <include>**/*IT.java</include>
+                    <include>**/DebuggingRunner.java</include>
                   </includes>
                   <systemProperties>
                     <screenshotDirectory>
@@ -203,6 +215,13 @@
       </build>
     </profile>
   </profiles>
+
+  <repositories>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
 
 
 </project>
