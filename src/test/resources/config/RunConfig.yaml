@@ -1,0 +1,12 @@
+browser: chrome
+webdriver.chrome.driver: /c/chromedriver.exe
+tags:~@wip
+build:
+jiraPassword:
+jiraResultFieldName:
+jiraResultTransition:
+jiraURL:
+jiraUsername:
+jqlQuery:
+resultVersion:
+zapiCycleRegEx:
