@@ -1,5 +1,6 @@
 import com.frameworkium.ui.tests.BaseUITest;
 import cucumber.api.CucumberOptions;
+import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.PickleEventWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 import org.testng.annotations.AfterClass;
@@ -13,10 +14,12 @@ import org.testng.annotations.Test;
         strict = true,
         features = {"src/test/resources/features/"},
 //        plugin = {"io.qameta.allure.cucumberjvm.AllureCucumberJvm"},
+        plugin = {"io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm2"},
+        //        plugin = {"com.frameworkium.jira.listeners.CukesListenerV2"},
         monochrome = true,
         tags = {"~@ignore"},
-        glue = {"com.google.glue", "com.trello.glue"})
-public class DebuggingRunner extends BaseUITest  {
+        glue = {"com.google.glue"})
+public class DebuggingRunner  extends BaseUITest {
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
@@ -27,10 +30,10 @@ public class DebuggingRunner extends BaseUITest  {
 
     @Test(
             groups = {"cucumber"},
-            description = "Runs Cucumber Sceanrios",
+            description = "Runs Cucumber Scenarios",
             dataProvider = "scenarios"
     )
-    public void runScenario(PickleEventWrapper pickleWrapper) throws Throwable {
+    public void runScenario(PickleEventWrapper pickleWrapper, CucumberFeatureWrapper featureWrapper) throws Throwable {
         this.testNGCucumberRunner.runScenario(pickleWrapper.getPickleEvent());
     }
 
