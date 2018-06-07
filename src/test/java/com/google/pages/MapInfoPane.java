@@ -4,7 +4,7 @@ import com.frameworkium.ui.annotations.Visible;
 import com.frameworkium.ui.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-//import io.qameta.allure.Step;
+////import io.qameta.allure.Step;
 import ru.yandex.qatools.htmlelements.annotations.Name;
 
 public class MapInfoPane extends BasePage<MapInfoPane> {
@@ -18,12 +18,12 @@ public class MapInfoPane extends BasePage<MapInfoPane> {
     @FindBy(css = "#pane span.section-info-text span:nth-of-type(3)")
     private WebElement addressSpan;
 
-    //@Step
+    ////@Step
     public String getHeader() {
         return infoHeader.getText();
     }
 
-    //@Step
+    ////@Step
     public String getAddress() {
         return addressSpan.getText();
     }

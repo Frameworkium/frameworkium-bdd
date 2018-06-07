@@ -4,7 +4,7 @@ import com.frameworkium.ui.annotations.Visible;
 import com.frameworkium.ui.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-//import io.qameta.allure.Step;
+////import io.qameta.allure.Step;
 import ru.yandex.qatools.htmlelements.annotations.Name;
 import ru.yandex.qatools.htmlelements.element.Link;
 import ru.yandex.qatools.htmlelements.element.TextBlock;
@@ -24,7 +24,7 @@ public class ResultsPage extends BasePage<ResultsPage> {
     @FindBy(css = "#ires h3.r > a")
     private List<Link> resultTitles;
     
-    //@Step("Get search result titles")
+    ////@Step("Get search result titles")
     public Stream<String> getResultTitles() {
         return resultTitles
                 .stream()

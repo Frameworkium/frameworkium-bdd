@@ -25,18 +25,24 @@
   <!--</prerequisites>-->
 
   <dependencies>
-    <!--<dependency>-->
-      <!--<groupId>com.github.frameworkium</groupId>-->
-      <!--<artifactId>frameworkium-jira</artifactId>-->
-      <!--<version>3.0-BETA2</version>-->
-    <!--</dependency>-->
+
 
     <!--Frameworkium 3-->
     <dependency>
-      <groupId>com.github.frameworkium</groupId>
-      <artifactId>frameworkium-base</artifactId>
-      <version>3.0-BETA2</version>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>23.1-jre</version>
     </dependency>
+    <dependency>
+      <groupId>com.github.frameworkium</groupId>
+      <artifactId>frameworkium-jira</artifactId>
+        <version>3.0-BETA5</version>
+    </dependency>
+      <dependency>
+          <groupId>com.github.frameworkium</groupId>
+          <artifactId>frameworkium-reporting</artifactId>
+          <version>3.0-BETA1</version>
+      </dependency>
     <dependency>
       <groupId>com.github.frameworkium</groupId>
       <artifactId>frameworkium-ui</artifactId>
@@ -47,25 +53,8 @@
       <artifactId>frameworkium-api</artifactId>
       <version>3.0-BETA1</version>
     </dependency>
-    <dependency>
-      <groupId>io.qameta.allure</groupId>
-      <artifactId>allure-cucumber2-jvm</artifactId>
-      <version>2.0-BETA20</version>
-      <exclusions>
-        <exclusion>
-          <groupId>io.cucumber</groupId>
-          <artifactId>cucumber-java</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>io.cucumber</groupId>
-          <artifactId>cucumber-testng</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>io.cucumber</groupId>
-          <artifactId>cucumber-core</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
+
+    <!--Allure does not support Cucumber 3 yet-->
     <!--<dependency>-->
       <!--<groupId>com.github.frameworkium</groupId>-->
       <!--<artifactId>frameworkium-reporting</artifactId>-->
@@ -91,12 +80,6 @@
       <version>3.0.0</version>
     </dependency>
 
-      <dependency>
-          <groupId>io.cucumber</groupId>
-          <artifactId>cucumber-testng</artifactId>
-          <version>3.0.0</version>
-          <scope>test</scope>
-      </dependency>
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
@@ -186,14 +169,14 @@
                   <includes>
                     <include>**/DebuggingRunner.java</include>
                   </includes>
-                  <systemProperties>
-                    <screenshotDirectory>
-                      ${project.build.directory}/screenshots
-                    </screenshotDirectory>
-                    <allure.results.directory>
-                      ${project.build.directory}/allure-results
-                    </allure.results.directory>
-                  </systemProperties>
+                  <!--<systemProperties>-->
+                    <!--<screenshotDirectory>-->
+                      <!--${project.build.directory}/screenshots-->
+                    <!--</screenshotDirectory>-->
+                    <!--<allure.results.directory>-->
+                      <!--${project.build.directory}/allure-results-->
+                    <!--</allure.results.directory>-->
+                  <!--</systemProperties>-->
                   <argLine>
                     -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                   </argLine>
@@ -203,31 +186,31 @@
             </executions>
           </plugin>
 
-          <plugin>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-maven</artifactId>
-            <version>2.9</version>
-            <configuration>
-              <reportVersion>2.4.1</reportVersion>
-              <resultsDirectory>
-                ${project.build.directory}/allure-results
-              </resultsDirectory>
-              <reportDirectory>
-                ${project.build.directory}/allure-report
-              </reportDirectory>
-              <installDirectory>
-                ${project.build.directory}/.allure
-              </installDirectory>
-              <properties>
-                <allure.issues.tracker.pattern>
-                  /browse/%s
-                </allure.issues.tracker.pattern>
-                <allure.tests.management.pattern>
-                  /browse/%s
-                </allure.tests.management.pattern>
-              </properties>
-            </configuration>
-          </plugin>
+          <!--<plugin>-->
+            <!--<groupId>io.qameta.allure</groupId>-->
+            <!--<artifactId>allure-maven</artifactId>-->
+            <!--<version>2.9</version>-->
+            <!--<configuration>-->
+              <!--<reportVersion>2.4.1</reportVersion>-->
+              <!--<resultsDirectory>-->
+                <!--${project.build.directory}/allure-results-->
+              <!--</resultsDirectory>-->
+              <!--<reportDirectory>-->
+                <!--${project.build.directory}/allure-report-->
+              <!--</reportDirectory>-->
+              <!--<installDirectory>-->
+                <!--${project.build.directory}/.allure-->
+              <!--</installDirectory>-->
+              <!--<properties>-->
+                <!--<allure.issues.tracker.pattern>-->
+                  <!--/browse/%s-->
+                <!--</allure.issues.tracker.pattern>-->
+                <!--<allure.tests.management.pattern>-->
+                  <!--/browse/%s-->
+                <!--</allure.tests.management.pattern>-->
+              <!--</properties>-->
+            <!--</configuration>-->
+          <!--</plugin>-->
 
         </plugins>
       </build>
