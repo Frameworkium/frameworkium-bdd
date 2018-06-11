@@ -13,9 +13,7 @@ import org.testng.annotations.Test;
 @CucumberOptions(
         strict = true,
         features = {"src/test/resources/features/"},
-//        plugin = {"io.qameta.allure.cucumberjvm.AllureCucumberJvm"},
-        plugin = {"io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm2"},
-        //        plugin = {"com.frameworkium.jira.listeners.CukesListenerV2"},
+        plugin = {"com.frameworkium.jira.listeners.CukesListenerV2"},
         monochrome = true,
         tags = {"~@ignore"},
         glue = {"com.google.glue"})

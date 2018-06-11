@@ -2,6 +2,7 @@ package com.google.glue;
 
 import com.google.pages.MapInfoPane;
 import com.google.pages.MapPage;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.*;
 //import io.qameta.allure.Step;
 
@@ -33,4 +34,6 @@ public class MapStepDefs {
     public void i_should_see_the_address(String address) throws Throwable {
         assertThat(new MapInfoPane().get().getAddress()).isEqualTo(address);
     }
+
+
 }
