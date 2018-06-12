@@ -1,0 +1,146 @@
+{
+  "uid" : "c1fcdf8a204f4d8a",
+  "name" : "Simple Image attachment using Allure.addAttachmnet",
+  "historyId" : "ea33e81094cc7c7de561233bbb782198",
+  "time" : {
+    "start" : 1528797649220,
+    "stop" : 1528797649225,
+    "duration" : 5
+  },
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "before",
+      "time" : {
+        "start" : 1528797649220,
+        "stop" : 1528797649220,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "When  I attach picture to step",
+      "time" : {
+        "start" : 1528797649220,
+        "stop" : 1528797649224,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "bf7d5bd337d7593c",
+        "name" : "Picture of a kitten",
+        "source" : "bf7d5bd337d7593c.jpg",
+        "type" : "image/jpeg",
+        "size" : 37130
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Then  it is displayed in report",
+      "time" : {
+        "start" : 1528797649225,
+        "stop" : 1528797649225,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "after",
+      "time" : {
+        "start" : 1528797649225,
+        "stop" : 1528797649225,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Test Scenarios with Attachments and Steps"
+  }, {
+    "name" : "story",
+    "value" : "Simple Image attachment using Allure.addAttachmnet"
+  }, {
+    "name" : "tag",
+    "value" : "FeatureTag"
+  }, {
+    "name" : "tag",
+    "value" : "good"
+  }, {
+    "name" : "host",
+    "value" : "ISVGREPC0000924"
+  }, {
+    "name" : "package",
+    "value" : "Test Scenarios with Attachments and Steps"
+  }, {
+    "name" : "suite",
+    "value" : "Test Scenarios with Attachments and Steps"
+  }, {
+    "name" : "testClass",
+    "value" : "Simple Image attachment using Allure.addAttachmnet"
+  }, {
+    "name" : "thread",
+    "value" : "15956@ISVGREPC0000924.pool-2-thread-1(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ {
+    "name" : "OAT-4444",
+    "type" : "tms"
+  }, {
+    "name" : "BUG-22400",
+    "type" : "issue"
+  } ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "FeatureTag", "good" ]
+  },
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "source" : "c1fcdf8a204f4d8a.json",
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,170 @@
+{
+  "uid" : "d122de44af7c2e0e",
+  "name" : "Scenario with pending steps",
+  "historyId" : "6cdcb56c5d5c597af7d1933e487b5686",
+  "time" : {
+    "start" : 1528797649210,
+    "stop" : 1528797649213,
+    "duration" : 3
+  },
+  "status" : "skipped",
+  "statusDetails" : {
+    "message" : "TODO: implement me",
+    "trace" : "cucumber.api.PendingException: TODO: implement me\r\n\tat io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm.handlePickleStep(AllureCucumber2Jvm.java:272)\r\n\tat io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm.handleTestStepFinished(AllureCucumber2Jvm.java:172)\r\n\tat cucumber.runner.EventBus.send(EventBus.java:28)\r\n\tat cucumber.api.TestStep.run(TestStep.java:90)\r\n\tat cucumber.api.TestCase.run(TestCase.java:58)\r\n\tat cucumber.runner.Runner.runPickle(Runner.java:80)\r\n\tat cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:84)\r\n\tat cucumber.api.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:22)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:497)\r\n\tat org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)\r\n\tat org.testng.internal.Invoker.invokeMethod(Invoker.java:645)\r\n\tat org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)\r\n\tat org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)\r\n\tat org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)\r\n\tat org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\r\n\tat java.lang.Thread.run(Thread.java:745)\r\n",
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "skipped",
+    "statusDetails" : {
+      "message" : "TODO: implement me",
+      "trace" : "cucumber.api.PendingException: TODO: implement me\r\n\tat io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm.handlePickleStep(AllureCucumber2Jvm.java:272)\r\n\tat io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm.handleTestStepFinished(AllureCucumber2Jvm.java:172)\r\n\tat cucumber.runner.EventBus.send(EventBus.java:28)\r\n\tat cucumber.api.TestStep.run(TestStep.java:90)\r\n\tat cucumber.api.TestCase.run(TestCase.java:58)\r\n\tat cucumber.runner.Runner.runPickle(Runner.java:80)\r\n\tat cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:84)\r\n\tat cucumber.api.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:22)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:497)\r\n\tat org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)\r\n\tat org.testng.internal.Invoker.invokeMethod(Invoker.java:645)\r\n\tat org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)\r\n\tat org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)\r\n\tat org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)\r\n\tat org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\r\n\tat java.lang.Thread.run(Thread.java:745)\r\n",
+      "flaky" : false
+    },
+    "steps" : [ {
+      "name" : "before",
+      "time" : {
+        "start" : 1528797649210,
+        "stop" : 1528797649210,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Given  первое число 1",
+      "time" : {
+        "start" : 1528797649210,
+        "stop" : 1528797649211,
+        "duration" : 1
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "When  call step with PendingException",
+      "time" : {
+        "start" : 1528797649211,
+        "stop" : 1528797649211,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "And  второе число 2",
+      "time" : {
+        "start" : 1528797649212,
+        "stop" : 1528797649212,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Then  test case market as unimplemented",
+      "time" : {
+        "start" : 1528797649212,
+        "stop" : 1528797649212,
+        "duration" : 0
+      },
+      "status" : "skipped",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "after",
+      "time" : {
+        "start" : 1528797649212,
+        "stop" : 1528797649213,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Test Scenarios with Pending Steps"
+  }, {
+    "name" : "story",
+    "value" : "Scenario with pending steps"
+  }, {
+    "name" : "tag",
+    "value" : "skipped"
+  }, {
+    "name" : "host",
+    "value" : "ISVGREPC0000924"
+  }, {
+    "name" : "package",
+    "value" : "Test Scenarios with Pending Steps"
+  }, {
+    "name" : "suite",
+    "value" : "Test Scenarios with Pending Steps"
+  }, {
+    "name" : "testClass",
+    "value" : "Scenario with pending steps"
+  }, {
+    "name" : "thread",
+    "value" : "15956@ISVGREPC0000924.pool-2-thread-1(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "skipped" ]
+  },
+  "statusDetailsSafe" : {
+    "message" : "TODO: implement me",
+    "trace" : "cucumber.api.PendingException: TODO: implement me\r\n\tat io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm.handlePickleStep(AllureCucumber2Jvm.java:272)\r\n\tat io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm.handleTestStepFinished(AllureCucumber2Jvm.java:172)\r\n\tat cucumber.runner.EventBus.send(EventBus.java:28)\r\n\tat cucumber.api.TestStep.run(TestStep.java:90)\r\n\tat cucumber.api.TestCase.run(TestCase.java:58)\r\n\tat cucumber.runner.Runner.runPickle(Runner.java:80)\r\n\tat cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:84)\r\n\tat cucumber.api.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:22)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.lang.reflect.Method.invoke(Method.java:497)\r\n\tat org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)\r\n\tat org.testng.internal.Invoker.invokeMethod(Invoker.java:645)\r\n\tat org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)\r\n\tat org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)\r\n\tat org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)\r\n\tat org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)\r\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\r\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\r\n\tat java.lang.Thread.run(Thread.java:745)\r\n",
+    "flaky" : false
+  },
+  "source" : "d122de44af7c2e0e.json",
+  "statusMessage" : {
+    "present" : true
+  },
+  "parameterValues" : [ ]
+}

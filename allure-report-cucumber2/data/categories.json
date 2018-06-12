@@ -1,0 +1,69 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "expected [16] but found [15]",
+      "children" : [ {
+        "name" : "Bad scenario with background",
+        "uid" : "577bc07544aafe43",
+        "parentUid" : "ac72c6f5ec71aac35f3bba5a2ae7a916",
+        "status" : "failed",
+        "time" : {
+          "start" : 1528797649034,
+          "stop" : 1528797649042,
+          "duration" : 8
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Wrong add a to b",
+        "uid" : "9fd8c0a661eacb3c",
+        "parentUid" : "ac72c6f5ec71aac35f3bba5a2ae7a916",
+        "status" : "failed",
+        "time" : {
+          "start" : 1528797649337,
+          "stop" : 1528797649339,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "ac72c6f5ec71aac35f3bba5a2ae7a916"
+    }, {
+      "name" : "expected [6] but found [4]",
+      "children" : [ {
+        "name" : "Scenario with Negative Examples",
+        "uid" : "beda4b1c015521d3",
+        "parentUid" : "adbeb3189dc7923420c1f450feb82799",
+        "status" : "failed",
+        "time" : {
+          "start" : 1528797649174,
+          "stop" : 1528797649177,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "3", "6" ]
+      } ],
+      "uid" : "adbeb3189dc7923420c1f450feb82799"
+    }, {
+      "name" : "expected [1] but found [6]",
+      "children" : [ {
+        "name" : "Scenario with Negative Examples",
+        "uid" : "ab7d2060f26a4e96",
+        "parentUid" : "38f9f7d92cda3f7003017ac51023c8fd",
+        "status" : "failed",
+        "time" : {
+          "start" : 1528797649185,
+          "stop" : 1528797649188,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ "2", "4", "1" ]
+      } ],
+      "uid" : "38f9f7d92cda3f7003017ac51023c8fd"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

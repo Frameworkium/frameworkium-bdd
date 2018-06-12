@@ -1,0 +1,161 @@
+{
+  "uid" : "467463900f1f8d1e",
+  "name" : "Step with sub step @Step and @Attachment",
+  "historyId" : "2e2fcda400c5347f42f73916ad2ef585",
+  "time" : {
+    "start" : 1528797649231,
+    "stop" : 1528797649264,
+    "duration" : 33
+  },
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "before",
+      "time" : {
+        "start" : 1528797649231,
+        "stop" : 1528797649231,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "When  I attach file in sub-step",
+      "time" : {
+        "start" : 1528797649231,
+        "stop" : 1528797649263,
+        "duration" : 32
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Sub-step with attachment File",
+        "time" : {
+          "start" : 1528797649254,
+          "stop" : 1528797649256,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ {
+        "uid" : "8e1ff266cd8d7bfc",
+        "name" : "subStepWithAttachment",
+        "source" : "8e1ff266cd8d7bfc.jpg",
+        "type" : "image/jpeg",
+        "size" : 37130
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "hasContent" : true,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Then  it is displayed in report",
+      "time" : {
+        "start" : 1528797649263,
+        "stop" : 1528797649264,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "after",
+      "time" : {
+        "start" : 1528797649264,
+        "stop" : 1528797649264,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Test Scenarios with Attachments and Steps"
+  }, {
+    "name" : "story",
+    "value" : "Step with sub step @Step and @Attachment"
+  }, {
+    "name" : "tag",
+    "value" : "FeatureTag"
+  }, {
+    "name" : "tag",
+    "value" : "good"
+  }, {
+    "name" : "host",
+    "value" : "ISVGREPC0000924"
+  }, {
+    "name" : "package",
+    "value" : "Test Scenarios with Attachments and Steps"
+  }, {
+    "name" : "suite",
+    "value" : "Test Scenarios with Attachments and Steps"
+  }, {
+    "name" : "testClass",
+    "value" : "Step with sub step @Step and @Attachment"
+  }, {
+    "name" : "thread",
+    "value" : "15956@ISVGREPC0000924.pool-2-thread-1(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ {
+    "name" : "OAT-4444",
+    "type" : "tms"
+  }, {
+    "name" : "BUG-22400",
+    "type" : "issue"
+  } ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "FeatureTag", "good" ]
+  },
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "source" : "467463900f1f8d1e.json",
+  "statusMessage" : {
+    "present" : false
+  },
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,185 @@
+{
+  "uid" : "9fd8c0a661eacb3c",
+  "name" : "Wrong add a to b",
+  "historyId" : "682c5060516e351a52601f7eb3fe2e5e",
+  "time" : {
+    "start" : 1528797649337,
+    "stop" : 1528797649339,
+    "duration" : 2
+  },
+  "description" : "  This is description for current feature.\n  It should appear on each scenario in report",
+  "descriptionHtml" : "<p>This is description for current feature.\nIt should appear on each scenario in report</p>\n",
+  "status" : "failed",
+  "statusDetails" : {
+    "message" : "expected [16] but found [15]",
+    "trace" : "java.lang.AssertionError: expected [16] but found [15]\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:513)\r\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:135)\r\n\tat org.testng.Assert.assertEquals(Assert.java:116)\r\n\tat org.testng.Assert.assertEquals(Assert.java:389)\r\n\tat org.testng.Assert.assertEquals(Assert.java:399)\r\n\tat allure.AllureStepDefs.result_is(AllureStepDefs.java:70)\r\n\tat ✽.result is 16(src/test/resources/features/google/allure/test.feature:26)\r\n",
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "expected [16] but found [15]",
+      "trace" : "java.lang.AssertionError: expected [16] but found [15]\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:513)\r\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:135)\r\n\tat org.testng.Assert.assertEquals(Assert.java:116)\r\n\tat org.testng.Assert.assertEquals(Assert.java:389)\r\n\tat org.testng.Assert.assertEquals(Assert.java:399)\r\n\tat allure.AllureStepDefs.result_is(AllureStepDefs.java:70)\r\n\tat ✽.result is 16(src/test/resources/features/google/allure/test.feature:26)\r\n",
+      "flaky" : false
+    },
+    "steps" : [ {
+      "name" : "before",
+      "time" : {
+        "start" : 1528797649337,
+        "stop" : 1528797649337,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Given  a is 5",
+      "time" : {
+        "start" : 1528797649337,
+        "stop" : 1528797649338,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "And  b is 10",
+      "time" : {
+        "start" : 1528797649338,
+        "stop" : 1528797649338,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "When  I add a to b",
+      "time" : {
+        "start" : 1528797649338,
+        "stop" : 1528797649338,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Then  result is 16",
+      "time" : {
+        "start" : 1528797649338,
+        "stop" : 1528797649339,
+        "duration" : 1
+      },
+      "status" : "failed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "after",
+      "time" : {
+        "start" : 1528797649339,
+        "stop" : 1528797649339,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Test Simple Scenarios"
+  }, {
+    "name" : "story",
+    "value" : "Wrong add a to b"
+  }, {
+    "name" : "tag",
+    "value" : "FeatureTag"
+  }, {
+    "name" : "tag",
+    "value" : "bad"
+  }, {
+    "name" : "host",
+    "value" : "ISVGREPC0000924"
+  }, {
+    "name" : "package",
+    "value" : "Test Simple Scenarios"
+  }, {
+    "name" : "suite",
+    "value" : "Test Simple Scenarios"
+  }, {
+    "name" : "testClass",
+    "value" : "Wrong add a to b"
+  }, {
+    "name" : "thread",
+    "value" : "15956@ISVGREPC0000924.pool-2-thread-1(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ {
+    "name" : "OAT-4444",
+    "type" : "tms"
+  }, {
+    "name" : "BUG-22400",
+    "type" : "issue"
+  } ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ "FeatureTag", "bad" ]
+  },
+  "statusDetailsSafe" : {
+    "message" : "expected [16] but found [15]",
+    "trace" : "java.lang.AssertionError: expected [16] but found [15]\r\n\tat org.testng.Assert.fail(Assert.java:94)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:513)\r\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:135)\r\n\tat org.testng.Assert.assertEquals(Assert.java:116)\r\n\tat org.testng.Assert.assertEquals(Assert.java:389)\r\n\tat org.testng.Assert.assertEquals(Assert.java:399)\r\n\tat allure.AllureStepDefs.result_is(AllureStepDefs.java:70)\r\n\tat ✽.result is 16(src/test/resources/features/google/allure/test.feature:26)\r\n",
+    "flaky" : false
+  },
+  "source" : "9fd8c0a661eacb3c.json",
+  "statusMessage" : {
+    "present" : true
+  },
+  "parameterValues" : [ ]
+}

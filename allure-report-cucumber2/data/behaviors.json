@@ -1,0 +1,349 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Test Scenarios with backgrounds",
+    "children" : [ {
+      "name" : "Scenario with background",
+      "children" : [ {
+        "name" : "Scenario with background",
+        "uid" : "4647b0009faea3a6",
+        "parentUid" : "984c6ff88c75d1f7d0d4d5079c0ecd7c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797648652,
+          "stop" : 1528797648876,
+          "duration" : 224
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "984c6ff88c75d1f7d0d4d5079c0ecd7c"
+    }, {
+      "name" : "Bad scenario with background",
+      "children" : [ {
+        "name" : "Bad scenario with background",
+        "uid" : "577bc07544aafe43",
+        "parentUid" : "09af9f805b20e118279cd4b367305922",
+        "status" : "failed",
+        "time" : {
+          "start" : 1528797649034,
+          "stop" : 1528797649042,
+          "duration" : 8
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "09af9f805b20e118279cd4b367305922"
+    } ],
+    "uid" : "78bdf5680762b7424905942cd185e381"
+  }, {
+    "name" : "Test Scenarios with Data Tables",
+    "children" : [ {
+      "name" : "Simple data table",
+      "children" : [ {
+        "name" : "Simple data table",
+        "uid" : "c24d1ce4fd91007d",
+        "parentUid" : "52b149c6995262ea438b62eadd6757af",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649078,
+          "stop" : 1528797649095,
+          "duration" : 17
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "52b149c6995262ea438b62eadd6757af"
+    }, {
+      "name" : "Steps with argumets and data tables",
+      "children" : [ {
+        "name" : "Steps with argumets and data tables",
+        "uid" : "68828d0e25f316c3",
+        "parentUid" : "09b2f11380a8fcb924f3afe2ff0ebde5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649104,
+          "stop" : 1528797649112,
+          "duration" : 8
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "09b2f11380a8fcb924f3afe2ff0ebde5"
+    } ],
+    "uid" : "a306fc6649a5a7e6e02556591caa0978"
+  }, {
+    "name" : "Test Scenarios with Examples",
+    "children" : [ {
+      "name" : "Scenario with Positive Examples",
+      "children" : [ {
+        "name" : "Scenario with Positive Examples",
+        "uid" : "e0ae02d2ec65bf58",
+        "parentUid" : "e2eae36fe2f654bd4c9f8bbdde7c9f5c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649128,
+          "stop" : 1528797649131,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "3", "4" ]
+      }, {
+        "name" : "Scenario with Positive Examples",
+        "uid" : "a88fb3f052e9d77d",
+        "parentUid" : "e2eae36fe2f654bd4c9f8bbdde7c9f5c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649139,
+          "stop" : 1528797649142,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ "2", "4", "6" ]
+      } ],
+      "uid" : "e2eae36fe2f654bd4c9f8bbdde7c9f5c"
+    }, {
+      "name" : "Scenario with Arguments in description: 1 and 3 == 4",
+      "children" : [ {
+        "name" : "Scenario with Arguments in description: 1 and 3 == 4",
+        "uid" : "d1ed065cb519ce7b",
+        "parentUid" : "0e1b93dbbc010d960b2253be801a5ba3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649150,
+          "stop" : 1528797649153,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "3", "4" ]
+      } ],
+      "uid" : "0e1b93dbbc010d960b2253be801a5ba3"
+    }, {
+      "name" : "Scenario with Arguments in description: 2 and 4 == 6",
+      "children" : [ {
+        "name" : "Scenario with Arguments in description: 2 and 4 == 6",
+        "uid" : "3cab89c610407c58",
+        "parentUid" : "8d319a9f2492c759037b78a00e898e9c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649160,
+          "stop" : 1528797649167,
+          "duration" : 7
+        },
+        "flaky" : false,
+        "parameters" : [ "2", "4", "6" ]
+      } ],
+      "uid" : "8d319a9f2492c759037b78a00e898e9c"
+    }, {
+      "name" : "Scenario with Negative Examples",
+      "children" : [ {
+        "name" : "Scenario with Negative Examples",
+        "uid" : "beda4b1c015521d3",
+        "parentUid" : "4d25cb2dbe2a90c4b78a31bd269dc164",
+        "status" : "failed",
+        "time" : {
+          "start" : 1528797649174,
+          "stop" : 1528797649177,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "3", "6" ]
+      }, {
+        "name" : "Scenario with Negative Examples",
+        "uid" : "ab7d2060f26a4e96",
+        "parentUid" : "4d25cb2dbe2a90c4b78a31bd269dc164",
+        "status" : "failed",
+        "time" : {
+          "start" : 1528797649185,
+          "stop" : 1528797649188,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ "2", "4", "1" ]
+      } ],
+      "uid" : "4d25cb2dbe2a90c4b78a31bd269dc164"
+    } ],
+    "uid" : "f1174a24ae99357a9f7c6a2721ad3d0a"
+  }, {
+    "name" : "Test Scenarios with Pending Steps",
+    "children" : [ {
+      "name" : "Scenario with unimplementd steps",
+      "children" : [ {
+        "name" : "Scenario with unimplementd steps",
+        "uid" : "bbb22f2139d50b4a",
+        "parentUid" : "1a0d20af55d9d69b7fbc61f118566f21",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1528797649200,
+          "stop" : 1528797649205,
+          "duration" : 5
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1a0d20af55d9d69b7fbc61f118566f21"
+    }, {
+      "name" : "Scenario with pending steps",
+      "children" : [ {
+        "name" : "Scenario with pending steps",
+        "uid" : "d122de44af7c2e0e",
+        "parentUid" : "29b8b1f72ca0eadd49a99dac4d188770",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1528797649210,
+          "stop" : 1528797649213,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "29b8b1f72ca0eadd49a99dac4d188770"
+    } ],
+    "uid" : "7e4b91cd3a3fdb2a146263d72d4cfce2"
+  }, {
+    "name" : "Test Scenarios with Attachments and Steps",
+    "children" : [ {
+      "name" : "Simple Image attachment using Allure.addAttachmnet",
+      "children" : [ {
+        "name" : "Simple Image attachment using Allure.addAttachmnet",
+        "uid" : "c1fcdf8a204f4d8a",
+        "parentUid" : "8efa14bba6eb375e2a95e9a92784d928",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649220,
+          "stop" : 1528797649225,
+          "duration" : 5
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8efa14bba6eb375e2a95e9a92784d928"
+    }, {
+      "name" : "Step with sub step @Step and @Attachment",
+      "children" : [ {
+        "name" : "Step with sub step @Step and @Attachment",
+        "uid" : "467463900f1f8d1e",
+        "parentUid" : "5257e5c49ea452a4753e6f850601108c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649231,
+          "stop" : 1528797649264,
+          "duration" : 33
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "5257e5c49ea452a4753e6f850601108c"
+    }, {
+      "name" : "Outline with steps which contain sub-steps and attachments",
+      "children" : [ {
+        "name" : "Outline with steps which contain sub-steps and attachments",
+        "uid" : "1631ce77c3c941c9",
+        "parentUid" : "6fdea8cf16562caed6e7fe1d5a4f26fe",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649270,
+          "stop" : 1528797649276,
+          "duration" : 6
+        },
+        "flaky" : false,
+        "parameters" : [ "SOMEVALUE" ]
+      }, {
+        "name" : "Outline with steps which contain sub-steps and attachments",
+        "uid" : "4a8cdbdedd7ece99",
+        "parentUid" : "6fdea8cf16562caed6e7fe1d5a4f26fe",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649286,
+          "stop" : 1528797649293,
+          "duration" : 7
+        },
+        "flaky" : false,
+        "parameters" : [ "ANOTHERVALUE" ]
+      }, {
+        "name" : "Outline with steps which contain sub-steps and attachments",
+        "uid" : "7029fd3aadf216e3",
+        "parentUid" : "6fdea8cf16562caed6e7fe1d5a4f26fe",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649298,
+          "stop" : 1528797649304,
+          "duration" : 6
+        },
+        "flaky" : false,
+        "parameters" : [ "VALUE WITH SPACE" ]
+      } ],
+      "uid" : "6fdea8cf16562caed6e7fe1d5a4f26fe"
+    }, {
+      "name" : "Step with sub step @Step",
+      "children" : [ {
+        "name" : "Step with sub step @Step",
+        "uid" : "9a5562bc5b490306",
+        "parentUid" : "be307569326abe746cba6674969c89d1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649313,
+          "stop" : 1528797649315,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "be307569326abe746cba6674969c89d1"
+    } ],
+    "uid" : "1389ccf58fc22e130e264f41c6846e46"
+  }, {
+    "name" : "Test Simple Scenarios",
+    "children" : [ {
+      "name" : "Add a to b",
+      "children" : [ {
+        "name" : "Add a to b",
+        "uid" : "9911b12606bfb50c",
+        "parentUid" : "bfaf8c194fa2cf4e9e8cdf65cfe28940",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649322,
+          "stop" : 1528797649324,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "bfaf8c194fa2cf4e9e8cdf65cfe28940"
+    }, {
+      "name" : "Scenario with empty tag and tag with more than one =",
+      "children" : [ {
+        "name" : "Scenario with empty tag and tag with more than one =",
+        "uid" : "396c0303a639c639",
+        "parentUid" : "6a0dce223962c44b2fe2eaf35fefefbd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528797649330,
+          "stop" : 1528797649332,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "6a0dce223962c44b2fe2eaf35fefefbd"
+    }, {
+      "name" : "Wrong add a to b",
+      "children" : [ {
+        "name" : "Wrong add a to b",
+        "uid" : "9fd8c0a661eacb3c",
+        "parentUid" : "246059cb8256cda30b4dabba850e52b0",
+        "status" : "failed",
+        "time" : {
+          "start" : 1528797649337,
+          "stop" : 1528797649339,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "246059cb8256cda30b4dabba850e52b0"
+    } ],
+    "uid" : "1e097bd9099ca08ada47b1151bee01a0"
+  } ]
+}
