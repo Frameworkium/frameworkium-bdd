@@ -1,0 +1,211 @@
+[ {
+  "uid" : "2c2585ce508b8f84",
+  "name" : "Scenario with Negative Examples",
+  "time" : {
+    "start" : 1528798466591,
+    "stop" : 1528798466593,
+    "duration" : 2
+  },
+  "status" : "failed",
+  "severity" : "blocker"
+}, {
+  "uid" : "ad71d2f25a2b8b14",
+  "name" : "Steps with argumets and data tables",
+  "time" : {
+    "start" : 1528798466530,
+    "stop" : 1528798466534,
+    "duration" : 4
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8297923e3b0d919e",
+  "name" : "Bad scenario with background",
+  "time" : {
+    "start" : 1528798466472,
+    "stop" : 1528798466477,
+    "duration" : 5
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "bc54d4a7b6ff3492",
+  "name" : "Outline with steps which contain sub-steps and attachments",
+  "time" : {
+    "start" : 1528798466689,
+    "stop" : 1528798466693,
+    "duration" : 4
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6b712f0a96ef0ec3",
+  "name" : "Scenario with Negative Examples",
+  "time" : {
+    "start" : 1528798466581,
+    "stop" : 1528798466585,
+    "duration" : 4
+  },
+  "status" : "failed",
+  "severity" : "blocker"
+}, {
+  "uid" : "c885e0196aa3d8e1",
+  "name" : "Scenario with Positive Examples",
+  "time" : {
+    "start" : 1528798466558,
+    "stop" : 1528798466561,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "652e387035a8f6ca",
+  "name" : "Scenario with unimplementd steps",
+  "time" : {
+    "start" : 1528798466628,
+    "stop" : 1528798466632,
+    "duration" : 4
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "d6318d834a961db8",
+  "name" : "Wrong add a to b",
+  "time" : {
+    "start" : 1528798466719,
+    "stop" : 1528798466721,
+    "duration" : 2
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "7e23a51f85331620",
+  "name" : "Simple data table",
+  "time" : {
+    "start" : 1528798466510,
+    "stop" : 1528798466525,
+    "duration" : 15
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "17baae55c0f69350",
+  "name" : "Step with sub step @Step",
+  "time" : {
+    "start" : 1528798466705,
+    "stop" : 1528798466707,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "231f2850a5751cc9",
+  "name" : "Simple Image attachment using Allure.addAttachmnet",
+  "time" : {
+    "start" : 1528798466643,
+    "stop" : 1528798466646,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "99995895dffae38c",
+  "name" : "Scenario with Arguments in description: 1 and 3 == 4",
+  "time" : {
+    "start" : 1528798466567,
+    "stop" : 1528798466570,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "ba67e64a958ca807",
+  "name" : "Scenario with background",
+  "time" : {
+    "start" : 1528798466343,
+    "stop" : 1528798466369,
+    "duration" : 26
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a01797f346af4a9c",
+  "name" : "Add a to b",
+  "time" : {
+    "start" : 1528798466710,
+    "stop" : 1528798466712,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "40371656a03c85b7",
+  "name" : "Scenario with pending steps",
+  "time" : {
+    "start" : 1528798466636,
+    "stop" : 1528798466639,
+    "duration" : 3
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "b01248ac2bd4db52",
+  "name" : "Scenario with Positive Examples",
+  "time" : {
+    "start" : 1528798466550,
+    "stop" : 1528798466554,
+    "duration" : 4
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "5141a3dac4d51cc6",
+  "name" : "Scenario with empty tag and tag with more than one =",
+  "time" : {
+    "start" : 1528798466715,
+    "stop" : 1528798466717,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a7c3c225e093bf95",
+  "name" : "Step with sub step @Step and @Attachment",
+  "time" : {
+    "start" : 1528798466648,
+    "stop" : 1528798466678,
+    "duration" : 30
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c6dabf2b65e3bcb9",
+  "name" : "Outline with steps which contain sub-steps and attachments",
+  "time" : {
+    "start" : 1528798466696,
+    "stop" : 1528798466702,
+    "duration" : 6
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ba1e009ab02e192c",
+  "name" : "Scenario with Arguments in description: 2 and 4 == 6",
+  "time" : {
+    "start" : 1528798466574,
+    "stop" : 1528798466577,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "a6c786abe14339db",
+  "name" : "Outline with steps which contain sub-steps and attachments",
+  "time" : {
+    "start" : 1528798466682,
+    "stop" : 1528798466686,
+    "duration" : 4
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

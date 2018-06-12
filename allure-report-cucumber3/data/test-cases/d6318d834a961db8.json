@@ -1,0 +1,185 @@
+{
+  "uid" : "d6318d834a961db8",
+  "name" : "Wrong add a to b",
+  "historyId" : "682c5060516e351a52601f7eb3fe2e5e",
+  "time" : {
+    "start" : 1528798466719,
+    "stop" : 1528798466721,
+    "duration" : 2
+  },
+  "description" : "  This is description for current feature.\n  It should appear on each scenario in report",
+  "descriptionHtml" : "<p>This is description for current feature.\nIt should appear on each scenario in report</p>\n",
+  "status" : "failed",
+  "statusDetails" : {
+    "message" : "expected [16] but found [15]",
+    "trace" : "java.lang.AssertionError: expected [16] but found [15]\n\tat org.testng.Assert.fail(Assert.java:96)\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:137)\n\tat org.testng.Assert.assertEquals(Assert.java:118)\n\tat org.testng.Assert.assertEquals(Assert.java:652)\n\tat org.testng.Assert.assertEquals(Assert.java:662)\n\tat allure.AllureStepDefs.result_is(AllureStepDefs.java:69)\n\tat ✽.result is 16(src/test/resources/features/google/allure/test.feature:26)\n",
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "expected [16] but found [15]",
+      "trace" : "java.lang.AssertionError: expected [16] but found [15]\n\tat org.testng.Assert.fail(Assert.java:96)\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:137)\n\tat org.testng.Assert.assertEquals(Assert.java:118)\n\tat org.testng.Assert.assertEquals(Assert.java:652)\n\tat org.testng.Assert.assertEquals(Assert.java:662)\n\tat allure.AllureStepDefs.result_is(AllureStepDefs.java:69)\n\tat ✽.result is 16(src/test/resources/features/google/allure/test.feature:26)\n",
+      "flaky" : false
+    },
+    "steps" : [ {
+      "name" : "before",
+      "time" : {
+        "start" : 1528798466719,
+        "stop" : 1528798466719,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Given  a is 5",
+      "time" : {
+        "start" : 1528798466719,
+        "stop" : 1528798466719,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And  b is 10",
+      "time" : {
+        "start" : 1528798466720,
+        "stop" : 1528798466720,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When  I add a to b",
+      "time" : {
+        "start" : 1528798466720,
+        "stop" : 1528798466720,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then  result is 16",
+      "time" : {
+        "start" : 1528798466720,
+        "stop" : 1528798466720,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "after",
+      "time" : {
+        "start" : 1528798466721,
+        "stop" : 1528798466721,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Test Simple Scenarios"
+  }, {
+    "name" : "story",
+    "value" : "Wrong add a to b"
+  }, {
+    "name" : "tag",
+    "value" : "FeatureTag"
+  }, {
+    "name" : "tag",
+    "value" : "bad"
+  }, {
+    "name" : "host",
+    "value" : "Ashleys-MacBook-Pro.local"
+  }, {
+    "name" : "package",
+    "value" : "Test Simple Scenarios"
+  }, {
+    "name" : "suite",
+    "value" : "Test Simple Scenarios"
+  }, {
+    "name" : "testClass",
+    "value" : "Wrong add a to b"
+  }, {
+    "name" : "thread",
+    "value" : "16809@Ashleys-MacBook-Pro.local.TestNG-test=Surefire test-1(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ {
+    "name" : "OAT-4444",
+    "type" : "tms"
+  }, {
+    "name" : "BUG-22400",
+    "type" : "issue"
+  } ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ "FeatureTag", "bad" ]
+  },
+  "source" : "d6318d834a961db8.json",
+  "statusMessage" : {
+    "present" : true
+  },
+  "statusDetailsSafe" : {
+    "message" : "expected [16] but found [15]",
+    "trace" : "java.lang.AssertionError: expected [16] but found [15]\n\tat org.testng.Assert.fail(Assert.java:96)\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:137)\n\tat org.testng.Assert.assertEquals(Assert.java:118)\n\tat org.testng.Assert.assertEquals(Assert.java:652)\n\tat org.testng.Assert.assertEquals(Assert.java:662)\n\tat allure.AllureStepDefs.result_is(AllureStepDefs.java:69)\n\tat ✽.result is 16(src/test/resources/features/google/allure/test.feature:26)\n",
+    "flaky" : false
+  },
+  "parameterValues" : [ ]
+}

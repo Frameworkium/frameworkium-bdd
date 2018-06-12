@@ -1,0 +1,265 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "Ashleys-MacBook-Pro.local",
+    "children" : [ {
+      "name" : "16809@Ashleys-MacBook-Pro.local.TestNG-test=Surefire test-1(15)",
+      "children" : [ {
+        "name" : "Scenario with Negative Examples",
+        "uid" : "2c2585ce508b8f84",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "failed",
+        "time" : {
+          "start" : 1528798466591,
+          "stop" : 1528798466593,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "parameters" : [ "2", "4", "1" ]
+      }, {
+        "name" : "Steps with argumets and data tables",
+        "uid" : "ad71d2f25a2b8b14",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466530,
+          "stop" : 1528798466534,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Bad scenario with background",
+        "uid" : "8297923e3b0d919e",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "failed",
+        "time" : {
+          "start" : 1528798466472,
+          "stop" : 1528798466477,
+          "duration" : 5
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Outline with steps which contain sub-steps and attachments",
+        "uid" : "bc54d4a7b6ff3492",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466689,
+          "stop" : 1528798466693,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "parameters" : [ "ANOTHERVALUE" ]
+      }, {
+        "name" : "Scenario with Negative Examples",
+        "uid" : "6b712f0a96ef0ec3",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "failed",
+        "time" : {
+          "start" : 1528798466581,
+          "stop" : 1528798466585,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "3", "6" ]
+      }, {
+        "name" : "Scenario with Positive Examples",
+        "uid" : "c885e0196aa3d8e1",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466558,
+          "stop" : 1528798466561,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ "2", "4", "6" ]
+      }, {
+        "name" : "Scenario with unimplementd steps",
+        "uid" : "652e387035a8f6ca",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1528798466628,
+          "stop" : 1528798466632,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Wrong add a to b",
+        "uid" : "d6318d834a961db8",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "failed",
+        "time" : {
+          "start" : 1528798466719,
+          "stop" : 1528798466721,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Simple data table",
+        "uid" : "7e23a51f85331620",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466510,
+          "stop" : 1528798466525,
+          "duration" : 15
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Step with sub step @Step",
+        "uid" : "17baae55c0f69350",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466705,
+          "stop" : 1528798466707,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Simple Image attachment using Allure.addAttachmnet",
+        "uid" : "231f2850a5751cc9",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466643,
+          "stop" : 1528798466646,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Scenario with Arguments in description: 1 and 3 == 4",
+        "uid" : "99995895dffae38c",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466567,
+          "stop" : 1528798466570,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "3", "4" ]
+      }, {
+        "name" : "Scenario with background",
+        "uid" : "ba67e64a958ca807",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466343,
+          "stop" : 1528798466369,
+          "duration" : 26
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Add a to b",
+        "uid" : "a01797f346af4a9c",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466710,
+          "stop" : 1528798466712,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Scenario with pending steps",
+        "uid" : "40371656a03c85b7",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1528798466636,
+          "stop" : 1528798466639,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Scenario with Positive Examples",
+        "uid" : "b01248ac2bd4db52",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466550,
+          "stop" : 1528798466554,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "3", "4" ]
+      }, {
+        "name" : "Scenario with empty tag and tag with more than one =",
+        "uid" : "5141a3dac4d51cc6",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466715,
+          "stop" : 1528798466717,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Step with sub step @Step and @Attachment",
+        "uid" : "a7c3c225e093bf95",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466648,
+          "stop" : 1528798466678,
+          "duration" : 30
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Outline with steps which contain sub-steps and attachments",
+        "uid" : "c6dabf2b65e3bcb9",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466696,
+          "stop" : 1528798466702,
+          "duration" : 6
+        },
+        "flaky" : false,
+        "parameters" : [ "VALUE WITH SPACE" ]
+      }, {
+        "name" : "Scenario with Arguments in description: 2 and 4 == 6",
+        "uid" : "ba1e009ab02e192c",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466574,
+          "stop" : 1528798466577,
+          "duration" : 3
+        },
+        "flaky" : false,
+        "parameters" : [ "2", "4", "6" ]
+      }, {
+        "name" : "Outline with steps which contain sub-steps and attachments",
+        "uid" : "a6c786abe14339db",
+        "parentUid" : "af0900cfe84fa67f0922920c765087e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1528798466682,
+          "stop" : 1528798466686,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "parameters" : [ "SOMEVALUE" ]
+      } ],
+      "uid" : "af0900cfe84fa67f0922920c765087e7"
+    } ],
+    "uid" : "de35c52beeaea0e1be7ac2a6d3c509b1"
+  } ]
+}

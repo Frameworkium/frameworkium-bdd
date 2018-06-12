@@ -1,0 +1,161 @@
+{
+  "uid" : "7e23a51f85331620",
+  "name" : "Simple data table",
+  "historyId" : "9c49accd1342c0add729d609ace470fa",
+  "time" : {
+    "start" : 1528798466510,
+    "stop" : 1528798466525,
+    "duration" : 15
+  },
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "before",
+      "time" : {
+        "start" : 1528798466511,
+        "stop" : 1528798466511,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Given  users are:",
+      "time" : {
+        "start" : 1528798466511,
+        "stop" : 1528798466524,
+        "duration" : 13
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ee8644c3644fdd3d",
+        "name" : "Data table",
+        "source" : "ee8644c3644fdd3d.csv",
+        "type" : "text/tab-separated-values",
+        "size" : 78
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And  users are:",
+      "time" : {
+        "start" : 1528798466524,
+        "stop" : 1528798466525,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "89a7e30b1c18afd5",
+        "name" : "Data table",
+        "source" : "89a7e30b1c18afd5.csv",
+        "type" : "text/tab-separated-values",
+        "size" : 81
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "after",
+      "time" : {
+        "start" : 1528798466525,
+        "stop" : 1528798466525,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Test Scenarios with Data Tables"
+  }, {
+    "name" : "story",
+    "value" : "Simple data table"
+  }, {
+    "name" : "tag",
+    "value" : "FeatureTag"
+  }, {
+    "name" : "tag",
+    "value" : "good"
+  }, {
+    "name" : "host",
+    "value" : "Ashleys-MacBook-Pro.local"
+  }, {
+    "name" : "package",
+    "value" : "Test Scenarios with Data Tables"
+  }, {
+    "name" : "suite",
+    "value" : "Test Scenarios with Data Tables"
+  }, {
+    "name" : "testClass",
+    "value" : "Simple data table"
+  }, {
+    "name" : "thread",
+    "value" : "16809@Ashleys-MacBook-Pro.local.TestNG-test=Surefire test-1(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ {
+    "name" : "OAT-4444",
+    "type" : "tms"
+  }, {
+    "name" : "BUG-22400",
+    "type" : "issue"
+  }, {
+    "name" : "http://yandex.ru",
+    "url" : "http://yandex.ru"
+  }, {
+    "name" : "mylinkname-12",
+    "type" : "mylink-112-qwe"
+  }, {
+    "name" : "12_12-12",
+    "type" : "mylink-112-qwe"
+  } ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "FeatureTag", "good" ]
+  },
+  "source" : "7e23a51f85331620.json",
+  "statusMessage" : {
+    "present" : false
+  },
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "parameterValues" : [ ]
+}

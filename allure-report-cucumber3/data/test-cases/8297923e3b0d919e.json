@@ -1,0 +1,183 @@
+{
+  "uid" : "8297923e3b0d919e",
+  "name" : "Bad scenario with background",
+  "historyId" : "f0ebd54b69e38010167aa61032a378b9",
+  "time" : {
+    "start" : 1528798466472,
+    "stop" : 1528798466477,
+    "duration" : 5
+  },
+  "status" : "failed",
+  "statusDetails" : {
+    "message" : "expected [16] but found [15]",
+    "trace" : "java.lang.AssertionError: expected [16] but found [15]\n\tat org.testng.Assert.fail(Assert.java:96)\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:137)\n\tat org.testng.Assert.assertEquals(Assert.java:118)\n\tat org.testng.Assert.assertEquals(Assert.java:652)\n\tat org.testng.Assert.assertEquals(Assert.java:662)\n\tat allure.AllureStepDefs.result_is(AllureStepDefs.java:69)\n\tat ✽.result is 16(src/test/resources/features/google/allure/test-background.feature:16)\n",
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "expected [16] but found [15]",
+      "trace" : "java.lang.AssertionError: expected [16] but found [15]\n\tat org.testng.Assert.fail(Assert.java:96)\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:137)\n\tat org.testng.Assert.assertEquals(Assert.java:118)\n\tat org.testng.Assert.assertEquals(Assert.java:652)\n\tat org.testng.Assert.assertEquals(Assert.java:662)\n\tat allure.AllureStepDefs.result_is(AllureStepDefs.java:69)\n\tat ✽.result is 16(src/test/resources/features/google/allure/test-background.feature:16)\n",
+      "flaky" : false
+    },
+    "steps" : [ {
+      "name" : "before",
+      "time" : {
+        "start" : 1528798466472,
+        "stop" : 1528798466472,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Given  a is 5",
+      "time" : {
+        "start" : 1528798466472,
+        "stop" : 1528798466473,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And  b is 10",
+      "time" : {
+        "start" : 1528798466473,
+        "stop" : 1528798466473,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When  I add a to b",
+      "time" : {
+        "start" : 1528798466473,
+        "stop" : 1528798466474,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then  result is 16",
+      "time" : {
+        "start" : 1528798466474,
+        "stop" : 1528798466476,
+        "duration" : 2
+      },
+      "status" : "failed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "after",
+      "time" : {
+        "start" : 1528798466476,
+        "stop" : 1528798466476,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Test Scenarios with backgrounds"
+  }, {
+    "name" : "story",
+    "value" : "Bad scenario with background"
+  }, {
+    "name" : "tag",
+    "value" : "FeatureTag"
+  }, {
+    "name" : "tag",
+    "value" : "bad"
+  }, {
+    "name" : "host",
+    "value" : "Ashleys-MacBook-Pro.local"
+  }, {
+    "name" : "package",
+    "value" : "Test Scenarios with backgrounds"
+  }, {
+    "name" : "suite",
+    "value" : "Test Scenarios with backgrounds"
+  }, {
+    "name" : "testClass",
+    "value" : "Bad scenario with background"
+  }, {
+    "name" : "thread",
+    "value" : "16809@Ashleys-MacBook-Pro.local.TestNG-test=Surefire test-1(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ {
+    "name" : "OAT-4444",
+    "type" : "tms"
+  }, {
+    "name" : "BUG-22400",
+    "type" : "issue"
+  } ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ "FeatureTag", "bad" ]
+  },
+  "source" : "8297923e3b0d919e.json",
+  "statusMessage" : {
+    "present" : true
+  },
+  "statusDetailsSafe" : {
+    "message" : "expected [16] but found [15]",
+    "trace" : "java.lang.AssertionError: expected [16] but found [15]\n\tat org.testng.Assert.fail(Assert.java:96)\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:137)\n\tat org.testng.Assert.assertEquals(Assert.java:118)\n\tat org.testng.Assert.assertEquals(Assert.java:652)\n\tat org.testng.Assert.assertEquals(Assert.java:662)\n\tat allure.AllureStepDefs.result_is(AllureStepDefs.java:69)\n\tat ✽.result is 16(src/test/resources/features/google/allure/test-background.feature:16)\n",
+    "flaky" : false
+  },
+  "parameterValues" : [ ]
+}

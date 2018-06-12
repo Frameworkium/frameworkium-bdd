@@ -1,0 +1,175 @@
+{
+  "uid" : "5141a3dac4d51cc6",
+  "name" : "Scenario with empty tag and tag with more than one =",
+  "historyId" : "abadedede71e882eef8125f52ac524cb",
+  "time" : {
+    "start" : 1528798466715,
+    "stop" : 1528798466717,
+    "duration" : 2
+  },
+  "description" : "  This is description for current feature.\n  It should appear on each scenario in report",
+  "descriptionHtml" : "<p>This is description for current feature.\nIt should appear on each scenario in report</p>\n",
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "before",
+      "time" : {
+        "start" : 1528798466715,
+        "stop" : 1528798466715,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Given  a is 5",
+      "time" : {
+        "start" : 1528798466715,
+        "stop" : 1528798466715,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And  b is 10",
+      "time" : {
+        "start" : 1528798466716,
+        "stop" : 1528798466716,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When  I add a to b",
+      "time" : {
+        "start" : 1528798466716,
+        "stop" : 1528798466716,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then  result is 15",
+      "time" : {
+        "start" : 1528798466716,
+        "stop" : 1528798466716,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "after",
+      "time" : {
+        "start" : 1528798466717,
+        "stop" : 1528798466717,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Test Simple Scenarios"
+  }, {
+    "name" : "story",
+    "value" : "Scenario with empty tag and tag with more than one ="
+  }, {
+    "name" : "tag",
+    "value" : "FeatureTag"
+  }, {
+    "name" : "tag",
+    "value" : "good"
+  }, {
+    "name" : "host",
+    "value" : "Ashleys-MacBook-Pro.local"
+  }, {
+    "name" : "package",
+    "value" : "Test Simple Scenarios"
+  }, {
+    "name" : "suite",
+    "value" : "Test Simple Scenarios"
+  }, {
+    "name" : "testClass",
+    "value" : "Scenario with empty tag and tag with more than one ="
+  }, {
+    "name" : "thread",
+    "value" : "16809@Ashleys-MacBook-Pro.local.TestNG-test=Surefire test-1(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ {
+    "name" : "OAT-4444",
+    "type" : "tms"
+  }, {
+    "name" : "BUG-22400",
+    "type" : "issue"
+  }, {
+    "name" : "ISSUE=12345",
+    "type" : "tms"
+  } ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "FeatureTag", "good" ]
+  },
+  "source" : "5141a3dac4d51cc6.json",
+  "statusMessage" : {
+    "present" : false
+  },
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "parameterValues" : [ ]
+}

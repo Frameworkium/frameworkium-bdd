@@ -1,0 +1,197 @@
+{
+  "uid" : "ba1e009ab02e192c",
+  "name" : "Scenario with Arguments in description: 2 and 4 == 6",
+  "historyId" : "c9f68266d520b8067909eb058bb3109c",
+  "time" : {
+    "start" : 1528798466574,
+    "stop" : 1528798466577,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "before",
+      "time" : {
+        "start" : 1528798466574,
+        "stop" : 1528798466574,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Given  a is 2",
+      "time" : {
+        "start" : 1528798466574,
+        "stop" : 1528798466575,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And  b is 4",
+      "time" : {
+        "start" : 1528798466575,
+        "stop" : 1528798466575,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When  I add a to b",
+      "time" : {
+        "start" : 1528798466576,
+        "stop" : 1528798466576,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then  result is 6",
+      "time" : {
+        "start" : 1528798466576,
+        "stop" : 1528798466577,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "after",
+      "time" : {
+        "start" : 1528798466577,
+        "stop" : 1528798466577,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Test Scenarios with Examples"
+  }, {
+    "name" : "story",
+    "value" : "Scenario with Arguments in description: 2 and 4 == 6"
+  }, {
+    "name" : "tag",
+    "value" : "FeatureTag"
+  }, {
+    "name" : "tag",
+    "value" : "good"
+  }, {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "tag",
+    "value" : "goofy=dog"
+  }, {
+    "name" : "tag",
+    "value" : "melted"
+  }, {
+    "name" : "host",
+    "value" : "Ashleys-MacBook-Pro.local"
+  }, {
+    "name" : "package",
+    "value" : "Test Scenarios with Examples"
+  }, {
+    "name" : "suite",
+    "value" : "Test Scenarios with Examples"
+  }, {
+    "name" : "testClass",
+    "value" : "Scenario with Arguments in description: 2 and 4 == 6"
+  }, {
+    "name" : "thread",
+    "value" : "16809@Ashleys-MacBook-Pro.local.TestNG-test=Surefire test-1(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "a",
+    "value" : "2"
+  }, {
+    "name" : "b",
+    "value" : "4"
+  }, {
+    "name" : "result",
+    "value" : "6"
+  } ],
+  "links" : [ {
+    "name" : "OAT-4444",
+    "type" : "tms"
+  }, {
+    "name" : "BUG-22400",
+    "type" : "issue"
+  }, {
+    "name" : "OAT-219",
+    "type" : "tms"
+  }, {
+    "name" : "BUG-12312",
+    "type" : "issue"
+  }, {
+    "name" : "http://yandex.ru",
+    "url" : "http://yandex.ru"
+  } ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "FeatureTag", "goofy=dog", "good", "melted" ]
+  },
+  "source" : "ba1e009ab02e192c.json",
+  "statusMessage" : {
+    "present" : false
+  },
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "parameterValues" : [ "2", "4", "6" ]
+}

@@ -1,0 +1,194 @@
+{
+  "summary" : {
+    "reportName" : "Allure Report",
+    "testRuns" : [ ],
+    "statistic" : {
+      "failed" : 4,
+      "broken" : 0,
+      "skipped" : 2,
+      "passed" : 15,
+      "unknown" : 0,
+      "total" : 21
+    },
+    "time" : {
+      "start" : 1528798466343,
+      "stop" : 1528798466721,
+      "duration" : 378,
+      "minDuration" : 2,
+      "maxDuration" : 30,
+      "sumDuration" : 131
+    }
+  },
+  "environment" : [ ],
+  "suites" : {
+    "total" : 6,
+    "items" : [ {
+      "uid" : "b9230f531d6f68c55e34af56ca8c75a8",
+      "name" : "Test Scenarios with Examples",
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 6
+      }
+    }, {
+      "uid" : "e616315361f7a7d39e3a73e1e5eef29c",
+      "name" : "Test Simple Scenarios",
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 3
+      }
+    }, {
+      "uid" : "272d721978ca96374612ff54be44220c",
+      "name" : "Test Scenarios with backgrounds",
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 2
+      }
+    }, {
+      "uid" : "7e7ff94c0bf192c300805c0ab1969c79",
+      "name" : "Test Scenarios with Attachments and Steps",
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 6,
+        "unknown" : 0,
+        "total" : 6
+      }
+    }, {
+      "uid" : "4b98c0b24612e22d068d110e8eab8ffb",
+      "name" : "Test Scenarios with Data Tables",
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      }
+    }, {
+      "uid" : "0a9c7bd0fcd82dd0130e2720034a083d",
+      "name" : "Test Scenarios with Pending Steps",
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 2,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 2
+      }
+    } ]
+  },
+  "history-trend" : [ {
+    "statistic" : {
+      "failed" : 4,
+      "broken" : 0,
+      "skipped" : 2,
+      "passed" : 15,
+      "unknown" : 0,
+      "total" : 21
+    }
+  } ],
+  "behaviors" : {
+    "total" : 6,
+    "items" : [ {
+      "uid" : "f1174a24ae99357a9f7c6a2721ad3d0a",
+      "name" : "Test Scenarios with Examples",
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 4
+      }
+    }, {
+      "uid" : "1e097bd9099ca08ada47b1151bee01a0",
+      "name" : "Test Simple Scenarios",
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 3
+      }
+    }, {
+      "uid" : "78bdf5680762b7424905942cd185e381",
+      "name" : "Test Scenarios with backgrounds",
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 2
+      }
+    }, {
+      "uid" : "1389ccf58fc22e130e264f41c6846e46",
+      "name" : "Test Scenarios with Attachments and Steps",
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      }
+    }, {
+      "uid" : "a306fc6649a5a7e6e02556591caa0978",
+      "name" : "Test Scenarios with Data Tables",
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      }
+    }, {
+      "uid" : "7e4b91cd3a3fdb2a146263d72d4cfce2",
+      "name" : "Test Scenarios with Pending Steps",
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 2,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 2
+      }
+    } ]
+  },
+  "executors" : [ {
+    "name" : "Maven",
+    "type" : "maven",
+    "buildName" : "Frameworkium-BDD"
+  } ],
+  "categories" : {
+    "total" : 1,
+    "items" : [ {
+      "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d",
+      "name" : "Product defects",
+      "statistic" : {
+        "failed" : 4,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 4
+      }
+    } ]
+  },
+  "launches" : [ ]
+}

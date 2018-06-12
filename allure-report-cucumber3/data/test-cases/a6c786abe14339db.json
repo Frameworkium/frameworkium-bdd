@@ -1,0 +1,164 @@
+{
+  "uid" : "a6c786abe14339db",
+  "name" : "Outline with steps which contain sub-steps and attachments",
+  "historyId" : "46c3543e70b84d2473264defa7a60f19",
+  "time" : {
+    "start" : 1528798466682,
+    "stop" : 1528798466686,
+    "duration" : 4
+  },
+  "status" : "passed",
+  "statusDetails" : {
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "before",
+      "time" : {
+        "start" : 1528798466683,
+        "stop" : 1528798466683,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When  I attach file in sub-step with SOMEVALUE in name",
+      "time" : {
+        "start" : 1528798466683,
+        "stop" : 1528798466685,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Sub-step with attachment File",
+        "time" : {
+          "start" : 1528798466684,
+          "stop" : 1528798466684,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ {
+        "uid" : "4f768de27db6ff03",
+        "name" : "subStepWithAttachment",
+        "source" : "4f768de27db6ff03.jpg",
+        "type" : "image/jpeg",
+        "size" : 37130
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then  it is displayed in report",
+      "time" : {
+        "start" : 1528798466686,
+        "stop" : 1528798466686,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "after",
+      "time" : {
+        "start" : 1528798466686,
+        "stop" : 1528798466686,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Test Scenarios with Attachments and Steps"
+  }, {
+    "name" : "story",
+    "value" : "Outline with steps which contain sub-steps and attachments"
+  }, {
+    "name" : "tag",
+    "value" : "FeatureTag"
+  }, {
+    "name" : "tag",
+    "value" : "good"
+  }, {
+    "name" : "host",
+    "value" : "Ashleys-MacBook-Pro.local"
+  }, {
+    "name" : "package",
+    "value" : "Test Scenarios with Attachments and Steps"
+  }, {
+    "name" : "suite",
+    "value" : "Test Scenarios with Attachments and Steps"
+  }, {
+    "name" : "testClass",
+    "value" : "Outline with steps which contain sub-steps and attachments"
+  }, {
+    "name" : "thread",
+    "value" : "16809@Ashleys-MacBook-Pro.local.TestNG-test=Surefire test-1(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "SOMEPARAMETER",
+    "value" : "SOMEVALUE"
+  } ],
+  "links" : [ {
+    "name" : "OAT-4444",
+    "type" : "tms"
+  }, {
+    "name" : "BUG-22400",
+    "type" : "issue"
+  } ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "FeatureTag", "good" ]
+  },
+  "source" : "a6c786abe14339db.json",
+  "statusMessage" : {
+    "present" : false
+  },
+  "statusDetailsSafe" : {
+    "flaky" : false
+  },
+  "parameterValues" : [ "SOMEVALUE" ]
+}

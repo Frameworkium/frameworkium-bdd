@@ -1,0 +1,210 @@
+{
+  "uid" : "2c2585ce508b8f84",
+  "name" : "Scenario with Negative Examples",
+  "historyId" : "6f035113322122098c225a87fc712236",
+  "time" : {
+    "start" : 1528798466591,
+    "stop" : 1528798466593,
+    "duration" : 2
+  },
+  "status" : "failed",
+  "statusDetails" : {
+    "message" : "expected [1] but found [6]",
+    "trace" : "java.lang.AssertionError: expected [1] but found [6]\n\tat org.testng.Assert.fail(Assert.java:96)\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:137)\n\tat org.testng.Assert.assertEquals(Assert.java:118)\n\tat org.testng.Assert.assertEquals(Assert.java:652)\n\tat org.testng.Assert.assertEquals(Assert.java:662)\n\tat allure.AllureStepDefs.result_is(AllureStepDefs.java:69)\n\tat ✽.result is 1(src/test/resources/features/google/allure/test-examples.feature:31)\n",
+    "flaky" : false
+  },
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusDetails" : {
+      "message" : "expected [1] but found [6]",
+      "trace" : "java.lang.AssertionError: expected [1] but found [6]\n\tat org.testng.Assert.fail(Assert.java:96)\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:137)\n\tat org.testng.Assert.assertEquals(Assert.java:118)\n\tat org.testng.Assert.assertEquals(Assert.java:652)\n\tat org.testng.Assert.assertEquals(Assert.java:662)\n\tat allure.AllureStepDefs.result_is(AllureStepDefs.java:69)\n\tat ✽.result is 1(src/test/resources/features/google/allure/test-examples.feature:31)\n",
+      "flaky" : false
+    },
+    "steps" : [ {
+      "name" : "before",
+      "time" : {
+        "start" : 1528798466591,
+        "stop" : 1528798466592,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Given  a is 2",
+      "time" : {
+        "start" : 1528798466592,
+        "stop" : 1528798466592,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And  b is 4",
+      "time" : {
+        "start" : 1528798466592,
+        "stop" : 1528798466592,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When  I add a to b",
+      "time" : {
+        "start" : 1528798466592,
+        "stop" : 1528798466593,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then  result is 1",
+      "time" : {
+        "start" : 1528798466593,
+        "stop" : 1528798466593,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "after",
+      "time" : {
+        "start" : 1528798466593,
+        "stop" : 1528798466593,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Test Scenarios with Examples"
+  }, {
+    "name" : "story",
+    "value" : "Scenario with Negative Examples"
+  }, {
+    "name" : "tag",
+    "value" : "FeatureTag"
+  }, {
+    "name" : "tag",
+    "value" : "bad"
+  }, {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "tag",
+    "value" : "goofy=dog"
+  }, {
+    "name" : "tag",
+    "value" : "melted"
+  }, {
+    "name" : "host",
+    "value" : "Ashleys-MacBook-Pro.local"
+  }, {
+    "name" : "package",
+    "value" : "Test Scenarios with Examples"
+  }, {
+    "name" : "suite",
+    "value" : "Test Scenarios with Examples"
+  }, {
+    "name" : "testClass",
+    "value" : "Scenario with Negative Examples"
+  }, {
+    "name" : "thread",
+    "value" : "16809@Ashleys-MacBook-Pro.local.TestNG-test=Surefire test-1(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "a",
+    "value" : "2"
+  }, {
+    "name" : "b",
+    "value" : "4"
+  }, {
+    "name" : "result",
+    "value" : "1"
+  } ],
+  "links" : [ {
+    "name" : "OAT-4444",
+    "type" : "tms"
+  }, {
+    "name" : "BUG-22400",
+    "type" : "issue"
+  }, {
+    "name" : "OAT-219",
+    "type" : "tms"
+  }, {
+    "name" : "BUG-12312",
+    "type" : "issue"
+  }, {
+    "name" : "http://yandex.ru",
+    "url" : "http://yandex.ru"
+  } ],
+  "hidden" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ "FeatureTag", "bad", "goofy=dog", "melted" ]
+  },
+  "source" : "2c2585ce508b8f84.json",
+  "statusMessage" : {
+    "present" : true
+  },
+  "statusDetailsSafe" : {
+    "message" : "expected [1] but found [6]",
+    "trace" : "java.lang.AssertionError: expected [1] but found [6]\n\tat org.testng.Assert.fail(Assert.java:96)\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:137)\n\tat org.testng.Assert.assertEquals(Assert.java:118)\n\tat org.testng.Assert.assertEquals(Assert.java:652)\n\tat org.testng.Assert.assertEquals(Assert.java:662)\n\tat allure.AllureStepDefs.result_is(AllureStepDefs.java:69)\n\tat ✽.result is 1(src/test/resources/features/google/allure/test-examples.feature:31)\n",
+    "flaky" : false
+  },
+  "parameterValues" : [ "2", "4", "1" ]
+}
