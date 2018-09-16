@@ -1,31 +1,19 @@
-
-
-
-
-import com.frameworkium.core.ui.tests.BaseTest;
-
+import com.frameworkium.core.ui.tests.BaseUITest;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-
-import org.testng.annotations.BeforeMethod;
-import ru.yandex.qatools.allure.cucumberjvm.AllureReporter;
-
-
+import org.testng.annotations.*;
 
 @Test
 @CucumberOptions(
         strict = true,
         features = {"src/test/resources/features/"},
-        plugin = {"ru.yandex.qatools.allure.cucumberjvm.AllureReporter", "com.frameworkium.core.common.listeners.CucumberZephyrListener"},
+        plugin = {"ru.yandex.qatools.allure.cucumberjvm.AllureReporter",
+                "com.frameworkium.core.common.listeners.CucumberZephyrListener"},
         monochrome = true,
         tags = {"~@ignore"},
         glue = {"com.google.glue", "com.tfl.glue", "com.microsoft.glue"})
-public class DebuggingRunner extends BaseTest{
+public class DebuggingRunner extends BaseUITest {
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
@@ -33,22 +21,14 @@ public class DebuggingRunner extends BaseTest{
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
 
-    @BeforeMethod
-    public void screenshotSetup(){
-        AllureReporter.applyFailureCallback(com.frameworkium.core.ui.cucumber.FailureCallback.class);
-    }
-
-
     @AfterClass(alwaysRun = true)
     public void tearDownClass() throws Exception {
         testNGCucumberRunner.finish();
     }
 
-    @Test(
-            groups = {"cucumber"},
+    @Test(groups = {"cucumber"},
             description = "Runs Cucumber Feature",
-            dataProvider = "features"
-    )
+            dataProvider = "features")
     public void feature(CucumberFeatureWrapper cucumberFeature) {
         this.testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }

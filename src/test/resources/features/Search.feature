@@ -11,7 +11,7 @@ Feature: Web Search
   @CustomTag
   Scenario: Search for Hello world
     When I search for "hello world"
-    Then I should see a link containing "HelloWorld" on Results page
+    Then I should see a link containing "Hello, World" on Results page
 
   @Story(scen_level_story) @run
   Scenario: Search for Cucumber

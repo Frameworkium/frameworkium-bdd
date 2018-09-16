@@ -2,10 +2,8 @@ package com.google.glue;
 
 import com.google.pages.HomePage;
 import com.google.pages.ResultsPage;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import ru.yandex.qatools.allure.annotations.Step;
+import cucumber.api.java.en.*;
+import io.qameta.allure.Step;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -28,7 +26,6 @@ public class SearchStepDefs {
     public void should_see_on_results(String result) {
         assertThat(new ResultsPage().get()
                 .getResultTitles()
-                // lazily evaluated
                 .anyMatch(title -> title.contains(result)))
                 .isTrue();
     }

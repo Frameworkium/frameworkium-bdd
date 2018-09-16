@@ -13,4 +13,4 @@ Feature: Map Search
   Scenario: Search for BlueFin
     When I search for a location "Blue Fin Venue"
     Then I should see information about "Blue Fin Venue"
-    And I should see the address "110 Southwark St, London SE1 0SU"
+    And I should see the address "110 Southwark St, London SE1 0SU, UK"

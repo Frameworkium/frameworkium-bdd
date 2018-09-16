@@ -5,14 +5,15 @@
 
   <groupId>com.frameworkium</groupId>
   <artifactId>Frameworkium-BDD</artifactId>
-  <version>2.4.2-BDD</version>
+  <version>3.0.0-BDD-SNAPSHOT</version>
 
   <properties>
-    <aspectj.version>1.8.10</aspectj.version>
+    <aspectj.version>1.9.1</aspectj.version>
     <!-- Default - can be overridden by -Dthreads=n at maven cmd line -->
     <threads>1</threads>
     <!-- Default - can be overridden by -Dtags="@Blah" at maven cmd line -->
     <tags>~</tags>
+    <customArgLine/>
   </properties>
 
   <name>Frameworkium-Cukes</name>
@@ -33,15 +34,8 @@
     <dependency>
       <groupId>com.github.frameworkium</groupId>
       <artifactId>frameworkium-core</artifactId>
-      <version>2.4.3</version>
-      <exclusions>
-        <exclusion>
-          <groupId>ru.yandex.qatools.allure</groupId>
-          <artifactId>allure-testng-adaptor</artifactId>
-        </exclusion>
-      </exclusions>
+      <version>master-SNAPSHOT</version>
     </dependency>
-    <!-- explicitly state cucumber dependencies -->
     <dependency>
       <groupId>info.cukes</groupId>
       <artifactId>cucumber-java</artifactId>
@@ -49,105 +43,87 @@
     </dependency>
   </dependencies>
 
-  <profiles>
-    <profile>
-      <id>standard-execution</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <properties>
-        <customArgLine/>
-      </properties>
-      <build>
-        <plugins>
+  <build>
+    <plugins>
 
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.6.0</version>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+      <!-- Used to generate Cucumber test classes to then run in parallel -->
+      <plugin>
+        <groupId>com.github.temyers</groupId>
+        <artifactId>cucumber-jvm-parallel-plugin</artifactId>
+        <version>5.0.0</version>
+        <executions>
+          <execution>
+            <id>generateRunners</id>
+            <phase>generate-test-sources</phase>
+            <goals>
+              <goal>generateRunners</goal>
+            </goals>
             <configuration>
-              <source>1.8</source>
-              <target>1.8</target>
+              <!-- change this to be your glue Java package -->
+              <glue>
+                <package>com.google.glue</package>
+                <package>com.tfl.glue</package>
+                <package>com.microsoft.glue</package>
+              </glue>
+              <featuresDirectory>src/test/resources/features/</featuresDirectory>
+              <!-- cucumber options -->
+              <format>json</format>
+              <strict>true</strict>
+              <monochrome>true</monochrome>
+              <plugins>
+                <plugin>
+                  <name>com.frameworkium.bdd.CucumberZephyrListener</name>
+                  <noOutput>true</noOutput>
+                </plugin>
+              </plugins>
+              <!--<tags>-->
+                <!--<tag>${tags}</tag>-->
+              <!--</tags>-->
+              <namingScheme>feature-title</namingScheme>
+              <namingPattern>Parallel{c}IT</namingPattern>
+              <parallelScheme>SCENARIO</parallelScheme>
+              <!-- Frameworkium custom template -->
+              <customVmTemplate>src/test/resources/frameworkium-cucumber-runner.vm</customVmTemplate>
             </configuration>
-          </plugin>
+          </execution>
+        </executions>
+      </plugin>
 
-          <!--
-            Used to generate Cucumber test classes to then run in parallel
-          -->
-          <plugin>
-            <groupId>com.github.temyers</groupId>
-            <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-            <version>4.1.0</version>
-            <executions>
-              <execution>
-                <id>generateRunners</id>
-                <phase>generate-test-sources</phase>
-                <goals>
-                  <goal>generateRunners</goal>
-                </goals>
-                <configuration>
-                  <!-- change this to be your glue Java package -->
-                  <glue>
-                    <package>com.google.glue</package>
-                    <package>com.tfl.glue</package>
-                    <package>com.microsoft.glue</package>
-                  </glue>
-                  <outputDirectory>${project.build.directory}/generated-test-sources/cucumber</outputDirectory>
-                  <featuresDirectory>src/test/resources/features/</featuresDirectory>
-                  <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
-                  <!-- cucumber options -->
-                  <format>json</format>
-                  <strict>true</strict>
-                  <monochrome>true</monochrome>
-                  <plugins>
-                    <plugin>
-                      <name>ru.yandex.qatools.allure.cucumberjvm.AllureReporter</name>
-                    </plugin>
-                    <plugin>
-                      <name>com.frameworkium.core.common.listeners.CucumberZephyrListener</name>
-                      <noOutput>true</noOutput>
-                    </plugin>
-                  </plugins>
-                  <tags>
-                    <tag>${tags}</tag>
-                  </tags>
-                  <namingScheme>feature-title</namingScheme>
-                  <namingPattern>Parallel{c}IT</namingPattern>
-                  <parallelScheme>SCENARIO</parallelScheme>
-                  <!-- Frameworkium custom template -->
-                  <customVmTemplate>src/test/resources/frameworkium-cucumber-runner.vm</customVmTemplate>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.19.1</version>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>test</goal>
-                </goals>
-                <configuration>
-                  <parallel>classes</parallel>
-                  <threadCount>${threads}</threadCount>
-                  <includes>
-                    <include>**/*IT.java</include>
-                  </includes>
-                  <argLine>
-                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                  </argLine>
-                  <failIfNoTests>true</failIfNoTests>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <configuration>
+              <parallel>classes</parallel>
+              <threadCount>${threads}</threadCount>
+              <includes>
+                <include>**/*IT.java</include>
+              </includes>
+              <argLine>
+                -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+              </argLine>
+              <failIfNoTests>true</failIfNoTests>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
   <reporting>
     <excludeDefaults>true</excludeDefaults>
