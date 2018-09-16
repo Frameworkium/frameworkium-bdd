@@ -11,7 +11,7 @@ public class TemplatesPage extends BasePage<TemplatesPage> {
     @FindBy(css = "h1.odcom-fabric-heading-1")
     private WebElement title;
 
-    public String getTitle(){
+    public String getTitle() {
         return title.getText();
     }
 }

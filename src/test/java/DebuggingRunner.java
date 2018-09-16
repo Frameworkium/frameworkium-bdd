@@ -8,8 +8,7 @@ import org.testng.annotations.*;
 @CucumberOptions(
         strict = true,
         features = {"src/test/resources/features/"},
-        plugin = {"ru.yandex.qatools.allure.cucumberjvm.AllureReporter",
-                "com.frameworkium.core.common.listeners.CucumberZephyrListener"},
+        plugin = {"com.frameworkium.bdd.CucumberZephyrListener"},
         monochrome = true,
         tags = {"~@ignore"},
         glue = {"com.google.glue", "com.tfl.glue", "com.microsoft.glue"})
@@ -17,12 +16,12 @@ public class DebuggingRunner extends BaseUITest {
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
-    public void setUpClass() throws Exception {
+    public void setUpClass() {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
 
     @AfterClass(alwaysRun = true)
-    public void tearDownClass() throws Exception {
+    public void tearDownClass() {
         testNGCucumberRunner.finish();
     }
 
