@@ -22,7 +22,7 @@ cache:
 env:
   global:
   - CAPTURE_URL="http://ec2-35-176-47-3.eu-west-2.compute.amazonaws.com"
-  - SUT_NAME="frameworkium-core"
+  - SUT_NAME="frameworkium-bdd"
   - SUT_VERSION=${TRAVIS_BRANCH}
   - THREAD_COUNT=2
   - SELENIUM_MAJ_VER=3.14
@@ -59,9 +59,6 @@ before_script:
   # Setup Firefox Selenium Grid Node
   - java -Xmx128m -jar ${SELENIUM_JAR} -role node -hub http://localhost:4444/grid/register -browser browserName=firefox,maxInstances=${THREAD_COUNT} -maxSession ${THREAD_COUNT} -port 5555 > ff-node.log  2>&1 &
 
-  # Set up Chrome Selenium Grid Node
-  - java -Xmx128m -jar ${SELENIUM_JAR} -role node -hub http://localhost:4444/grid/register -browser browserName=chrome,maxInstances=${THREAD_COUNT} -maxSession ${THREAD_COUNT} -port 5556 > chrome-node.log 2>&1 &
-
 script:
   # Download deps, compile and generate tests
   - mvn test-compile -B --show-version -DskipTests=true -Dmaven.javadoc.skip=true
@@ -75,18 +72,12 @@ script:
   # Firefox off the grid
   - mvn verify -B -o -Dthreads=${THREAD_COUNT} -Dbrowser=firefox -DreuseBrowser=true -Dheadless=true -DcaptureURL=${CAPTURE_URL} -DsutName="${SUT_NAME}" -DsutVersion="${SUT_VERSION}" 2> /dev/null
 
-  # Chrome on the grid
-  - mvn verify -B -o -Dthreads=${THREAD_COUNT} -Dbrowser=chrome -DreuseBrowser=true -Dheadless=true -DgridURL=http://localhost:4444/wd/hub -DcaptureURL=${CAPTURE_URL} -DsutName="${SUT_NAME}" -DsutVersion="${SUT_VERSION}"
-
-  # Custom Browser Impl (without Capture so the PageFactorySpec runs)
-  - mvn verify -B -o -Dthreads=${THREAD_COUNT} -DcustomBrowserImpl=com.frameworkium.integration.CustomFirefoxImpl -Dmaximise=true 2> /dev/null
+  # Chrome off the grid
+  - mvn verify -B -o -Dthreads=${THREAD_COUNT} -Dbrowser=chrome -DreuseBrowser=true -Dheadless=true -DcaptureURL=${CAPTURE_URL} -DsutName="${SUT_NAME}" -DsutVersion="${SUT_VERSION}"
 
   # Query Jira for which test to run and then log results to Jira
   # Disabled until we have a JIRA to use
   # - mvn verify -B -Dthreads=${THREAD_COUNT} -Dbrowser=chrome -DjiraURL="http://52.29.130.45:8080" -DjqlQuery="issueKey=TEST-1" -DresultVersion="BUILD TEST VERSION" -DzapiCycleRegex="Test Cycle" -DjiraUsername=frameworkium -DjiraPassword=frameworkium -DcaptureURL=${CAPTURE_URL} -DsutName="${SUT_NAME}" -DsutVersion="${SUT_VERSION}"
-
-  # SauceLabs - disabled until we have a sauce account to use
-  # - mvn verify -Dsauce=true -Dplatform=ios -Dbrowser=safari -DplatformVersion=8.0 -Ddevice=iPad -DcaptureURL=${CAPTURE_URL} -DsutName="${SUT_NAME}" -DsutVersion="${SUT_VERSION}"
 
   # Allure report
   - mvn allure:report -B
