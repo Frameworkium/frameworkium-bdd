@@ -1,17 +1,16 @@
-Frameworkium-BDD [![Build Status][status-svg]][status]
-======================================================
+# Frameworkium-BDD [![Build Status][status-svg]][status]
 
-This is a Cucumber implementation of [Frameworkium][frameworkium], it utilises all the features of 
-[frameworkium-core][core] with an added BDD layer provided from the Cucumber-JVM framework to give you a BDD Automation solution
+This is a Cucumber implementation of [Frameworkium][frameworkium],
+it utilises [frameworkium-core][core] with an added BDD layer,
+provided by the Cucumber-JVM framework, to give you a BDD Automation solution.
 
 ## Getting Started
 
 1. Clone this project `git clone https://github.com/Frameworkium/frameworkium-bdd.git`
 2. Create your own package for your project under `src/test/java`
-3. Add your package to a new `<package>` tag of the `<configuration>` section of the `cucumber-jvm-parallel-plugin` 
-plugin in the `pom.xml`
+3. Add your package to a new `<package>` tag of the `<configuration>` 
+section of the `cucumber-jvm-parallel-plugin` plugin in the `pom.xml`
 ```
- <configuration>
    <glue>
      <package>com.your.package</package>
    </glue>
@@ -42,8 +41,6 @@ The layout looks something like this
 |        └── resources/
 |            ├── features/
 |            |	└── Feature_file.feature
-|            └── META-INF/
-|                └── aop.xml
 └── pom.xml
 ```
 
@@ -54,7 +51,6 @@ An overview of some of the important packages
 | glue  | Contain your 'step definition' classes (e.g AStepClass.java) which join together the page object layer with the feature file | 
 | pages  | Contain page object classes  | 
 | features  | Contain your 'feature files' which hold all your test scenario's  |
-| aop.xml | configuration file to tell the allure reporting which packages to include in the report  | 
 
 ## Running Tests
 
