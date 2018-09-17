@@ -7,13 +7,27 @@
   <artifactId>Frameworkium-BDD</artifactId>
   <version>3.0.0-BDD-SNAPSHOT</version>
 
+  <issueManagement>
+    <system>github issues</system>
+    <url>https://github.com/Frameworkium/frameworkium-bdd/issues</url>
+  </issueManagement>
+  <ciManagement>
+    <url>https://travis-ci.org/Frameworkium/frameworkium-bdd</url>
+  </ciManagement>
+
   <properties>
+    <!-- Versions need to match those in Frameworkium-core -->
     <aspectj.version>1.9.1</aspectj.version>
-    <!-- Default - can be overridden by -Dthreads=n at maven cmd line -->
+    <allure.version>2.7.0</allure.version>
+
+    <!-- Default - can be overridden by -DpropName=n at maven cmd line -->
     <threads>1</threads>
-    <!-- Default - can be overridden by -Dtags="@Blah" at maven cmd line -->
-    <tags>~</tags>
+    <tags>~@ignore</tags>
     <customArgLine/>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
   </properties>
 
   <name>Frameworkium-Cukes</name>
@@ -36,16 +50,30 @@
       <artifactId>frameworkium-core</artifactId>
       <version>master-SNAPSHOT</version>
     </dependency>
+
+    <!-- Cucumber -->
     <dependency>
       <groupId>info.cukes</groupId>
       <artifactId>cucumber-java</artifactId>
       <version>1.2.5</version>
+    </dependency>
+    <dependency>
+      <groupId>info.cukes</groupId>
+      <artifactId>cucumber-testng</artifactId>
+      <version>1.2.5</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-cucumber-jvm</artifactId>
+      <version>${allure.version}</version>
     </dependency>
   </dependencies>
 
   <build>
     <plugins>
 
+      <!-- To compile all the lovely Java -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -56,7 +84,7 @@
         </configuration>
       </plugin>
 
-      <!-- Used to generate Cucumber test classes to then run in parallel -->
+      <!-- Generates Cucumber test classes to then run in parallel -->
       <plugin>
         <groupId>com.github.temyers</groupId>
         <artifactId>cucumber-jvm-parallel-plugin</artifactId>
@@ -69,7 +97,7 @@
               <goal>generateRunners</goal>
             </goals>
             <configuration>
-              <!-- change this to be your glue Java package -->
+              <!-- IMPORTANT: Change this to be your glue Java package(s) -->
               <glue>
                 <package>com.google.glue</package>
                 <package>com.tfl.glue</package>
@@ -86,9 +114,9 @@
                   <noOutput>true</noOutput>
                 </plugin>
               </plugins>
-              <!--<tags>-->
-                <!--<tag>${tags}</tag>-->
-              <!--</tags>-->
+              <tags>
+                <tag>${tags}</tag>
+              </tags>
               <namingScheme>feature-title</namingScheme>
               <namingPattern>Parallel{c}IT</namingPattern>
               <parallelScheme>SCENARIO</parallelScheme>
@@ -122,17 +150,18 @@
           </execution>
         </executions>
       </plugin>
-    </plugins>
-  </build>
 
-  <reporting>
-    <excludeDefaults>true</excludeDefaults>
-    <plugins>
+      <!-- Allure2 -->
       <plugin>
-        <groupId>ru.yandex.qatools.allure</groupId>
-        <artifactId>allure-maven-plugin</artifactId>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-maven</artifactId>
+        <version>2.9</version>
+        <configuration>
+          <!-- Keep version in sync with dependencies -->
+          <reportVersion>${allure.version}</reportVersion>
+        </configuration>
       </plugin>
     </plugins>
-  </reporting>
+  </build>
 
 </project>
