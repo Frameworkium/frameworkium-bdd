@@ -121,7 +121,9 @@
               <namingPattern>Parallel{c}IT</namingPattern>
               <parallelScheme>SCENARIO</parallelScheme>
               <!-- Frameworkium custom template -->
-              <customVmTemplate>src/test/resources/frameworkium-cucumber-runner.vm</customVmTemplate>
+              <customVmTemplate>
+                src/test/resources/frameworkium-cucumber-runner.vm
+              </customVmTemplate>
             </configuration>
           </execution>
         </executions>
@@ -131,22 +133,39 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.22.0</version>
+        <configuration>
+          <parallel>classes</parallel>
+          <threadCount>${threads}</threadCount>
+          <systemPropertyVariables>
+            <!-- For Frameworkium screenshots on test failure -->
+            <screenshotDirectory>
+              ${project.build.directory}/screenshots
+            </screenshotDirectory>
+            <!-- Required for writing the allure results -->
+            <allure.results.directory>
+              ${project.build.directory}/allure-results
+            </allure.results.directory>
+          </systemPropertyVariables>
+          <includes>
+            <include>**/*IT.java</include>
+          </includes>
+          <argLine>
+            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+          </argLine>
+          <failIfNoTests>true</failIfNoTests>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+          </dependency>
+        </dependencies>
         <executions>
           <execution>
             <goals>
               <goal>test</goal>
             </goals>
-            <configuration>
-              <parallel>classes</parallel>
-              <threadCount>${threads}</threadCount>
-              <includes>
-                <include>**/*IT.java</include>
-              </includes>
-              <argLine>
-                -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-              </argLine>
-              <failIfNoTests>true</failIfNoTests>
-            </configuration>
           </execution>
         </executions>
       </plugin>

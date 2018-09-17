@@ -1,4 +1,3 @@
-@ignore
 Feature: Fetching bike points
 
   In order to find some information

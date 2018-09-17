@@ -22,7 +22,7 @@ public class HomePage extends BasePage<HomePage> {
 
     @Step("Navigate to the homepage")
     public static HomePage open() {
-        return new HomePage().get("http://www.google.com");
+        return new HomePage().get("https://www.google.co.uk");
     }
 
     @Step("Search for {0}")
