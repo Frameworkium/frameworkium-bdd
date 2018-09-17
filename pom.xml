@@ -101,7 +101,7 @@
               <glue>
                 <package>com.google.glue</package>
                 <package>com.tfl.glue</package>
-                <package>com.microsoft.glue</package>
+                <package>org.seleniumhq.glue</package>
               </glue>
               <featuresDirectory>src/test/resources/features/</featuresDirectory>
               <!-- cucumber options -->
