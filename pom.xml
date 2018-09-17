@@ -112,6 +112,9 @@
                   <name>com.frameworkium.bdd.CucumberZephyrListener</name>
                   <noOutput>true</noOutput>
                 </plugin>
+                <plugin>
+                  <name>io.qameta.allure.cucumberjvm.AllureCucumberJvm</name>
+                </plugin>
               </plugins>
               <tags>
                 <tag>${tags}</tag>
