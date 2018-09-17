@@ -19,7 +19,7 @@ public class MapInfoPane extends BasePage<MapInfoPane> {
     private WebElement addressSpan;
 
     @Step
-    public String getHeader() {
+    public String getInfoHeaderText() {
         return infoHeader.getText();
     }
 

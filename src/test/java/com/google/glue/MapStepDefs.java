@@ -26,13 +26,16 @@ public class MapStepDefs {
     @Step
     @Then("^I should see information about \"([^\"]*)\"$")
     public void i_should_see_information_about(String searchTerm) {
-        final MapInfoPane mapInfoPaneWithTimeout = new MapInfoPane().get(Duration.ofSeconds(30));
-        assertThat(mapInfoPaneWithTimeout.getHeader()).isEqualTo(searchTerm);
+        MapInfoPane mapInfoPaneWithTimeout =
+                new MapInfoPane().get(Duration.ofSeconds(30));
+        assertThat(mapInfoPaneWithTimeout.getInfoHeaderText())
+                .isEqualTo(searchTerm);
     }
 
     @Step
     @And("^I should see the address \"([^\"]*)\"$")
     public void i_should_see_the_address(String address) {
-        assertThat(new MapInfoPane().get().getAddress()).contains(address);
+        assertThat(new MapInfoPane().get().getAddress())
+                .contains(address);
     }
 }

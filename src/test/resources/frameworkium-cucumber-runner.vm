@@ -43,30 +43,22 @@ public class $className extends BaseAPITest {
 public class $className extends BaseUITest {
 #end
 
-    private TestNGCucumberRunner testNGCucumberRunner;
+    private TestNGCucumberRunner testNGCucumberRunner =
+            new TestNGCucumberRunner(this.getClass());
 
-    @BeforeClass(alwaysRun = true)
-    public void setUpClass() {
-      testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-    }
-
-    @AfterClass(alwaysRun = true)
-    public void tearDownClass() {
-      testNGCucumberRunner.finish();
-    }
-
-    @Test(
-    groups = {"cucumber"},
-    description = "Runs Cucumber Feature",
-    dataProvider = "features"
-    )
-    public void $className(CucumberFeatureWrapper cucumberFeature) {
-      this.testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
+    // Runs Cucumber feature
+    @Test(groups = {"cucumber"}, dataProvider = "features")
+    public void ${className}_feature(CucumberFeatureWrapper cucumberFeature) {
+        this.testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }
 
     @DataProvider
     public Object[][] features() {
-      return this.testNGCucumberRunner.provideFeatures();
+        return this.testNGCucumberRunner.provideFeatures();
     }
 
+    @AfterClass(alwaysRun = true)
+    public void tearDownClass() {
+        testNGCucumberRunner.finish();
+    }
 }

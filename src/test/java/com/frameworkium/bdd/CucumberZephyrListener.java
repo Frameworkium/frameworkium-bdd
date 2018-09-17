@@ -42,7 +42,7 @@ public class CucumberZephyrListener implements Formatter, Reporter {
     public void startOfScenarioLifeCycle(Scenario scenario) {
         scnStepBrokenCount = 0;
 
-        //Update Zephyr with scen's test case = WIP
+        // Update Zephyr with scenario's test case = WIP
         if (updateTCMStatus) {
             updateTCMStatus(getTestCaseId(scenario), ZAPI_STATUS_WIP, "");
         }
@@ -55,7 +55,7 @@ public class CucumberZephyrListener implements Formatter, Reporter {
     }
 
     private Stream<String> retrieveTagStream(List<Tag> tags, String tagName) {
-        final String tagSearch = "@" + tagName + "(";
+        String tagSearch = "@" + tagName + "(";
         return tags.stream()
                 .map(Tag::getName)
                 .filter(name -> name.startsWith(tagSearch))
@@ -67,7 +67,7 @@ public class CucumberZephyrListener implements Formatter, Reporter {
     }
 
     private void updateTCMStatus(List<String> testCaseIds, int status, String comment) {
-        final String updatedComment = "Updated by Cucumber Zephyr Listener\n" + comment;
+        String updatedComment = "Updated by Cucumber Zephyr Listener\n" + comment;
         testCaseIds.stream()
                 .filter(StringUtils::isNotBlank)
                 .map(Execution::new)
@@ -76,14 +76,16 @@ public class CucumberZephyrListener implements Formatter, Reporter {
 
     @Override
     public void endOfScenarioLifeCycle(Scenario scenario) {
-        // Update Zephyr with scen's test result
-        if (updateTCMStatus) {
-            final List<String> testCaseIds = getTestCaseId(scenario);
-            if (scnStepBrokenCount > 0) {
-                updateTCMStatus(testCaseIds, ZAPI_STATUS_FAIL, latestError.getLocalizedMessage());
-            } else {
-                updateTCMStatus(testCaseIds, ZAPI_STATUS_PASS, "");
-            }
+        if (!updateTCMStatus) {
+            return;
+        }
+
+        // Update Zephyr with scenario's test result
+        final List<String> testCaseIds = getTestCaseId(scenario);
+        if (scnStepBrokenCount > 0) {
+            updateTCMStatus(testCaseIds, ZAPI_STATUS_FAIL, latestError.getLocalizedMessage());
+        } else {
+            updateTCMStatus(testCaseIds, ZAPI_STATUS_PASS, "");
         }
     }
 
