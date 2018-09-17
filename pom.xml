@@ -62,7 +62,6 @@
       <artifactId>cucumber-testng</artifactId>
       <version>1.2.5</version>
     </dependency>
-
     <dependency>
       <groupId>io.qameta.allure</groupId>
       <artifactId>allure-cucumber-jvm</artifactId>
@@ -118,7 +117,6 @@
                 <tag>${tags}</tag>
               </tags>
               <namingScheme>feature-title</namingScheme>
-              <namingPattern>Parallel{c}IT</namingPattern>
               <parallelScheme>SCENARIO</parallelScheme>
               <!-- Frameworkium custom template -->
               <customVmTemplate>
