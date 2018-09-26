@@ -11,7 +11,8 @@ import org.testng.annotations.*;
         plugin = {"com.frameworkium.bdd.CucumberZephyrListener"},
         monochrome = true,
         tags = {"~@ignore"},
-        glue = {"com.google.glue", "com.tfl.glue", "com.microsoft.glue"})
+        // NB: change these to match your glue packages.
+        glue = {"com.google.glue", "com.tfl.glue", "org.seleniumhq.glue"})
 public class DebuggingRunner extends BaseUITest {
     private TestNGCucumberRunner testNGCucumberRunner;
 
