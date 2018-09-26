@@ -4,6 +4,9 @@ This is a Cucumber implementation of [Frameworkium][frameworkium],
 it utilises [frameworkium-core][core] with an added BDD layer,
 provided by the Cucumber-JVM framework, to give you a BDD Automation solution.
 
+This currently uses a Beta version of Frameworkium v3, so please report bugs here
+and we will fix them as soon as we can.
+
 ## Getting Started
 
 1. Clone this project `git clone https://github.com/Frameworkium/frameworkium-bdd.git`
