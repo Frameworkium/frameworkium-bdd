@@ -15,7 +15,7 @@ and we will fix them as soon as we can.
 section of the `cucumber-jvm-parallel-plugin` plugin in the `pom.xml`
 ```
    <glue>
-     <package>com.your.package</package>
+     <package>com.your.package.glue</package>
    </glue>
 ```
 4. Create a `glue` package within your project package where you will put all your step definition classes 
@@ -25,7 +25,7 @@ section of the `cucumber-jvm-parallel-plugin` plugin in the `pom.xml`
 
 ## Project Layout
 
-Frameworkium-BDD uses conventional Cucumber-JVM layout as shown below. the main 
+Frameworkium-BDD uses conventional Cucumber-JVM layout as shown below. The main 
 package and features package path is already configured within the `pom.xml` so 
 that TestNG knows where all the necessary components are when tests are run.
 
@@ -38,22 +38,22 @@ The layout looks something like this
 |        ├── java/
 |        |   └── com.your.package/
 |        |       ├── glue/
-|        |       |   └──AStepClass.java  
+|        |       |   └──SomeSteps.java  
 |        |       └── pages/
-|        |           └──PageObjectClass.java
+|        |           └──PageObject.java
 |        └── resources/
 |            ├── features/
 |            |	└── Feature_file.feature
 └── pom.xml
 ```
 
-An overview of some of the important packages 
+An overview of some of the important packages.
 
-| Package/file  | Description | 
-| ------------- | ------------- | 
-| glue  | Contain your 'step definition' classes (e.g AStepClass.java) which join together the page object layer with the feature file | 
-| pages  | Contain page object classes  | 
-| features  | Contain your 'feature files' which hold all your test scenario's  |
+| Package/file  | Description |
+| ------------- | ------------- |
+| glue  | Contain your 'step definition' classes (e.g SomeSteps.java) which join together the page objects with the feature files |
+| pages  | Contain page object classes |
+| features  | Contain your 'feature files' which hold all your test scenarios |
 
 ## Running Tests
 
@@ -82,7 +82,7 @@ mvn clean verify -Dtags=@p1,@smoke
 ```
 
 Comprehensive docs on cucumber tagging can be found on the official
-[cucumber wiki here](https://github.com/cucumber/cucumber/wiki/Tags).
+[cucumber wiki](https://github.com/cucumber/cucumber/wiki/Tags).
 
 If no tag property is set all tests will be executed.
 
@@ -105,7 +105,7 @@ We achieve parallel execution by running multiple 'Runner' classes in parallel
 with different runner classes executing different tests.
 We use the [cucumber-jvm-parallel-plugin](https://github.com/temyers/cucumber-jvm-parallel-plugin), 
 it auto-generates a runner class in the target directory at runtime for each
-scenario which will then in turn be run in parallel if you are using selenium grid. 
+scenario which will then in turn be run in parallel if you are using Selenium grid. 
 
 ## Reporting
 
