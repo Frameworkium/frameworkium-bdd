@@ -29,7 +29,7 @@ public class MapStepDefs {
         MapInfoPane mapInfoPaneWithTimeout =
                 new MapInfoPane().get(Duration.ofSeconds(30));
         assertThat(mapInfoPaneWithTimeout.getInfoHeaderText())
-                .isEqualTo(searchTerm);
+                .contains(searchTerm);
     }
 
     @Step
