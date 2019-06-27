@@ -20,18 +20,18 @@
     <aspectj.version>1.9.4</aspectj.version>
     <allure.version>2.12.1</allure.version>
 
-    <!-- Default - can be overridden by -DpropName=n at maven cmd line -->
+    <!-- Default properties, use -DpropName=value at maven cmd line -->
     <threads>1</threads>
-    <tags>~@ignore</tags>
-    <customArgLine/>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
   </properties>
 
-  <name>Frameworkium-Cukes</name>
-  <description>Frameworkium Cucumber-JVM Test Automation Framework</description>
+  <name>Frameworkium-BDD</name>
+  <description>
+    Frameworkium Cucumber-JVM Test Automation Framework with example tests
+  </description>
 
   <repositories>
     <repository>
@@ -48,7 +48,7 @@
     <dependency>
       <groupId>com.github.frameworkium</groupId>
       <artifactId>frameworkium-core</artifactId>
-      <version>3.0.0-BETA2</version>
+      <version>3.0.0-BETA3-SNAPSHOT</version>
     </dependency>
 
     <!-- Cucumber -->
@@ -101,7 +101,8 @@
             </property>
           </properties>
           <parallel>classes</parallel>
-          <threadCount>${threads}</threadCount>
+          <!-- Will run API and UI tests sequentially, change to 2 to run in parallel -->
+          <threadCount>1</threadCount>
           <systemPropertyVariables>
             <!-- For Frameworkium screenshots on test failure -->
             <screenshotDirectory>

@@ -1,4 +1,4 @@
-package com.frameworkium.bdd;
+package com.frameworkium.bdd.zephyr;
 
 import com.frameworkium.core.common.properties.Property;
 import com.frameworkium.core.common.reporting.jira.zapi.Execution;
