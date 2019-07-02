@@ -1,8 +1,7 @@
 package com.frameworkium.bdd;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.testng.*;
 import gherkin.events.PickleEvent;
+import io.cucumber.testng.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.ITestResult;
