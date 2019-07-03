@@ -18,7 +18,7 @@
   <properties>
     <!-- Versions need to match those in Frameworkium-core -->
     <aspectj.version>1.9.4</aspectj.version>
-    <allure.version>2.12.1</allure.version>
+    <allure.version>2.9.0</allure.version>
     <cucumber.version>4.5.2</cucumber.version>
 
     <!-- Default properties, use -DpropName=value at maven cmd line -->

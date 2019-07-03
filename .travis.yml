@@ -28,8 +28,8 @@ env:
   - SELENIUM_MAJ_VER=3.14
   - SELENIUM_VER=${SELENIUM_MAJ_VER}.0
   - SELENIUM_JAR=selenium-server-standalone-${SELENIUM_VER}.jar
-  - GECKO_VER=0.22.0
-  - CHROME_DRIVER_VER=2.42
+  - GECKO_VER=0.23.0
+  - CHROME_DRIVER_VER=74.0.3729.0
   # Override Travis default to give browsers more room
   - _JAVA_OPTIONS="-Xmx1024m -Xms128m"
   # Required to turn on workaround for the following issue:
@@ -66,14 +66,11 @@ script:
   # Firefox on the grid
   - mvn verify -B -Dthreads=${THREAD_COUNT} -Dconfig=FirefoxGrid.yaml -DcaptureURL=${CAPTURE_URL} -DsutName="${SUT_NAME}" -DsutVersion="${SUT_VERSION}"
 
-  # Following have -o (offline) flag to prevent timing out for snapshot metadata
-  # Problem appeared Sept 2018
-
   # Firefox off the grid
-  - mvn verify -B -o -Dthreads=${THREAD_COUNT} -Dbrowser=firefox -DreuseBrowser=true -Dheadless=true -DcaptureURL=${CAPTURE_URL} -DsutName="${SUT_NAME}" -DsutVersion="${SUT_VERSION}" 2> /dev/null
+  - mvn verify -B -Dthreads=${THREAD_COUNT} -Dbrowser=firefox -DreuseBrowser=true -Dheadless=true -DcaptureURL=${CAPTURE_URL} -DsutName="${SUT_NAME}" -DsutVersion="${SUT_VERSION}" 2> /dev/null
 
   # Chrome off the grid
-  - mvn verify -B -o -Dthreads=${THREAD_COUNT} -Dbrowser=chrome -DreuseBrowser=true -Dheadless=true -DcaptureURL=${CAPTURE_URL} -DsutName="${SUT_NAME}" -DsutVersion="${SUT_VERSION}"
+  - mvn verify -B -Dthreads=${THREAD_COUNT} -Dbrowser=chrome -DreuseBrowser=true -Dheadless=true -DcaptureURL=${CAPTURE_URL} -DsutName="${SUT_NAME}" -DsutVersion="${SUT_VERSION}"
 
   # Query Jira for which test to run and then log results to Jira
   # Disabled until we have a JIRA to use
@@ -81,3 +78,4 @@ script:
 
   # Allure report
   - mvn allure:report -B
+
