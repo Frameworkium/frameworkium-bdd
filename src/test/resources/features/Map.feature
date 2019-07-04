@@ -7,8 +7,6 @@ Feature: Map Search
   Background:
     Given I am on the google maps page
 
-  @Stories(one_story,another_story)
-  @Story(yet_another_story)
   Scenario: Search for BlueFin
     When I search for a location "Blue Fin Venue"
     Then I should see information about "Blue Fin Venue"

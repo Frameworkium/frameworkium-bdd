@@ -7,6 +7,7 @@ import gherkin.events.PickleEvent;
 import io.cucumber.testng.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.ITest;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -23,7 +24,7 @@ import java.lang.reflect.Method;
         },
         // NB: change these to match your glue packages.
         glue = {"com.google.glue", "org.seleniumhq.glue"})
-public class UITestRunner {
+public class UITestRunner implements ITest {
 
     private static final Logger logger = LogManager.getLogger();
 
@@ -45,7 +46,7 @@ public class UITestRunner {
         UITestLifecycle.get().beforeTestMethod(scenarioName.get());
     }
 
-    @Test(description = "Runs Cucumber Scenarios", dataProvider = "scenarios")
+    @Test(dataProvider = "scenarios")
     public void scenario(PickleEventWrapper pickleEvent, CucumberFeatureWrapper cfw) throws Throwable {
         testNGCucumberRunner.runScenario(pickleEvent.getPickleEvent());
     }
@@ -81,5 +82,10 @@ public class UITestRunner {
     public void tearDownClass() {
         testNGCucumberRunner.finish();
         UITestLifecycle.get().afterTestSuite();
+    }
+
+    @Override
+    public String getTestName() {
+        return scenarioName.get();
     }
 }

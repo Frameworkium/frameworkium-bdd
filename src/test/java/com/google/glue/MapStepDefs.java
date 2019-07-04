@@ -2,7 +2,7 @@ package com.google.glue;
 
 import com.google.pages.MapInfoPane;
 import com.google.pages.MapPage;
-import cucumber.api.java.en.*;
+import io.cucumber.java.en.*;
 import io.qameta.allure.Step;
 
 import java.time.Duration;

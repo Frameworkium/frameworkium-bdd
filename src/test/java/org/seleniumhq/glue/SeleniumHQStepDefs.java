@@ -2,7 +2,7 @@ package org.seleniumhq.glue;
 
 import org.seleniumhq.pages.SeleniumDownloadPage;
 import org.seleniumhq.pages.SeleniumHomePage;
-import cucumber.api.java.en.*;
+import io.cucumber.java.en.*;
 import io.qameta.allure.Step;
 
 import static com.google.common.truth.Truth.assertThat;
