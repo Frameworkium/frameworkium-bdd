@@ -16,7 +16,7 @@
   </ciManagement>
 
   <properties>
-    <cucumber.version>4.5.2</cucumber.version>
+    <cucumber.version>4.5.4</cucumber.version>
     <!-- Versions need to match those in Frameworkium-core -->
     <aspectj.version>1.9.4</aspectj.version>
     <allure.version>2.12.1</allure.version>
