@@ -1,7 +1,8 @@
-package com.frameworkium.bdd;
+package com.frameworkium.bdd.zephyr;
 
 import com.frameworkium.core.common.properties.Property;
 import com.frameworkium.core.common.reporting.jira.zapi.Execution;
+import cucumber.api.Plugin;
 import cucumber.runtime.CucumberException;
 import gherkin.formatter.Formatter;
 import gherkin.formatter.Reporter;
@@ -14,14 +15,14 @@ import java.util.stream.Stream;
 
 import static com.frameworkium.core.common.reporting.jira.JiraConfig.ZapiStatus.*;
 
-public class CucumberZephyrListener implements Formatter, Reporter {
+public class CucumberZephyrListener implements Formatter, Reporter, Plugin {
 
     private Boolean updateTCMStatus = Property.JIRA_URL.isSpecified();
     private int scnStepBrokenCount = 0;
     private Throwable latestError;
 
     @Override
-    public void syntaxError(String s, String s1, List<String> list, String s2, Integer integer) {}
+    public void syntaxError(String s, String s1, List<String> list, String s2, Integer i) {}
 
     @Override
     public void uri(String s) {}

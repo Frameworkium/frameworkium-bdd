@@ -2,7 +2,7 @@ package com.google.glue;
 
 import com.google.pages.MapInfoPane;
 import com.google.pages.MapPage;
-import cucumber.api.java.en.*;
+import io.cucumber.java.en.*;
 import io.qameta.allure.Step;
 
 import java.time.Duration;
@@ -29,7 +29,7 @@ public class MapStepDefs {
         MapInfoPane mapInfoPaneWithTimeout =
                 new MapInfoPane().get(Duration.ofSeconds(30));
         assertThat(mapInfoPaneWithTimeout.getInfoHeaderText())
-                .isEqualTo(searchTerm);
+                .contains(searchTerm);
     }
 
     @Step

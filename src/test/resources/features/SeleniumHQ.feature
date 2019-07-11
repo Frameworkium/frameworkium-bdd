@@ -1,4 +1,3 @@
-@Story(feature_level_story) @all
 Feature: SeleniumHQ Download
 
   In order to do my job
@@ -8,7 +7,6 @@ Feature: SeleniumHQ Download
   Background:
     Given I am on the SeleniumHQ home page
 
-  @CustomTag
-  Scenario: Find the version
+  Scenario: Find the Selenium download version
     When I click downloads
     Then I should see a link containing the latest version

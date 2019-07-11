@@ -16,22 +16,23 @@
   </ciManagement>
 
   <properties>
+    <cucumber.version>4.5.2</cucumber.version>
     <!-- Versions need to match those in Frameworkium-core -->
-    <aspectj.version>1.9.1</aspectj.version>
-    <allure.version>2.7.0</allure.version>
+    <aspectj.version>1.9.4</aspectj.version>
+    <allure.version>2.12.1</allure.version>
 
-    <!-- Default - can be overridden by -DpropName=n at maven cmd line -->
+    <!-- Default properties, change via -DpropName=value at maven cmd line -->
     <threads>1</threads>
-    <tags>~@ignore</tags>
-    <customArgLine/>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
   </properties>
 
-  <name>Frameworkium-Cukes</name>
-  <description>Frameworkium Cucumber-JVM Test Automation Framework</description>
+  <name>Frameworkium-BDD</name>
+  <description>
+    Frameworkium Cucumber-JVM Test Automation Framework with example tests
+  </description>
 
   <repositories>
     <repository>
@@ -48,24 +49,30 @@
     <dependency>
       <groupId>com.github.frameworkium</groupId>
       <artifactId>frameworkium-core</artifactId>
-      <version>3.0.0-BETA1</version>
+      <version>3.0.0</version>
     </dependency>
 
     <!-- Cucumber -->
     <dependency>
-      <groupId>info.cukes</groupId>
+      <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
-      <version>1.2.5</version>
+      <version>${cucumber.version}</version>
     </dependency>
     <dependency>
-      <groupId>info.cukes</groupId>
+      <groupId>io.cucumber</groupId>
       <artifactId>cucumber-testng</artifactId>
-      <version>1.2.5</version>
+      <version>${cucumber.version}</version>
     </dependency>
     <dependency>
       <groupId>io.qameta.allure</groupId>
       <artifactId>allure-cucumber-jvm</artifactId>
       <version>${allure.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>${aspectj.version}</version>
     </dependency>
   </dependencies>
 
@@ -83,60 +90,21 @@
         </configuration>
       </plugin>
 
-      <!-- Generates Cucumber test classes to then run in parallel -->
-      <plugin>
-        <groupId>com.github.temyers</groupId>
-        <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-        <version>5.0.0</version>
-        <executions>
-          <execution>
-            <id>generateRunners</id>
-            <phase>generate-test-sources</phase>
-            <goals>
-              <goal>generateRunners</goal>
-            </goals>
-            <configuration>
-              <!-- IMPORTANT: Change this to be your glue Java package(s) -->
-              <glue>
-                <package>com.google.glue</package>
-                <package>com.tfl.glue</package>
-                <package>org.seleniumhq.glue</package>
-              </glue>
-              <featuresDirectory>src/test/resources/features/</featuresDirectory>
-              <!-- cucumber options -->
-              <format>json</format>
-              <strict>true</strict>
-              <monochrome>true</monochrome>
-              <plugins>
-                <plugin>
-                  <name>com.frameworkium.bdd.CucumberZephyrListener</name>
-                  <noOutput>true</noOutput>
-                </plugin>
-                <plugin>
-                  <name>io.qameta.allure.cucumberjvm.AllureCucumberJvm</name>
-                </plugin>
-              </plugins>
-              <tags>
-                <tag>${tags}</tag>
-              </tags>
-              <namingScheme>feature-title</namingScheme>
-              <parallelScheme>SCENARIO</parallelScheme>
-              <!-- Frameworkium custom template -->
-              <customVmTemplate>
-                src/test/resources/frameworkium-cucumber-runner.vm
-              </customVmTemplate>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.22.0</version>
         <configuration>
+          <properties>
+            <property>
+              <!-- Used to run scenarios in parallel -->
+              <name>dataproviderthreadcount</name>
+              <value>${threads}</value>
+            </property>
+          </properties>
           <parallel>classes</parallel>
-          <threadCount>${threads}</threadCount>
+          <!-- Will run API and UI tests sequentially, change to 2 to run in parallel -->
+          <threadCount>1</threadCount>
           <systemPropertyVariables>
             <!-- For Frameworkium screenshots on test failure -->
             <screenshotDirectory>
@@ -148,7 +116,7 @@
             </allure.results.directory>
           </systemPropertyVariables>
           <includes>
-            <include>**/*IT.java</include>
+            <include>**/*TestRunner.java</include>
           </includes>
           <argLine>
             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
@@ -175,7 +143,7 @@
       <plugin>
         <groupId>io.qameta.allure</groupId>
         <artifactId>allure-maven</artifactId>
-        <version>2.9</version>
+        <version>2.10.0</version>
         <configuration>
           <!-- Keep version in sync with dependencies -->
           <reportVersion>${allure.version}</reportVersion>

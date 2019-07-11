@@ -2,20 +2,16 @@ package com.tfl.glue;
 
 import com.tfl.api.dto.BikePoints;
 import com.tfl.api.service.BikePointService;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.qameta.allure.Step;
 
 import static com.google.common.truth.Truth.assertWithMessage;
 
 public class TflStepDefs {
 
-    private final BikePointService bikePoints;
+    private final BikePointService bikePoints = new BikePointService();
     private BikePoints points;
-
-    public TflStepDefs() {
-        bikePoints = new BikePointService();
-    }
 
     @Step
     @When("^I request all bike points$")
