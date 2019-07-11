@@ -77,7 +77,7 @@ mvn clean verify -Dcucumber.options="--tags @p1,@smoke"
 ```
 
 Comprehensive docs on cucumber tagging can be found on the official
-[cucumber wiki](https://github.com/cucumber/cucumber/wiki/Tags).
+[cucumber docs](https://cucumber.io/docs/cucumber/api/#tags).
 
 ### API tests
 
