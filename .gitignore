@@ -57,5 +57,6 @@ nbactions.xml
 ################
 ajcore.*.txt
 test-output/
-logs/
 screenshots/
+.allure/
+tmp-mvn-repo/
