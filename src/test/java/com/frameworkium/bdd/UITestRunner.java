@@ -41,9 +41,10 @@ public class UITestRunner implements ITest {
     @BeforeMethod(alwaysRun = true)
     public void setTestName(Method method, Object[] testData) {
         PickleEvent pickleEvent = ((PickleEventWrapper) testData[0]).getPickleEvent();
-        scenarioName.set(pickleEvent.pickle.getName());
-        logger.info("START {}", scenarioName.get());
-        UITestLifecycle.get().beforeTestMethod(scenarioName.get());
+        String scenarioName = pickleEvent.pickle.getName();
+        this.scenarioName.set(scenarioName);
+        logger.info("START {}", scenarioName);
+        UITestLifecycle.get().beforeTestMethod(scenarioName);
     }
 
     @Test(dataProvider = "scenarios")

@@ -12,7 +12,7 @@ import static com.google.common.truth.Truth.assertThat;
 public class MapStepDefs {
 
     @Step
-    @Given("^I am on the google maps page$")
+    @Given("I am on the google maps page")
     public void i_am_on_the_Google_Maps_page() {
         MapPage.open();
     }

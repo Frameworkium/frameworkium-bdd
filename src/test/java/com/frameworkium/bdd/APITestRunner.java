@@ -35,8 +35,9 @@ public class APITestRunner implements ITest {
     @BeforeMethod(alwaysRun = true)
     public void setTestName(Method method, Object[] testData) {
         PickleEvent pickleEvent = ((PickleEventWrapper) testData[0]).getPickleEvent();
-        scenarioName.set(pickleEvent.pickle.getName());
-        logger.info("START {}", scenarioName.get());
+        String scenarioName = pickleEvent.pickle.getName();
+        this.scenarioName.set(scenarioName);
+        logger.info("START {}", scenarioName);
     }
 
     @Test(dataProvider = "scenarios")

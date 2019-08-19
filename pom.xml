@@ -16,17 +16,16 @@
   </ciManagement>
 
   <properties>
-    <cucumber.version>4.5.4</cucumber.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <cucumber.version>4.7.1</cucumber.version>
     <!-- Versions need to match those in Frameworkium-core -->
     <aspectj.version>1.9.4</aspectj.version>
     <allure.version>2.12.1</allure.version>
 
     <!-- Default properties, change via -DpropName=value at maven cmd line -->
     <threads>1</threads>
-
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
   </properties>
 
   <name>Frameworkium-BDD</name>
@@ -63,6 +62,7 @@
       <artifactId>cucumber-testng</artifactId>
       <version>${cucumber.version}</version>
     </dependency>
+
     <dependency>
       <groupId>io.qameta.allure</groupId>
       <artifactId>allure-cucumber-jvm</artifactId>
@@ -78,7 +78,6 @@
 
   <build>
     <plugins>
-
       <!-- To compile all the lovely Java -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -93,7 +92,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.0</version>
+        <version>3.0.0-M3</version>
         <configuration>
           <properties>
             <property>
@@ -103,7 +102,7 @@
             </property>
           </properties>
           <parallel>classes</parallel>
-          <!-- Will run API and UI tests sequentially, change to 2 to run in parallel -->
+          <!-- 1 runs API and UI runners sequentially, change to 2 to run in parallel -->
           <threadCount>1</threadCount>
           <systemPropertyVariables>
             <!-- For Frameworkium screenshots on test failure -->
@@ -145,7 +144,6 @@
         <artifactId>allure-maven</artifactId>
         <version>2.10.0</version>
         <configuration>
-          <!-- Keep version in sync with dependencies -->
           <reportVersion>${allure.version}</reportVersion>
         </configuration>
       </plugin>
