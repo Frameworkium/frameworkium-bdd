@@ -28,7 +28,7 @@ env:
   - SUT_VERSION=${TRAVIS_BRANCH}
   - THREAD_COUNT=2
   - GECKO_VER=0.24.0
-  - CHROME_DRIVER_VER=75.0.3770.90
+  - CHROME_DRIVER_VER=77.0.3865.40
   # Override Travis default to give browsers more room
   - _JAVA_OPTIONS="-Xmx1024m -Xms128m"
   # Required to turn on workaround for the following issue:
