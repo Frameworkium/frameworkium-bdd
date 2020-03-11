@@ -57,7 +57,7 @@ public class UITestRunner implements ITest {
         return testNGCucumberRunner.provideScenarios();
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult result) {
         UITestLifecycle.get().afterTestMethod();
         logResult(result);
