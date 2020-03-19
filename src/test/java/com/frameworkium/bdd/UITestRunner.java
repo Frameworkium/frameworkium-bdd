@@ -59,7 +59,12 @@ public class UITestRunner implements ITest {
 
     @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult result) {
-        UITestLifecycle.get().afterTestMethod();
+        UITestLifecycle uiTestLifecycle = UITestLifecycle.get();
+            
+        if (uiTestLifecycle != null) {
+            uiTestLifecycle.afterTestMethod();
+        }
+        
         logResult(result);
     }
 
