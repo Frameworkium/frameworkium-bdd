@@ -1,26 +1,25 @@
 package com.frameworkium.bdd;
 
-import gherkin.events.PickleEvent;
 import io.cucumber.testng.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.ITest;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
 
 @CucumberOptions(
-        strict = true,
         features = {"src/test/resources/features/"},
-        tags = {"not @ignore and @api"},
+        tags = "not @ignore and @api",
         plugin = {
                 "pretty", // pretty console logging
-                "json:cucumber-results.json" // json results file
+                "json:target/json/cucumber-results.json", // json results file
+                "listener.CukeScreenshotListener",
+                "io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm"
         },
         // NB: change these to match your glue packages.
         glue = {"com.tfl.glue"})
-public class APITestRunner implements ITest {
+public class APITestRunner extends AbstractTestNGCucumberTests {
 
     private static final Logger logger = LogManager.getLogger();
 
@@ -34,15 +33,16 @@ public class APITestRunner implements ITest {
 
     @BeforeMethod(alwaysRun = true)
     public void setTestName(Method method, Object[] testData) {
-        PickleEvent pickleEvent = ((PickleEventWrapper) testData[0]).getPickleEvent();
-        String scenarioName = pickleEvent.pickle.getName();
+        Pickle pickleEvent = ((PickleWrapper) testData[0]).getPickle();
+        String scenarioName = pickleEvent.getName();
         this.scenarioName.set(scenarioName);
         logger.info("START {}", scenarioName);
     }
 
     @Test(dataProvider = "scenarios")
-    public void scenario(PickleEventWrapper pickleEvent, CucumberFeatureWrapper cfw) throws Throwable {
-        testNGCucumberRunner.runScenario(pickleEvent.getPickleEvent());
+    public void runScenario(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper) {
+        // the 'featureWrapper' parameter solely exists to display the feature file in a test report
+        testNGCucumberRunner.runScenario(pickleWrapper.getPickle());
     }
 
     @DataProvider(parallel = true)
@@ -74,10 +74,5 @@ public class APITestRunner implements ITest {
     @AfterClass(alwaysRun = true)
     public void tearDownClass() {
         testNGCucumberRunner.finish();
-    }
-
-    @Override
-    public String getTestName() {
-        return scenarioName.get();
     }
 }

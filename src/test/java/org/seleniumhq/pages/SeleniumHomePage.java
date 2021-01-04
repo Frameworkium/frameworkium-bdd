@@ -7,7 +7,7 @@ import ru.yandex.qatools.htmlelements.element.Link;
 
 public class SeleniumHomePage extends BasePage<SeleniumHomePage> {
 
-    @FindBy(css = "#menu_download > a")
+    @FindBy(css = "#navbar [href='/downloads']")
     private Link downloadLink;
 
     public static void open() {
