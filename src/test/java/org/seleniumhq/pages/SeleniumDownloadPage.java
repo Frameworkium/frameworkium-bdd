@@ -8,7 +8,7 @@ import ru.yandex.qatools.htmlelements.element.Link;
 public class SeleniumDownloadPage extends BasePage<SeleniumDownloadPage> {
 
     @Visible
-    @FindBy(xpath = "//p[text()=\"Latest stable version \"]/a")
+    @FindBy(css = "section + .split-section .right a")
     private Link latestDownloadLink;
 
     public String getLatestVersion() {

@@ -59,3 +59,7 @@ ajcore.*.txt
 test-output/
 logs/
 screenshots/
+
+# Reporting files #
+################
+.allure
