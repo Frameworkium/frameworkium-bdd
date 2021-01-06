@@ -8,7 +8,7 @@ import ru.yandex.qatools.htmlelements.element.Link;
 public class SeleniumDownloadPage extends BasePage<SeleniumDownloadPage> {
 
     @Visible
-    @FindBy(css = "#mainContent > p:nth-child(5) > a")
+    @FindBy(css = "section + .split-section .right a")
     private Link latestDownloadLink;
 
     public String getLatestVersion() {

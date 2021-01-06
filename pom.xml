@@ -19,10 +19,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <cucumber.version>4.7.1</cucumber.version>
+    <cucumber.version>6.7.0</cucumber.version>
     <!-- Versions need to match those in Frameworkium-core -->
     <aspectj.version>1.9.4</aspectj.version>
-    <allure.version>2.12.1</allure.version>
+    <allure.version>2.13.8</allure.version>
 
     <!-- Default properties, change via -DpropName=value at maven cmd line -->
     <threads>1</threads>
@@ -59,13 +59,18 @@
     </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java8</artifactId>
+      <version>${cucumber.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
       <artifactId>cucumber-testng</artifactId>
       <version>${cucumber.version}</version>
     </dependency>
 
     <dependency>
       <groupId>io.qameta.allure</groupId>
-      <artifactId>allure-cucumber-jvm</artifactId>
+      <artifactId>allure-cucumber6-jvm</artifactId>
       <version>${allure.version}</version>
     </dependency>
 
