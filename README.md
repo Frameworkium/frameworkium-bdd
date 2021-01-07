@@ -1,5 +1,7 @@
 # Frameworkium-BDD
+
 ![build](https://github.com/frameworkium/frameworkium-bdd/workflows/frameworkium-bdd%20build/badge.svg)
+![release](https://img.shields.io/github/v/release/frameworkium/frameworkium-bdd)
 
 This is a Cucumber implementation of [Frameworkium][frameworkium],
 it utilises [frameworkium-core][core] with an added BDD layer,
