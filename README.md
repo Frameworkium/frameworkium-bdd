@@ -1,4 +1,5 @@
-# Frameworkium-BDD [![Build Status][status-svg]][status]
+# Frameworkium-BDD
+![build](https://github.com/frameworkium/frameworkium-bdd/workflows/frameworkium-bdd%20build/badge.svg)
 
 This is a Cucumber implementation of [Frameworkium][frameworkium],
 it utilises [frameworkium-core][core] with an added BDD layer,
