@@ -56,9 +56,14 @@ public class UITestRunner extends AbstractTestNGCucumberTests {
         return testNGCucumberRunner.provideScenarios();
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult result) {
-        UITestLifecycle.get().afterTestMethod();
+        UITestLifecycle uiTestLifecycle = UITestLifecycle.get();
+            
+        if (uiTestLifecycle != null) {
+            uiTestLifecycle.afterTestMethod();
+        }
+        
         logResult(result);
     }
 
