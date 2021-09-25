@@ -1,17 +1,17 @@
 package org.seleniumhq.pages;
 
+import com.frameworkium.core.htmlelements.element.Link;
 import com.frameworkium.core.ui.pages.BasePage;
 import com.frameworkium.core.ui.pages.PageFactory;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import ru.yandex.qatools.htmlelements.element.Link;
 
 public class SeleniumHomePage extends BasePage<SeleniumHomePage> {
 
-    @FindBy(css = "#navbar [href='/downloads']")
+    @FindBy(css = ".navbar [href='/downloads']")
     private Link downloadLink;
 
-    @FindBy(css = ".headerLink + #dropdownButton")
+    @FindBy(css = "button[data-target='#main_navbar']")
     private WebElement menuLink;
 
     public static void open() {
