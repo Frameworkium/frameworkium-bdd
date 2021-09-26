@@ -9,10 +9,10 @@ import org.openqa.selenium.support.FindBy;
 public class MapInfoPane extends BasePage<MapInfoPane> {
 
     @Visible
-    @FindBy(css = "#pane .section-hero-header-title")
+    @FindBy(css = "#pane h1")
     private WebElement infoHeader;
 
-    @FindBy(css = "#pane .widget-pane-content [data-item-id='address']")
+    @FindBy(css = "#pane [data-item-id='address']")
     private WebElement addressSpan;
 
     @Step
