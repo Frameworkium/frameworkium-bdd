@@ -22,7 +22,7 @@
     <cucumber.version>6.11.0</cucumber.version>
     <!-- Versions need to match those in Frameworkium-core -->
     <aspectj.version>1.9.7</aspectj.version>
-    <allure.version>2.14.0</allure.version>
+    <allure.version>2.15.0</allure.version>
 
     <!-- Default properties, change via -DpropName=value at maven cmd line -->
     <threads>1</threads>
