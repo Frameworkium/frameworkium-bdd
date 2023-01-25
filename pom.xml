@@ -23,7 +23,6 @@
     <!-- Versions need to match those in Frameworkium-core -->
     <aspectj.version>1.9.7</aspectj.version>
     <allure.version>2.14.0</allure.version>
-
     <!-- Default properties, change via -DpropName=value at maven cmd line -->
     <threads>1</threads>
   </properties>
@@ -45,6 +44,14 @@
   </prerequisites>
 
   <dependencies>
+
+    <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/properties-maven-plugin -->
+    <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>properties-maven-plugin</artifactId>
+      <version>1.1.0</version>
+    </dependency>
+
     <dependency>
       <groupId>com.github.frameworkium</groupId>
       <artifactId>frameworkium-core</artifactId>
@@ -118,7 +125,13 @@
             <allure.results.directory>
               ${project.build.directory}/allure-results
             </allure.results.directory>
+<!--            -Dip=value -->
+            <ip>
+              ${ip}
+            </ip>
           </systemPropertyVariables>
+<!--          load external properties file-->
+          <systemPropertiesFile>src/test/resources/config/${confile}</systemPropertiesFile>
           <includes>
             <include>**/*TestRunner.java</include>
           </includes>

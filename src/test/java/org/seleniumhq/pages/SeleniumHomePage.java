@@ -1,5 +1,6 @@
 package org.seleniumhq.pages;
 
+import com.common.Config;
 import com.frameworkium.core.htmlelements.element.Link;
 import com.frameworkium.core.ui.UITestLifecycle;
 import com.frameworkium.core.ui.pages.BasePage;
@@ -18,8 +19,8 @@ public class SeleniumHomePage extends BasePage<SeleniumHomePage> {
 
     public static void open() {
         PageFactory.newInstance(
-                SeleniumHomePage.class,
-                "https://www.seleniumhq.org");
+                SeleniumHomePage.class, Config.getBaseURL());
+        System.out.println(System.getProperty("qa.baseURL"));
     }
 
     public void gotoDownloadsPage() {

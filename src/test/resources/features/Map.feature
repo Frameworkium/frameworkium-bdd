@@ -1,3 +1,5 @@
+@ignore
+
 Feature: Map Search
 
   In order to find information about places

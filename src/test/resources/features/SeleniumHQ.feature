@@ -1,3 +1,5 @@
+@Tests
+
 Feature: SeleniumHQ Download
 
   In order to do my job
